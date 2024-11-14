@@ -1,0 +1,9 @@
+# Mengabaikan folder venv
+.venv
+
+# Mengabaikan file Python bytecode
+*.pyc
+*.pyo
+
+# Mengabaikan file logs
+*.log

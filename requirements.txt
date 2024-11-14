@@ -1,0 +1,18 @@
+pytest-playwright
+localStoragePy
+pyotp
+requests
+assertpy
+pytest-json-report
+allure-pytest
+pytest-xdist
+pytest-rerunfailures
+python-dotenv
+
+# Library Robot Framework
+robotframework-seleniumlibrary
+robotframework-requests
+robotframework-appiumlibrary
+robotframework-pabot
+robotframework-excellib
+robotframework-csvlib
