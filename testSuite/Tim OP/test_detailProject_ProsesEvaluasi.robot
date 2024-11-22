@@ -1,6 +1,6 @@
 *** Settings ***
 Resource            ../config/${ENV}.robot
-Resource            ../testScenario/detailProject_MenungguPersetujuan.robot
+Resource            ../../testScenario/Tim OP/detailProject_ProsesEvaluasi.robot
 Test Setup            Begin Web Test
 Test Teardown         End Web Test
 
@@ -15,11 +15,6 @@ Tim OP can Changes Data Alamat Project
     [Documentation]            This scenario test User can change data alamat project
     [Tags]                     1000s    detail_project    test
     User change data alamat project
-
-Tim OP can Changes Data Estimasi Tanggal Mulai Project
-    [Documentation]            This scenario test User can change data tanggal mulai project
-    [Tags]                     1000s    detail_project    test
-    User change data Start Date project
 
 Tim OP can Changes Data Estimasi Tanggal Berakhir Project
     [Documentation]            This scenario test User can change data tanggal berakhir project before tanggal mulai project

@@ -157,7 +157,7 @@ Get list Project Manajemen
     @{project_names}=    Get Project Names    ${valueList}
 
     # Ambil salah satu nama proyek, misalnya proyek pertama
-    ${single_project_name}=    Get From List    ${project_names}    0 
+    ${single_project_name}=    Get From List    ${project_names}    2 
     Set Global Variable    ${projectName}    ${single_project_name}
     Log    Single Project Name: ${single_project_name}
     Log To Console    Single Project Name: ${single_project_name}

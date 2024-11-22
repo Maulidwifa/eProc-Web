@@ -1,5 +1,5 @@
 *** Settings ***
-Resource                ../pageObject/pom_createProject.robot
+Resource                ../pageObject/detailProject/Tim OP/pom_createProject.robot
 Resource                ../pageObject/generalFunct.robot
 Resource                ../pageObject/API_listKecamatan.robot
 Resource                ./login.robot

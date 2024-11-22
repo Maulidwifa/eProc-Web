@@ -1,37 +1,42 @@
 *** Settings ***
 Library                SeleniumLibrary
-Resource        ../generalFunct.robot
-Resource        ../API_listKecamatan.robot
-Resource        ../pom_createProject.robot
+Resource        ../../generalFunct.robot
+Resource        ../../API_listKecamatan.robot
+Resource        ./pom_createProject.robot
 
 *** Variables ***
 ${namaProject_onDetailPage}              xpath=//span[@class='ttlMdSemiBold']
 ${statusProject}                         xpath=//div[@class='d-flex align-items-center justify-content-between mb-2px']//div[@class='d-flex align-items-center']/span[2]
-${buttonRiwayat}                         xpath=//div[@class='d-flex align-items-center justify-content-end w-100']/button[1]
-${buttonUbah}                            xpath=//div[@class='d-flex align-items-center justify-content-end w-100']/button[2]
-${buttonBatalkan}                        xpath=//div[@class='d-flex align-items-center justify-content-end w-100']/button[3]
+# ${buttonRiwayat}                         xpath=//div[@class='d-flex align-items-center justify-content-end w-100']/button[1]
+# ${buttonUbah}                            xpath=//div[@class='d-flex align-items-center justify-content-end w-100']/button[2]
+# ${buttonBatalkan}                        xpath=//div[@class='d-flex align-items-center justify-content-end w-100']/button[3]
 ${ubahProject_MenungguPersetujuan}       xpath=//p[contains(.,'Perubahan Project')]
 
 ${iconDeleteCity}                        xpath=//div[@id='svgdeletecity']
 
+# Paging in List Project
+${nextPage}                              xpath=//a[@title="Next page"]
+
 *** Keywords ***
-user click Detail on Project Menunggu Persetujuan
+user click Detail on Project
+    [Arguments]    ${textStatus}
     ${len}    Get Length    xpath=//tbody/tr/td[5]
     Sleep    3
     FOR    ${counter}    IN RANGE    1    ${len}
-        ${res}    general return status    xpath=//tbody/tr/td[5]//div[contains(.,'Menunggu persetujuan')]
+        ${res}    general return status    xpath=//tbody/tr/td[5]//div[contains(.,'${textStatus}')]
         IF    ${res}
-            check in project list
+            check in project list    ${textStatus}
             Exit For Loop
         ELSE
-            ${next}    general return status    xpath=//a[@title="Next page"]
-            Run Keyword If    ${next}    user click element    xpath=//a[@title="Next page"]
+            ${next}    general return status    ${nextPage}
+            Run Keyword If    ${next}    user click element    ${nextPage}
         END
     END
 
 check in project list
+    [Arguments]    ${textStatusProject}
     FOR    ${counter}    IN RANGE    1    10
-        ${res}    general return status    xpath=//tbody/tr[${counter}]/td[5]//div[contains(.,'Menunggu persetujuan')]
+        ${res}    general return status    xpath=//tbody/tr[${counter}]/td[5]//div[contains(.,'${textStatusProject}')]
         IF    ${res}
             ${text}    Get Text    xpath=//tbody/tr[${counter}]/td[1]
             ${status}    Get Text    xpath=//tbody/tr[${counter}]/td[5]
@@ -53,7 +58,7 @@ check in project list
         END
     END
 
-detail information
+detail information on detail page
     ${len}    Get Length    xpath=//div[@class='w-100']/div
     FOR    ${counter}    IN RANGE    1    ${len}
         ${res}    general return status    xpath=//div[@class='w-100']/div[${counter}]
@@ -89,9 +94,9 @@ user click button Riwayat
         END
     END
 
-click button ubah
-    general Wait Until    ${buttonUbah}
-    user click element    ${buttonUbah}
+# click button ubah
+#     general Wait Until    ${buttonUbah}
+#     user click element    ${buttonUbah}
 
 user ubah alamat project
     # Get list city
@@ -127,12 +132,14 @@ user ubah pic yang sama satu sama lain
     Log To Console    Error State: ${labelErr}
 
 user ubah nama project dengan nama yang sudah digunakan
+    [Arguments]    ${StatusProject}
     Get list Project Manajemen
-    user click Detail on Project Menunggu Persetujuan
+    user click Detail on Project    ${StatusProject}
     click button ubah
+    general Wait Until    ${inputNamaProject}
+    user click element    ${inputNamaProject}
     Run Keyword If    '${nameProject_MenungguPersetujuan}' == '${projectName}'    Get list Project Manajemen
-    Wait Until Element Is Visible    ${inputNamaProject}
     ${nameUsed}    Replace String    ${nameProject_MenungguPersetujuan}    ${nameProject_MenungguPersetujuan}    ${projectName}
     user input text    ${inputNamaProject}    ${nameUsed}
-    detail information
+    detail information on detail page
     

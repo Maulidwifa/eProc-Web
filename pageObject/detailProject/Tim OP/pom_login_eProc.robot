@@ -1,6 +1,6 @@
 *** Settings ***
 Library        SeleniumLibrary
-Resource       generalFunct.robot
+Resource       ../../generalFunct.robot
 
 *** Variables ***
 # ${id_user}              085210758864    # Administrator

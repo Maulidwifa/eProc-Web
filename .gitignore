@@ -6,4 +6,5 @@
 *.pyo
 
 # Mengabaikan file logs
-*.log
+*report
+API_listKecamatan.robot

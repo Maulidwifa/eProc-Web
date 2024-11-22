@@ -20,6 +20,11 @@ ${errLabel_formProject}     xpath=//div[@class='mb-20px']/label[@class='txt-dang
 # Button Simpan Pop Up
 ${btn_simpanPopUP}          xpath=//div[@class='d-flex']/button[contains(.,'Simpan')]
 
+# Button on Detail Project
+${buttonRiwayat}                         xpath=//div[@class='d-flex align-items-center justify-content-end w-100']/button[1]
+${buttonUbah}                            xpath=//div[@class='d-flex align-items-center justify-content-end w-100']/button[2]
+${buttonBatalkan}                        xpath=//div[@class='d-flex align-items-center justify-content-end w-100']/button[3]
+
 *** Keywords ***
 # General Function
 user input text
@@ -90,6 +95,16 @@ error for startDate and endDate
         Log To Console    ${\n}Error State: ${text}
     END
 
+# Button Ubah on Detail Page
+click button ubah
+    general Wait Until    ${buttonUbah}
+    user click element    ${buttonUbah} 
+
+# Bisa Kirim / Simpan
+button accept on dialog form ubah
+    [Arguments]    ${textPopUP}
+    general Wait Until    xpath=//div[@class='d-flex']/button[contains(.,'${textPopUP}')]
+    user click element    xpath=//div[@class='d-flex']/button[contains(.,'${textPopUP}')]
 
 # Pop Up Dialog
 show pop up dialog

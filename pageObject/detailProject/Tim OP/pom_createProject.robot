@@ -1,7 +1,7 @@
 *** Settings ***
 Library                SeleniumLibrary
-Resource               ./API_listKecamatan.robot
-Resource               ./generalFunct.robot
+Resource               ../../API_listKecamatan.robot
+Resource               ../../generalFunct.robot
 
 *** Variables ***
 ${buttonBuatProject}        xpath=//span[contains(text(), 'Buat Project')]//ancestor::button
