@@ -1,5 +1,6 @@
 # Mengabaikan folder venv
 .venv
+report
 
 # Mengabaikan file Python bytecode
 *.pyc
@@ -8,3 +9,6 @@
 # Mengabaikan file logs
 *report
 API_listKecamatan.robot
+# pageObject\ssl_helper.py
+ssl_helper.py
+tensor.py

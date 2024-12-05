@@ -17,13 +17,18 @@ ${errMessageLabel}         xpath=//div[@class='mb-20px']/label[@class='txt-dange
 ${errMessageFormProject}    xpath=//label[contains(.,'Wajib')]
 ${errLabel_formProject}     xpath=//div[@class='mb-20px']/label[@class='txt-danger txtMdMedium mt-6px d-block ']
 
-# Button Simpan Pop Up
+# Content Pop Up
 ${btn_simpanPopUP}          xpath=//div[@class='d-flex']/button[contains(.,'Simpan')]
+${popUp_alert}              xpath=//div[@role='dialog']
+${titlePopUp}               xpath=//div[@role='dialog']//div[@class='text-center']/p[1]
+${btnTidak_onPopUp}         xpath=//div[@role='dialog']//div[2]/button[contains(.,'Tidak')]
+${btnYa_onPopUp}            xpath=//div[@role='dialog']//div[2]/button[contains(.,'Ya')]
 
 # Button on Detail Project
 ${buttonRiwayat}                         xpath=//div[@class='d-flex align-items-center justify-content-end w-100']/button[1]
 ${buttonUbah}                            xpath=//div[@class='d-flex align-items-center justify-content-end w-100']/button[2]
 ${buttonBatalkan}                        xpath=//div[@class='d-flex align-items-center justify-content-end w-100']/button[3]
+${buttonBatalkan_onNotes}                xpath=//div[contains(@class,'UpdateNoteBudget')]//button
 
 *** Keywords ***
 # General Function
@@ -99,6 +104,11 @@ error for startDate and endDate
 click button ubah
     general Wait Until    ${buttonUbah}
     user click element    ${buttonUbah} 
+
+user click button
+    [Arguments]    ${loc_btn}
+    general Wait Until    ${loc_btn}
+    user click element    ${loc_btn}    
 
 # Bisa Kirim / Simpan
 button accept on dialog form ubah

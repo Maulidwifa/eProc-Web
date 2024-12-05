@@ -7,9 +7,6 @@ Resource        ./pom_createProject.robot
 *** Variables ***
 ${namaProject_onDetailPage}              xpath=//span[@class='ttlMdSemiBold']
 ${statusProject}                         xpath=//div[@class='d-flex align-items-center justify-content-between mb-2px']//div[@class='d-flex align-items-center']/span[2]
-# ${buttonRiwayat}                         xpath=//div[@class='d-flex align-items-center justify-content-end w-100']/button[1]
-# ${buttonUbah}                            xpath=//div[@class='d-flex align-items-center justify-content-end w-100']/button[2]
-# ${buttonBatalkan}                        xpath=//div[@class='d-flex align-items-center justify-content-end w-100']/button[3]
 ${ubahProject_MenungguPersetujuan}       xpath=//p[contains(.,'Perubahan Project')]
 
 ${iconDeleteCity}                        xpath=//div[@id='svgdeletecity']
@@ -94,12 +91,7 @@ user click button Riwayat
         END
     END
 
-# click button ubah
-#     general Wait Until    ${buttonUbah}
-#     user click element    ${buttonUbah}
-
 user ubah alamat project
-    # Get list city
     user click element    ${iconDeleteCity}
     user choose kecamatan list
 
