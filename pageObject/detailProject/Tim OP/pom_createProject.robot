@@ -84,12 +84,13 @@ tanggal berakhir
     user click element    ${loc}
     ${textHeaderCalendar}    Get Text    ${headerCalendar}
     Get Random Angka    30
+    general Wait Until    xpath=//button[contains(@aria-label, '${randomAngka} ${textHeaderCalendar}')]
     user click element    xpath=//button[contains(@aria-label, '${randomAngka} ${textHeaderCalendar}')]
-
 
 user input anggaranMax
     Random angka
     user input text    ${anggaranMax}    ${angka_acak}
+    Sleep    3
 
 user pilih PIC
     user pilih seluruh pic

@@ -26,7 +26,7 @@ user on form ubah project
     ${notesOnForm}    Get Text    ${notesOn_FormUbah}
     Should Be Equal    ${notesProsesEvaluasi}    ${notesOnForm}
 
-verify status after change data in Proses Evaluasi
+verify status after change data
     [Arguments]    ${StatusProj}
     Sleep    3
     general Wait Until    ${statusProject}

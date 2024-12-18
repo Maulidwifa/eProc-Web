@@ -33,10 +33,11 @@ user on detail page Persetujuan Anggaran
 
 user click button Riwayats
     [Arguments]    ${loc_btn}
-    general Wait Until    ${buttonRiwayat}
-    user click element    ${buttonRiwayat}
+    general Wait Until    ${loc_btn}
+    user click element    ${loc_btn}
 
 show content in riwayat detail
+    [Arguments]    ${riwayat_terakhir}
     # Fungsi ini berbeda karna ada Notes nya di Riwayat
     general Wait Until    ${dateOnRiwayatPopUp}
     Element Should Be Visible    xpath=//div[@class='dvHistory ']/div[contains(.,'Aktif')]
@@ -56,7 +57,7 @@ show content in riwayat detail
     ${notesPerubahanAnggaran_onDetailProject}    Get Text    ${notes_onDetailPage}
 
     # Verify Content on Riwayat
-    Should Be Equal    ${history}    Anggaran Project Diubah
+    Should Be Equal    ${history}    ${riwayat_terakhir}
     Should Be Equal    ${notesPerubahanAnggaran_onDetailProject}    ${notesPerubahanAnggaran_onRiwayat}
 
 

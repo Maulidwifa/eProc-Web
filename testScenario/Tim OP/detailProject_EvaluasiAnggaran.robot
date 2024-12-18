@@ -2,20 +2,20 @@
 Resource                ../pageObject/generalFunct.robot
 Resource                ../pageObject/API_listKecamatan.robot
 Resource                ../pageObject/detailProject/Tim OP/pom_detailProject_MenungguPersetujuan.robot
-Resource                ../pageObject/detailProject/Tim OP/pom_detailProject_PersetujuanAnggaran.robot
+Resource                ../../pageObject/detailProject/Tim OP/pom_detailProject_EvaluasiAnggaran.robot
 Resource                ./login.robot
 
 *** Keywords ***
 User go to detail Project Page
     Given User can access Home Login 1000s
-    When user click Detail on Project    Persetujuan anggaran
+    When user click Detail on Project    Evaluasi anggaran
     And detail information on detail page
-    And user on detail page Persetujuan Anggaran
+    And user on detail page Evaluasi Anggaran
 
 user click button riwayat on detail project page
     Given User go to detail Project Page
     When user click button Riwayats    ${buttonRiwayat}
-    Then show content in riwayat detail    Anggaran Project Diubah
+    Then show content in riwayat detail    Anggaran Project Dievaluasi
 
 user click button batalkan (Tidak)
     Given User go to detail Project Page

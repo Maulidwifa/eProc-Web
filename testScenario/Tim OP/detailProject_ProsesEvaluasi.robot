@@ -19,7 +19,7 @@ User change data alamat project
     And user ubah alamat project
     Then user click element    ${buttonSimpan}
     # And button accept on dialog form ubah    Kirim
-    # And verify status after change data in Proses Evaluasi    Menunggu persetujuan
+    And verify status after change data    Menunggu persetujuan
 
 User change data End Date project before the start date
     Given User go to detail Project Page
