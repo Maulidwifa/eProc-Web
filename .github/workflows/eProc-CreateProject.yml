@@ -81,11 +81,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt  # Install dependencies dari requirements.txt
 
-      # Langkah 5: Set Environment Variable for Testing
-      - name: Set Environment Variable for Testing
-        run: |
-          echo "WEB_EPROC=web_eProc" >> $GITHUB_ENV
-
       # Langkah 6: Debug folder structure
       - name: Check folder structure in GitHub Actions
         run: |
@@ -97,4 +92,4 @@ jobs:
       # Langkah 7: Run Robot Framework Tests
       - name: Run Robot Framework Tests
         run: |
-          robot -d report/ -i test '.\testSuite\Tim OP\*.robot'
+          robot -d report/ -i test '.\testSuite\Tim OP\test_createProject.robot'
