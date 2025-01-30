@@ -1,5 +1,10 @@
 *** Settings ***
+<<<<<<< HEAD
 Resource            ../config/${ENV}.robot
+=======
+# Resource            ../config/${ENV}.robot
+Resource            ../../config/web_eProc.robot    # Kebutuhan Git Action
+>>>>>>> 5aa0310cbc00189f7971f6ac5c9a1c013950b8c1
 Resource            ../../testScenario/Tim OP/createProject.robot
 Test Setup            Begin Web Test
 Test Teardown         End Web Test
