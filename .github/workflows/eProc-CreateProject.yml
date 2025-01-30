@@ -32,7 +32,8 @@ jobs:
 
       - name: List files in the repository
         run: |
-          dir  # List files in the current directory to debug
+          dir .\config  # Periksa apakah file di dalam folder config ada
+          dir .\testSuite  # Periksa apakah file di dalam testSuite ada
 
       # Langkah 4: Install WebDriver (ChromeDriver di Windows)
       # - name: Install ChromeDriver
@@ -44,5 +45,5 @@ jobs:
       # Langkah 5: Jalankan Robot Framework Tests
       - name: Run Robot Framework Tests
         run: |
-          robot -d report/ -v ENV:web_eProc -i test ".\testSuite\Tim OP\test_createProject.robot"
+          robot -v ENV:web_eProc -d report/ ".\testSuite\Tim OP\test_createProject.robot"
           # robot -d report/ -v env:$WEB_EPROC -i test '.\testSuite\Tim OP\test_createProject.robot'
