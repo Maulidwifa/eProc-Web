@@ -1,5 +1,6 @@
 *** Settings ***
-Resource            ../config/${ENV}.robot
+# Resource            ../config/${ENV}.robot
+Resource            ../config/web_eProc.robot    # Kebutuhan Git Action
 Resource            ../../testScenario/Tim OP/login.robot
 # Suite Setup         Begin Web Test
 # Suite Teardown       End Web Test

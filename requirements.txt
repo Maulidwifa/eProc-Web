@@ -8,6 +8,7 @@ allure-pytest
 pytest-xdist
 pytest-rerunfailures
 python-dotenv
+# chromedriver-autoinstaller
 
 # Library Robot Framework
 robotframework-seleniumlibrary

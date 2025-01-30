@@ -1,5 +1,6 @@
 *** Settings ***
-Resource            ../config/${ENV}.robot
+# Resource            ../config/${ENV}.robot
+Resource            ../config/web_eProc.robot    # Kebutuhan Git Action
 Resource            ../../testScenario/Tim OP/detailProject_Terjadwal.robot
 # Resource            ../../testScenario/Tim OP/detailProject_Aktif.robot
 Test Setup            Begin Web Test
