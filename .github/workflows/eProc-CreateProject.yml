@@ -45,5 +45,5 @@ jobs:
       # Langkah 5: Jalankan Robot Framework Tests
       - name: Run Robot Framework Tests
         run: |
-          robot -v ENV:"${GITHUB_WORKSPACE}/config/web_eProc.robot" -d report/ ".\testSuite\Tim OP\test_createProject.robot"
+          robot -v ENV:config/web_eProc -d report/ ".\testSuite\Tim OP\test_createProject.robot"
           # robot -d report/ -v env:$WEB_EPROC -i test '.\testSuite\Tim OP\test_createProject.robot'
