@@ -81,13 +81,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt  # Install dependencies dari requirements.txt
 
-      # Langkah 4: Install ChromeDriver
-      - name: Install ChromeDriver
-        run: |
-          Invoke-WebRequest -Uri https://chromedriver.storage.googleapis.com/113.0.5672.63/chromedriver_win32.zip -OutFile chromedriver.zip
-          Expand-Archive -Path chromedriver.zip -DestinationPath C:\chromedriver
-          $env:Path += ";C:\chromedriver"
-
       # Langkah 5: Set Environment Variable for Testing
       - name: Set Environment Variable for Testing
         run: |
@@ -104,4 +97,4 @@ jobs:
       # Langkah 7: Run Robot Framework Tests
       - name: Run Robot Framework Tests
         run: |
-          robot -d report/ -v env:$WEB_EPROC -i test ".\testSuite\Tim OP\test_createProject.robot"
+          robot -d report/ -i test ".\testSuite\Tim OP\test_createProject.robot"
