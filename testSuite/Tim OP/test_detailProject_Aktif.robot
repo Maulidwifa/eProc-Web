@@ -1,6 +1,5 @@
 *** Settings ***
-# Resource            ../config/${ENV}.robot
-Resource            ../config/web_eProc.robot    # Kebutuhan Git Action
+Resource            ../config/${ENV}.robot
 Resource            ../../testScenario/Tim OP/detailProject_MenungguPersetujuan.robot
 Resource            ../../testScenario/Tim OP/detailProject_EvaluasiAnggaran.robot
 Resource            ../../testScenario/Tim OP/detailProject_Aktif.robot
