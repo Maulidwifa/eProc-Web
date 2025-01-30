@@ -30,17 +30,16 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt  # Menginstal dependensi dari file requirements.txt
 
-      - name: List files in the repository
+      - name: Check current working directory
         run: |
-          dir .\config  # Periksa apakah file di dalam folder config ada
-          dir .\testSuite  # Periksa apakah file di dalam testSuite ada
+          echo "Current directory: $(pwd)"
 
       # Langkah 4: Install WebDriver (ChromeDriver di Windows)
-      # - name: Install ChromeDriver
-      #   run: |
-      #     Invoke-WebRequest -Uri https://chromedriver.storage.googleapis.com/113.0.5672.63/chromedriver_win32.zip -OutFile chromedriver.zip
-      #     Expand-Archive -Path chromedriver.zip -DestinationPath C:\chromedriver
-      #     $env:Path += ";C:\chromedriver"
+      - name: Install ChromeDriver
+        run: |
+          Invoke-WebRequest -Uri https://chromedriver.storage.googleapis.com/113.0.5672.63/chromedriver_win32.zip -OutFile chromedriver.zip
+          Expand-Archive -Path chromedriver.zip -DestinationPath C:\chromedriver
+          $env:Path += ";C:\chromedriver"
 
       # Langkah 5: Jalankan Robot Framework Tests
       - name: Run Robot Framework Tests
