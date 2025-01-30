@@ -30,9 +30,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt  # Menginstal dependensi dari file requirements.txt
 
-      - name: Set Environment Variables
-        run: |
-          echo "WEB_EPROC=web_eProc" >> $GITHUB_ENV
       # Langkah 4: Install WebDriver (ChromeDriver di Windows)
       # - name: Install ChromeDriver
       #   run: |
