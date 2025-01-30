@@ -28,6 +28,7 @@ user on detail page Persetujuan Anggaran
     Element Should Be Visible    ${buttonRiwayat}
     ${textStatus}    Get Text    ${statusProject}
     Set Global Variable    ${textStatus}    ${textStatus}
+
     # Verify Status detail Project
     Should Be Equal    ${textStatus}    Persetujuan anggaran
 
@@ -38,6 +39,7 @@ user click button Riwayats
 
 show content in riwayat detail
     [Arguments]    ${riwayat_terakhir}
+
     # Fungsi ini berbeda karna ada Notes nya di Riwayat
     general Wait Until    ${dateOnRiwayatPopUp}
     Element Should Be Visible    xpath=//div[@class='dvHistory ']/div[contains(.,'Aktif')]
@@ -65,7 +67,6 @@ user click button batalkan
     [Arguments]    ${btn_loc}    ${titleText_popUp}
     general Wait Until    ${btn_loc}
     user click element    ${btn_loc}
-
     Wait Until Element Is Visible    ${titlePopUp}
     
     # Verify Content PopUp Alert

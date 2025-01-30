@@ -47,4 +47,3 @@ User cancel change data project
     And user on form ubah project
     And user ubah alamat project
     Then user click element    ${buttonSimpan}
-    Sleep    7

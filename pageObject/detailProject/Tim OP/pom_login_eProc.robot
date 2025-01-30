@@ -28,7 +28,6 @@ user login E-Proc1000s Page
     Wait Until Element Is Visible    ${inputPassword}
     Input Text    ${inputUsername}    ${ROLE_ADMIN}
     Input Password    ${inputPassword}    ${PASSWORD}
-    # Click Element        ${buttonMasuk}
     Press Key    ${inputPassword}    \\13
     Wait Until Element Is Visible    ${listFilter}
     Sleep    3

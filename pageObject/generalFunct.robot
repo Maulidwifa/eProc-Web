@@ -91,7 +91,6 @@ show message error project
     END
 
 error for startDate and endDate
-    # //div[@class='row datePopup']/div[1]//label[contains(.,'Harus')]
     ${label}    general return status    xpath=//div[@class='col-md-6']/div/label
     FOR    ${counter}    IN RANGE    1    3
         ${text}    Run Keyword If    ${label}    Get Text    xpath=//div[@class='col-md-6'][${counter}]/div/label

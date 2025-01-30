@@ -49,13 +49,21 @@ user choose kecamatan list
     Get list city
     user input text    ${inputKecamatan}    ${kecamatan_name}
     Sleep    2
-    user click element    ${listKecamatan}
+    ${res}    Run Keyword And Return Status    Wait Until Element Is Visible    ${listKecamatan}
+    IF    ${res}
+        user click element    ${listKecamatan}
+    ELSE
+        user input text    ${inputKecamatan}    ${EMPTY}
+        Get list city
+        user input text    ${inputKecamatan}    ${kecamatan_name}
+        Sleep    2
+        user click element    ${listKecamatan}
+    END
 
 user choose address detail
     user click element    ${alamatDetail}
     ${a}    Split String From Right    ${kecamatan_name}
     user input text    ${alamatDetail}    ${kecamatan_name}
-    # Click Element    css=div:nth-child(8) > div > .pac-item-query
 
 user choose address detail without fill kecamatan
     Get list city
@@ -66,7 +74,7 @@ user choose address detail without fill kecamatan
 tanggal mulai
     user click element    ${tanggalMulai_datePicker}
     user click element    ${nextMonth}
-    Get Random Angka    30
+    Get Random Angka    28
     ${textHeaderCalendar}    Get Text    ${headerCalendar}
     user click element    xpath=//button[contains(@aria-label, '${randomAngka} ${textHeaderCalendar}')]
 
@@ -80,10 +88,9 @@ Pilih tanggal hari ini
 tanggal berakhir
     [Arguments]    ${loc}
     user click element    ${tanggalBerakhir_datePicker}
-    # user click element    ${loc}
     user click element    ${loc}
     ${textHeaderCalendar}    Get Text    ${headerCalendar}
-    Get Random Angka    30
+    Get Random Angka    28
     general Wait Until    xpath=//button[contains(@aria-label, '${randomAngka} ${textHeaderCalendar}')]
     user click element    xpath=//button[contains(@aria-label, '${randomAngka} ${textHeaderCalendar}')]
 
@@ -163,6 +170,7 @@ func PIC
     [Arguments]    ${res}
     
     general Wait Until    ${listPIC}
+    Sleep    3
     Scroll Element Into View    xpath=//div[@class='dvContentSearch'][${randomAngka}]
     IF    ${res}
         Random Number    ${totalUser}
@@ -220,15 +228,19 @@ user input with names used
 
 choose same PIC
     # Pilih PIC Admin
-    user click element    ${fieldPICadmin}
-    user click element    xpath=//div[@class='dvContentSearch'][1]
+    choose PIC (same PIC)    ${fieldPICadmin}
     
     # Pilih PIC Manager
-    user click element    ${fieldPICmanager}
-    user click element    xpath=//div[@class='dvContentSearch'][1]
+    choose PIC (same PIC)    ${fieldPICmanager}
     
     # Verify Error State
     Element Should Be Visible    ${labelErr_PICsame}
     ${labelErr}    Get Text    ${labelErr_PICsame}
     Should Be Equal    ${labelErr}    PIC Tidak boleh sama
     Log To Console    Error State: ${labelErr}
+
+choose PIC (same PIC)
+    [Arguments]    ${field_PIC}
+    user click element    ${field_PIC}
+    Sleep    3
+    user click element    xpath=//div[@class='dvContentSearch'][1]

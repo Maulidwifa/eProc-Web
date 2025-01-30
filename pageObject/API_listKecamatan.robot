@@ -10,8 +10,6 @@ Library    ssl_helper.py
 ${authURL}     https://dev-apiv1.1000saudara.com/auth/access
 ${KEY}         DPEqC6x0Rh8eU5QhtjS1
 ${BASE_URL}    https://dev-apiv1.1000saudara.com/apiproyek/wb
-# ${ROLE_ADMIN}    085210758864
-# ${PASSWORD}      123456
 
 
 *** Keywords ***
@@ -100,7 +98,6 @@ Get list User Management (SITE)
     
     ${response}=    POST On Session    api    /User/GetListUserManagement    json=${body}
     Should Be Equal As Strings    ${response.status_code}    200
-    # ${json}=    To Json    ${response.content}
     ${json}=    Set Variable    ${response.json()}
 
     # Mendapatkan jumlah list Detail User Management 
@@ -142,9 +139,7 @@ Get list Project Manajemen
     
     ${response}=    POST On Session    api    /Project/GetListProjectManagement    json=${body}
     Should Be Equal As Strings    ${response.status_code}    200
-    # ${json}=    To Json    ${response.content}
     ${json}=    Set Variable    ${response.json()}
-    # Log To Console    ${json}
     Log    ${json}
     
     # Mendapatkan jumlah list Detail User Management 
