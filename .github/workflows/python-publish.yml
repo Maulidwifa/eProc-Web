@@ -95,7 +95,7 @@ jobs:
             pip install --upgrade pip
             pip install -r requirements.txt
         - name: Run Test
-          run: python -m robot --outputdir results testcases/functional_tests
+          run: python -m robot --outputdir results testSuite/Tim_OP/test_createProject.robot
         - name: Run Test and create report
           run: python -m robot -d reports -x junit-report.xml "testcases/functional_tests"
         - name: Run Robot Framework tests and generate report
