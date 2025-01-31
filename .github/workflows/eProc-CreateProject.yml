@@ -1,53 +1,37 @@
-name: Run Robot Framework Tests
-
+name: Robot Framework - Python
 on:
   push:
-    branches: ["master"]
+    branches: [ "main" ]
   pull_request:
-    branches: ["master"]
-
+    branches: [ "main" ]
+ 
+permissions:
+  contents: read
+ 
 jobs:
   test:
     runs-on: ubuntu-latest
-
+     
     steps:
-      # Langkah 1: Checkout repository
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      # Langkah 2: Set up Python
-      - name: Set up Python
-        uses: actions/setup-python@v5.0.0
+      - uses: actions/checkout@v3
+      - name: Set up Python 3.12.1
+        uses: actions/setup-python@v3
         with:
-          python-version: 3.12.5
-
-      # Langkah 3: Install dependencies
-      - name: Install dependencies from requirements.txt
+          python-version: 3.12.1
+   
+      - name: Install dependencies
         run: |
-          python -m venv .venv
-          source .venv/bin/activate
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+   
+      - name: Test with RobotFramework
+        run: robot .  
+         
+      - name: Test Report Generation
+        uses: actions/upload-artifact@v4
+        if: success() || failure()
+        with:
+          name: Report                # Name of the folder
+          path: report.html           # Path to test results
 
-      # Langkah 4: Debugging - Print working directory dan list files di testSuite
-      - name: Print working directory and list files in testSuite
-        run: |
-          echo "Current directory:"
-          pwd  # Menampilkan direktori kerja
-          echo "Listing contents of eProc-Web/testSuite/Tim_OP"
-          ls -l /home/runner/work/eProc-Web/eProc-Web/testSuite  # Menampilkan file di dalam testSuite/Tim OP
-
-      # Langkah 5: Verifikasi apakah file ada
-      - name: Check if test_createProject.robot exists
-        run: |
-          if [ -f "/home/runner/work/eProc-Web/eProc-Web/testSuite/Tim_OP/test_createProject.robot" ]; then
-            echo "File exists!"
-          else
-            echo "File does not exist!"
-          fi
-
-      # Langkah 6: Run Robot Framework Tests
-      - name: Run Robot Framework Tests
-        run: |
-          source .venv/bin/activate
-          robot /home/runner/work/eProc-Web/eProc-Web/testSuite/Tim_OP/test_createProject.robot
+          
