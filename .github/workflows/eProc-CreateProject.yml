@@ -73,25 +73,19 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.12.5'  # Tentukan versi Python yang diinginkan
+          python-version: 3.12.5
 
       # Langkah 3: Install dependencies
       - name: Install dependencies from requirements.txt
         run: |
+          python -m venv .venv
+          source .venv/bin/activate
           python -m pip install --upgrade pip
           pip install -r requirements.txt  # Install dependencies dari requirements.txt
 
-      # Langkah 6: Debug folder structure
-      # - name: Check folder structure in GitHub Actions
-      #   run: |
-      #     echo "Current directory: $(pwd)"
-      #     dir
-      #     dir .\config
-      #     dir .\testSuite
-
       # Langkah 7: Run Robot Framework Tests
       - name: Run Robot Framework Tests
-        run: $GITHUB_WORKSPACE -m robot.run --suite eProc-Web.testSuite.Tim OP.test_createProject --outputdir $GITHUB_WORKSPACE/results .
+        run: $GITHUB_WORKSPACE/.venv/bin/python3.12.5 -m robot.run --suite eProc-Web.testSuite.Tim OP.test_createProject --outputdir $GITHUB_WORKSPACE/results .
 
       - name: Upload Test Report
         uses: actions/upload-artifact@v4.3.1
