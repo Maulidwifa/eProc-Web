@@ -1,8 +1,8 @@
 *** Settings ***
-Resource                ../pageObject/generalFunct.robot
-Resource                ../pageObject/API_listKecamatan.robot
-Resource                ../pageObject/detailProject/Tim_OP/pom_detailProject_MenungguPersetujuan.robot
-Resource                ../pageObject/detailProject/Tim_OP/pom_detailProject_PersetujuanAnggaran.robot
+Resource                ../../pageObject/generalFunct.robot
+Resource                ../../pageObject/API_listKecamatan.robot
+Resource                ../../../pageObject/detailProject/Tim_OP/pom_detailProject_MenungguPersetujuan.robot
+Resource                ../../../pageObject/detailProject/Tim_OP/pom_detailProject_PersetujuanAnggaran.robot
 Resource                ./login.robot
 
 *** Keywords ***

@@ -1,11 +1,11 @@
 *** Settings ***
-Resource                ../pageObject/generalFunct.robot
-Resource                ../pageObject/API_listKecamatan.robot
-Resource                ../../pageObject/detailProject/Tim_OP/pom_detailProject_Aktif.robot
-Resource                ../pageObject/detailProject/Tim_OP/pom_detailProject_MenungguPersetujuan.robot
-Resource                ../pageObject/detailProject/Tim_OP/pom_detailProject_Terjadwal.robot
-Resource                ../../pageObject/detailProject/Tim_OP/pom_detailProject_ProsesEvaluasi.robot
-Resource                ../../pageObject/detailProject/Tim_OP/pom_detailProject_EvaluasiAnggaran.robot
+Resource                ../../pageObject/generalFunct.robot
+Resource                ../../pageObject/API_listKecamatan.robot
+Resource                ../../../pageObject/detailProject/Tim_OP/pom_detailProject_Aktif.robot
+Resource                ../../../pageObject/detailProject/Tim_OP/pom_detailProject_MenungguPersetujuan.robot
+Resource                ../../../pageObject/detailProject/Tim_OP/pom_detailProject_Terjadwal.robot
+Resource                ../../../pageObject/detailProject/Tim_OP/pom_detailProject_ProsesEvaluasi.robot
+Resource                ../../../pageObject/detailProject/Tim_OP/pom_detailProject_EvaluasiAnggaran.robot
 Resource                ./login.robot
 
 *** Keywords ***

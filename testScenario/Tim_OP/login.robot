@@ -1,6 +1,6 @@
 *** Settings ***
-Resource        ../pageObject/detailProject/Tim_OP/pom_login_eProc.robot
-Resource        ../pageObject/generalFunct.robot
+Resource        ../../../pageObject/detailProject/Tim_OP/pom_login_eProc.robot
+Resource        ../../pageObject/generalFunct.robot
 Library         OperatingSystem
 
 *** Keywords ***

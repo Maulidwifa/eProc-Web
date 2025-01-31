@@ -2,7 +2,8 @@
 Library                SeleniumLibrary
 Resource        ../../generalFunct.robot
 Resource        ../../API_listKecamatan.robot
-Resource        ./pom_createProject.robot
+# Resource        ./pom_createProject.robot
+Resource        ../../detailProject/Tim_OP/pom_createProject.robot
 
 *** Variables ***
 ${namaProject_onDetailPage}              xpath=//span[@class='ttlMdSemiBold']

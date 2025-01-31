@@ -2,8 +2,9 @@
 Library                SeleniumLibrary
 Resource        ../../generalFunct.robot
 Resource        ../../API_listKecamatan.robot
-Resource        ../pageObject/detailProject/Tim_OP/pom_detailProject_MenungguPersetujuan.robot
-Resource        pom_detailProject_PersetujuanAnggaran.robot
+Resource        ../../../pageObject/detailProject/Tim_OP/pom_detailProject_MenungguPersetujuan.robot
+# Resource        pom_detailProject_PersetujuanAnggaran.robot
+Resource        ../../../pageObject/detailProject/Tim_OP/pom_detailProject_PersetujuanAnggaran.robot
 
 
 *** Variables ***

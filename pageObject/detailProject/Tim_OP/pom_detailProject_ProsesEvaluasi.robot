@@ -2,7 +2,8 @@
 Library                SeleniumLibrary
 Resource        ../../generalFunct.robot
 Resource        ../../API_listKecamatan.robot
-Resource        ./pom_detailProject_MenungguPersetujuan.robot
+# Resource        ./pom_detailProject_MenungguPersetujuan.robot
+Resource        ../../../pageObject/detailProject/Tim_OP/pom_detailProject_MenungguPersetujuan.robot
 
 *** Variables ***
 ${notesOnDetail_ProsesEvaluasi}                xpath=//div[contains(@class,'UpdateNoteBudget mb-24px')]//p

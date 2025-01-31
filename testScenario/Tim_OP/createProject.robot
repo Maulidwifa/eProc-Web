@@ -1,7 +1,7 @@
 *** Settings ***
-Resource                ../pageObject/detailProject/Tim_OP/pom_createProject.robot
-Resource                ../pageObject/generalFunct.robot
-Resource                ../pageObject/API_listKecamatan.robot
+Resource                ../../pageObject/detailProject/Tim_OP/pom_createProject.robot
+Resource                ../../pageObject/generalFunct.robot
+Resource                ../../pageObject/API_listKecamatan.robot
 Resource                ./login.robot
 
 *** Keywords ***
