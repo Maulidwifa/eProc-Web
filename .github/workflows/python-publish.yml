@@ -93,7 +93,7 @@ jobs:
         - name: Install pip dependencies
           run: |
             pip install --upgrade pip
-            pip install -r requirement.txt
+            pip install -r requirements.txt
         - name: Run Test
           run: python -m robot --outputdir results testcases/functional_tests
         - name: Run Test and create report
