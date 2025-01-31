@@ -91,9 +91,7 @@ jobs:
 
       # Langkah 7: Run Robot Framework Tests
       - name: Run Robot Framework Tests
-        run: |
-          # robot -d report/ -i test '.\testSuite\Tim OP\test_createProject.robot'
-          $GITHUB_WORKSPACE -m robot.run --suite eProc-Web.testSuite.Tim OP.test_createProject --outputdir $GITHUB_WORKSPACE/results .
+        run: $GITHUB_WORKSPACE -m robot.run --suite eProc-Web.testSuite.Tim OP.test_createProject --outputdir $GITHUB_WORKSPACE/results .
 
       - name: Upload Test Report
         uses: actions/upload-artifact@v4.3.1
