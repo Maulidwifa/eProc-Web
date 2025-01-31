@@ -35,12 +35,15 @@ jobs:
 
       - name: Check if test_createProject.robot exists
         run: |
-          if [ -f "eProc-Web/testSuite/Tim\ OP/test_createProject.robot" ]; then
+          if [ -f "eProc-Web/testSuite/Tim OP/test_createProject.robot" ]; then
             echo "File exists!"
           else
             echo "File does not exist!"
           fi
-
+          
+      - name: List the contents of testSuite directory
+        run: |
+          ls -R eProc-Web/testSuite/  # Menampilkan semua file dalam testSuite dan subfoldernya
 
       # Langkah 4: Run Robot Framework Tests
       - name: Run Robot Framework Tests
