@@ -1,3 +1,97 @@
+# name: Run Robot Framework Tests
+
+# on:
+#   push:
+#     branches:
+#       - master  # atau branch lain yang kamu gunakan
+#   pull_request:
+#     branches:
+#       - master  # atau branch lain yang kamu gunakan
+#   schedule:
+#     - cron: '0 * * * *'  # Menjadwalkan setiap jam pada menit ke-0
+
+# jobs:
+#   test:
+#     runs-on: ubuntu-latest  # Menjalankan di runner ubuntu
+
+#     steps:
+#       # Langkah 1: Checkout repository
+#       - name: Checkout repository
+#         uses: actions/checkout@v3
+
+#       # Langkah 2: Set up Python
+#       - name: Set up Python
+#         uses: actions/setup-python@v2
+#         with:
+#           python-version: '3.12.5'  # Tentukan versi Python yang digunakan
+
+#       # Langkah 3: Install dependencies
+#       - name: Install dependencies from requirements.txt
+#         run: |
+#           python -m venv .venv  # Membuat virtual environment
+#           source .venv/bin/activate  # Mengaktifkan environment
+#           pip install --upgrade pip  # Upgrade pip
+#           pip install -r requirements.txt  # Install dependencies dari requirements.txt
+
+#       - name: Check if test_createProject.robot exists
+#         run: |
+#           if [ -f "eProc-Web/testSuite/Tim OP/test_createProject.robot" ]; then
+#             echo "File exists!"
+#           else
+#             echo "File does not exist!"
+#           fi
+          
+#       - name: List the contents of testSuite directory
+#         run: |
+#           ls -R eProc-Web/testSuite/  # Menampilkan semua file dalam testSuite dan subfoldernya
+
+#       # Langkah 4: Run Robot Framework Tests
+#       - name: Run Robot Framework Tests
+#         run: |
+#           source .venv/bin/activate  # Mengaktifkan virtual environment
+#           python -m robot.run --suite eProc-Web.testSuite.Tim\ OP.test_createProject --outputdir $GITHUB_WORKSPACE/results .
+
+#       # Langkah 5: Upload Test Report
+#       - name: Upload Test Report
+#         uses: actions/upload-artifact@v4.3.1
+#         with:
+#           name: rf-results  # Nama artifact
+#           path: results/  # Path ke folder results yang berisi output.xml, log.html, dan report.html
+
+# name: Run Robot Framework Tests
+
+# on:
+#   push:
+#     branches: ["master"]
+#   pull_request:
+#     branches: ["master"]
+
+# jobs:
+#   test:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       # Checkout repository
+#       - name: Checkout repository
+#         uses: actions/checkout@v3
+
+#       # Debugging: Cek direktori setelah checkout
+#       - name: List directory contents
+#         run: |
+#           echo "Current working directory:"
+#           pwd
+#           echo "Listing all files:"
+#           ls -R
+
+#       # Verifikasi file yang dicari ada
+#       - name: Check if test_createProject.robot exists
+#         run: |
+#           if [ -f "eProc-Web/testSuite/Tim OP/test_createProject.robot" ]; then
+#             echo "File exists!"
+#           else
+#             echo "File does not exist!"
+#           fi
+
 name: Run Robot Framework Tests
 
 on:
@@ -5,25 +99,23 @@ on:
     branches: ["master"]
   pull_request:
     branches: ["master"]
-  schedule:
-    - cron: '0 * * * *'  # Menjadwalkan setiap jam pada menit ke-0
 
 jobs:
   test:
     runs-on: ubuntu-latest
-    
+
     steps:
-      # Step 1: Checkout repository
+      # Langkah 1: Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Step 2: Set up Python
+      # Langkah 2: Set up Python
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5.0.0
         with:
           python-version: 3.12.5
 
-      # Step 3: Install dependencies
+      # Langkah 3: Install dependencies
       - name: Install dependencies from requirements.txt
         run: |
           python -m venv .venv
@@ -31,23 +123,37 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      # Step 4: Change to correct directory
-      - name: Change to test directory
-        run: cd eProc-Web/testSuite
+      # Langkah 4: Debugging - Print working directory dan list files di testSuite
+      - name: Print working directory and list files in testSuite
+        run: |
+          echo "Current directory:"
+          pwd  # Menampilkan direktori kerja
+          echo "Listing contents of eProc-Web/testSuite/Tim OP"
+          ls -l eProc-Web/testSuite/Tim\ OP  # Menampilkan file di dalam testSuite/Tim OP
 
-      # Step 5: Run Robot Framework Tests with correct path
+      # Langkah 5: Verifikasi apakah file ada
+      - name: Check if test_createProject.robot exists
+        run: |
+          if [ -f "eProc-Web/testSuite/Tim OP/test_createProject.robot" ]; then
+            echo "File exists!"
+          else
+            echo "File does not exist!"
+          fi
+
+      # Langkah 6: Run Robot Framework Tests
       - name: Run Robot Framework Tests
         run: |
           source .venv/bin/activate
-          python -m robot.run --resource ${GITHUB_WORKSPACE}/eProc-Web/testSuite/pageObject/generalFunct.robot --suite eProc-Web.testSuite.Tim\ OP.test_createProject --outputdir $GITHUB_WORKSPACE/results .
+          robot eProc-Web/testSuite/Tim\ OP/test_createProject.robot --outputdir $GITHUB_WORKSPACE/results
 
-      # Step 6: Upload Test Report
+      # Langkah 7: Upload Test Report
       - name: Upload Test Report
         uses: actions/upload-artifact@v4.3.1
         with:
           name: rf-results
           path: results/
 
+<<<<<<< HEAD
 
 # project-root/
 
@@ -66,3 +172,5 @@ jobs:
 # │   ├── testSuite/
 # │   │   ├── Tim OP
 # │   │   │   ├── test_createProject.robot
+=======
+>>>>>>> f1d3c918c5e67a06ebb97764e30692a9bfb5a13a
