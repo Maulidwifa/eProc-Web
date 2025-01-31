@@ -62,8 +62,8 @@ on:
 
 jobs:
   test:
-    runs-on: windows-latest  # Menjalankan di Windows runner
-
+    runs-on: ubuntu-latest
+    
     steps:
       # Langkah 1: Checkout repository
       - name: Checkout repository
@@ -82,14 +82,21 @@ jobs:
           pip install -r requirements.txt  # Install dependencies dari requirements.txt
 
       # Langkah 6: Debug folder structure
-      - name: Check folder structure in GitHub Actions
-        run: |
-          echo "Current directory: $(pwd)"
-          dir
-          dir .\config
-          dir .\testSuite
+      # - name: Check folder structure in GitHub Actions
+      #   run: |
+      #     echo "Current directory: $(pwd)"
+      #     dir
+      #     dir .\config
+      #     dir .\testSuite
 
       # Langkah 7: Run Robot Framework Tests
       - name: Run Robot Framework Tests
         run: |
-          robot -d report/ -i test '.\testSuite\Tim OP\test_createProject.robot'
+          # robot -d report/ -i test '.\testSuite\Tim OP\test_createProject.robot'
+          $GITHUB_WORKSPACE -m robot.run --suite eProc-Web.testSuite.Tim OP.test_createProject --outputdir $GITHUB_WORKSPACE/results .
+
+      - name: Upload Test Report
+        uses: actions/upload-artifact@v4.3.1
+        with:
+          name: rf-results
+          path: results/
