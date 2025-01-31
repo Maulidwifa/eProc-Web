@@ -35,7 +35,7 @@ jobs:
 
       - name: Check if test_createProject.robot exists
         run: |
-          if [ -f "eProc-Web/testSuite/Tim OP/test_createProject.robot" ]; then
+          if [ -f "eProc-Web/testSuite/Tim\ OP/test_createProject.robot" ]; then
             echo "File exists!"
           else
             echo "File does not exist!"
