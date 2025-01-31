@@ -1,6 +1,6 @@
 *** Settings ***
 Resource            ../config/${ENV}.robot
-Resource            ../../testScenario/Tim OP/detailProject_PersetujuanAnggaran.robot
+Resource            ../../testScenario/Tim_OP/detailProject_EvaluasiAnggaran.robot
 Test Setup            Begin Web Test
 Test Teardown         End Web Test
 

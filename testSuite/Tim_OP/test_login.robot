@@ -1,6 +1,6 @@
 *** Settings ***
 Resource            ../config/${ENV}.robot
-Resource            ../../testScenario/Tim OP/login.robot
+Resource            ../../testScenario/Tim_OP/login.robot
 # Suite Setup         Begin Web Test
 # Suite Teardown       End Web Test
 Test Setup    Begin Web Test

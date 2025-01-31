@@ -47,3 +47,22 @@ jobs:
         with:
           name: rf-results
           path: results/
+
+
+# project-root/
+
+# ├── eProc-Web/
+# │   ├── pageObject/
+# │   │   ├── detailProject/
+# │   │   │   ├── Tim OP/
+# │   │   │   │   ├── pom_createProject.robot
+# │   │       ├── generalFunct.robot
+# │   │       └── API_listKecamatan.robot
+# │   │
+# │   ├── testScenario/
+# │   │   ├── Tim OP
+# │   │   │   ├── createProject.robot
+# │   │
+# │   ├── testSuite/
+# │   │   ├── Tim OP
+# │   │   │   ├── test_createProject.robot
