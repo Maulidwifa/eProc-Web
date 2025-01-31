@@ -1,4 +1,4 @@
-name: Run Robot Framework Web Tests on Windows
+name: Run Robot Framework Tests
 
 on:
   push:
@@ -13,17 +13,17 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      # Langkah 1: Checkout repository
-      - name: Checkout
+      # Step 1: Checkout repository
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Langkah 2: Set up Python
+      # Step 2: Set up Python
       - name: Set up Python
-        uses: actions/setup-python@v5.0.0
+        uses: actions/setup-python@v2
         with:
           python-version: 3.12.5
 
-      # Langkah 3: Install dependencies
+      # Step 3: Install dependencies
       - name: Install dependencies from requirements.txt
         run: |
           python -m venv .venv
@@ -31,13 +31,17 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      # Langkah 4: Run Robot Framework Tests
+      # Step 4: Change to correct directory
+      - name: Change to test directory
+        run: cd eProc-Web/testSuite
+
+      # Step 5: Run Robot Framework Tests with correct path
       - name: Run Robot Framework Tests
         run: |
           source .venv/bin/activate
-          eProc-Web -m robot.run --suite eProc-Web.testSuite.Tim\ OP.test_createProject --outputdir $GITHUB_WORKSPACE/results .
+          python -m robot.run --resource ${GITHUB_WORKSPACE}/eProc-Web/testSuite/pageObject/generalFunct.robot --suite eProc-Web.testSuite.Tim\ OP.test_createProject --outputdir $GITHUB_WORKSPACE/results .
 
-      # Langkah 5: Upload Test Report
+      # Step 6: Upload Test Report
       - name: Upload Test Report
         uses: actions/upload-artifact@v4.3.1
         with:
