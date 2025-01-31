@@ -35,7 +35,7 @@ jobs:
       - name: Run Robot Framework Tests
         run: |
           source .venv/bin/activate
-          python -m robot.run --suite eProc-Web.testSuite.Tim\ OP.test_createProject --outputdir $GITHUB_WORKSPACE/results .
+          robot.run --suite eProc-Web.testSuite.Tim\ OP.test_createProject --outputdir $GITHUB_WORKSPACE/results .
 
       # Langkah 5: Upload Test Report
       - name: Upload Test Report
