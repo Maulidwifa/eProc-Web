@@ -128,13 +128,13 @@ jobs:
         run: |
           echo "Current directory:"
           pwd  # Menampilkan direktori kerja
-          echo "Listing contents of eProc-Web/testSuite/Tim OP"
-          ls -l eProc-Web/testSuite/Tim\ OP  # Menampilkan file di dalam testSuite/Tim OP
+          echo "Listing contents of eProc-Web/testSuite/Tim_OP"
+          ls -l eProc-Web/testSuite/Tim_OP  # Menampilkan file di dalam testSuite/Tim OP
 
       # Langkah 5: Verifikasi apakah file ada
       - name: Check if test_createProject.robot exists
         run: |
-          if [ -f "eProc-Web/testSuite/Tim OP/test_createProject.robot" ]; then
+          if [ -f "eProc-Web/testSuite/Tim_OP/test_createProject.robot" ]; then
             echo "File exists!"
           else
             echo "File does not exist!"
@@ -144,7 +144,7 @@ jobs:
       - name: Run Robot Framework Tests
         run: |
           source .venv/bin/activate
-          robot eProc-Web/testSuite/Tim\ OP/test_createProject.robot --outputdir $GITHUB_WORKSPACE/results
+          robot eProc-Web/testSuite/Tim_OP/test_createProject.robot --outputdir $GITHUB_WORKSPACE/results
 
       # Langkah 7: Upload Test Report
       - name: Upload Test Report
@@ -152,25 +152,3 @@ jobs:
         with:
           name: rf-results
           path: results/
-
-<<<<<<< HEAD
-
-# project-root/
-
-# ├── eProc-Web/
-# │   ├── pageObject/
-# │   │   ├── detailProject/
-# │   │   │   ├── Tim OP/
-# │   │   │   │   ├── pom_createProject.robot
-# │   │       ├── generalFunct.robot
-# │   │       └── API_listKecamatan.robot
-# │   │
-# │   ├── testScenario/
-# │   │   ├── Tim OP
-# │   │   │   ├── createProject.robot
-# │   │
-# │   ├── testSuite/
-# │   │   ├── Tim OP
-# │   │   │   ├── test_createProject.robot
-=======
->>>>>>> f1d3c918c5e67a06ebb97764e30692a9bfb5a13a
