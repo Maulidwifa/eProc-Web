@@ -52,11 +52,10 @@ name: Run Robot Framework Web Tests on Windows
 
 on:
   push:
-    branches:
-      - master  # Menjalankan di branch master
+    branches: ["master"]
   pull_request:
-    branches:
-      - master  # Menjalankan pada pull request ke master
+    branches: ["master"]
+
   schedule:
     - cron: '0 * * * *'  # Menjadwalkan setiap jam pada menit ke-0
 
@@ -66,12 +65,12 @@ jobs:
     
     steps:
       # Langkah 1: Checkout repository
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v3
 
       # Langkah 2: Set up Python
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5.0.0
         with:
           python-version: 3.12.5
 
