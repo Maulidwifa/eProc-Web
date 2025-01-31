@@ -41,7 +41,7 @@ jobs:
 
       # Langkah 5: Upload Test Report
       - name: Upload Test Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4.3.1
         with:
           name: rf-results  # Nama artifact
           path: results/  # Path ke folder results yang berisi output.xml, log.html, dan report.html
