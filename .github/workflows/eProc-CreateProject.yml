@@ -40,7 +40,7 @@ jobs:
       # Langkah 5: Verifikasi apakah file ada
       - name: Check if test_createProject.robot exists
         run: |
-          if [ -f "eProc-Web/eProc-Web/testSuite/Tim_OP/test_createProject.robot" ]; then
+          if [ -f "/home/runner/work/eProc-Web/eProc-Web/testSuite/Tim_OP/test_createProject.robot" ]; then
             echo "File exists!"
           else
             echo "File does not exist!"
@@ -50,7 +50,7 @@ jobs:
       - name: Run Robot Framework Tests
         run: |
           source .venv/bin/activate
-          robot /testSuite/Tim_OP/test_createProject.robot --outputdir $GITHUB_WORKSPACE/results
+          robot /home/runner/work/eProc-Web/eProc-Web/testSuite/Tim_OP/test_createProject.robot --outputdir $GITHUB_WORKSPACE/results
 
       # Langkah 7: Upload Test Report
       - name: Upload Test Report
