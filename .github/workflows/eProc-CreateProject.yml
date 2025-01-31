@@ -1,95 +1,45 @@
-# name: Run Robot Framework Web Tests on Windows
-
-# on:
-#   push:
-#     branches:
-#       - master  # Atau branch lain yang diinginkan
-#   pull_request:
-#     branches:
-#       - master  # Atau branch lain yang diinginkan
-#   schedule:
-#     # Menjalankan workflow setiap jam pada menit ke-0
-#     - cron: '0 * * * *'  # Cron expression untuk setiap jam
-
-# jobs:
-#   test:
-#     runs-on: windows-latest  # Menjalankan job di Windows runner
-
-#     steps:
-#       - name: Checkout repository
-#         uses: actions/checkout@v2
-
-#       - name: Set up Python
-#         uses: actions/setup-python@v2
-#         with:
-#           python-version: '3.12.5'  # Tentukan versi Python yang diinginkan
-
-#       # Langkah 3: Install dependencies
-#       - name: Install dependencies from requirements.txt
-#         run: |
-#           python -m pip install --upgrade pip
-#           pip install -r requirements.txt  # Menginstal dependensi dari file requirements.txt
-
-#       - name: Check current working directory
-#         run: |
-#           echo "Current directory: $(pwd)"
-
-#       # Langkah 4: Install WebDriver (ChromeDriver di Windows)
-#       - name: Install ChromeDriver
-#         run: |
-#           Invoke-WebRequest -Uri https://chromedriver.storage.googleapis.com/113.0.5672.63/chromedriver_win32.zip -OutFile chromedriver.zip
-#           Expand-Archive -Path chromedriver.zip -DestinationPath C:\chromedriver
-#           $env:Path += ";C:\chromedriver"
-
-#       # Langkah 5: Jalankan Robot Framework Tests
-#       - name: Run Robot Framework Tests
-#         run: |
-#           robot -d report/ ".\testSuite\Tim OP\test_createProject.robot"
-#           # robot -d report/ -v env:$WEB_EPROC -i test '.\testSuite\Tim OP\test_createProject.robot'
-
-
 name: Run Robot Framework Web Tests on Windows
 
 on:
   push:
-    branches:
-      - master  # Menjalankan di branch master
+    branches: ["master"]
   pull_request:
-    branches:
-      - master  # Menjalankan pada pull request ke master
+    branches: ["master"]
   schedule:
     - cron: '0 * * * *'  # Menjadwalkan setiap jam pada menit ke-0
 
 jobs:
   test:
-    runs-on: windows-latest  # Menjalankan di Windows runner
-
+    runs-on: ubuntu-latest
+    
     steps:
       # Langkah 1: Checkout repository
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v3
 
       # Langkah 2: Set up Python
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5.0.0
         with:
-          python-version: '3.12.5'  # Tentukan versi Python yang diinginkan
+          python-version: 3.12.5
 
       # Langkah 3: Install dependencies
       - name: Install dependencies from requirements.txt
         run: |
+          python -m venv .venv
+          source .venv/bin/activate
           python -m pip install --upgrade pip
-          pip install -r requirements.txt  # Install dependencies dari requirements.txt
+          pip install -r requirements.txt
 
-      # Langkah 6: Debug folder structure
-      - name: Check folder structure in GitHub Actions
-        run: |
-          echo "Current directory: $(pwd)"
-          dir
-          dir .\config
-          dir .\testSuite
-
-      # Langkah 7: Run Robot Framework Tests
+      # Langkah 4: Run Robot Framework Tests
       - name: Run Robot Framework Tests
         run: |
-          robot -d report/ -i test '.\testSuite\Tim OP\test_createProject.robot'
+          source .venv/bin/activate
+          eProc-Web -m robot.run --suite eProc-Web.testSuite.Tim\ OP.test_createProject --outputdir $GITHUB_WORKSPACE/results .
+
+      # Langkah 5: Upload Test Report
+      - name: Upload Test Report
+        uses: actions/upload-artifact@v4.3.1
+        with:
+          name: rf-results
+          path: results/
