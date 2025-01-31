@@ -33,6 +33,15 @@ jobs:
           pip install --upgrade pip  # Upgrade pip
           pip install -r requirements.txt  # Install dependencies dari requirements.txt
 
+      - name: Check if test_createProject.robot exists
+        run: |
+          if [ -f "eProc-Web/testSuite/Tim OP/test_createProject.robot" ]; then
+            echo "File exists!"
+          else
+            echo "File does not exist!"
+          fi
+
+
       # Langkah 4: Run Robot Framework Tests
       - name: Run Robot Framework Tests
         run: |
