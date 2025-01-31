@@ -2,48 +2,46 @@ name: Run Robot Framework Tests
 
 on:
   push:
-    branches: ["master"]
+    branches:
+      - master  # atau branch lain yang kamu gunakan
   pull_request:
-    branches: ["master"]
+    branches:
+      - master  # atau branch lain yang kamu gunakan
   schedule:
     - cron: '0 * * * *'  # Menjadwalkan setiap jam pada menit ke-0
 
 jobs:
   test:
-    runs-on: ubuntu-latest
-    
+    runs-on: ubuntu-latest  # Menjalankan di runner ubuntu
+
     steps:
-      # Step 1: Checkout repository
+      # Langkah 1: Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Step 2: Set up Python
+      # Langkah 2: Set up Python
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.12.5
+          python-version: '3.12.5'  # Tentukan versi Python yang digunakan
 
-      # Step 3: Install dependencies
+      # Langkah 3: Install dependencies
       - name: Install dependencies from requirements.txt
         run: |
-          python -m venv .venv
-          source .venv/bin/activate
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          python -m venv .venv  # Membuat virtual environment
+          source .venv/bin/activate  # Mengaktifkan environment
+          pip install --upgrade pip  # Upgrade pip
+          pip install -r requirements.txt  # Install dependencies dari requirements.txt
 
-      # Step 4: Change to correct directory
-      - name: Change to test directory
-        run: cd eProc-Web/testSuite
-
-      # Step 5: Run Robot Framework Tests with correct path
+      # Langkah 4: Run Robot Framework Tests
       - name: Run Robot Framework Tests
         run: |
-          source .venv/bin/activate
-          python -m robot.run --resource ${GITHUB_WORKSPACE}/eProc-Web/testSuite/pageObject/generalFunct.robot --suite eProc-Web.testSuite.Tim\ OP.test_createProject --outputdir $GITHUB_WORKSPACE/results .
+          source .venv/bin/activate  # Mengaktifkan virtual environment
+          python -m robot.run --suite eProc-Web.testSuite.Tim\ OP.test_createProject --outputdir $GITHUB_WORKSPACE/results .
 
-      # Step 6: Upload Test Report
+      # Langkah 5: Upload Test Report
       - name: Upload Test Report
-        uses: actions/upload-artifact@v4.3.1
+        uses: actions/upload-artifact@v3
         with:
-          name: rf-results
-          path: results/
+          name: rf-results  # Nama artifact
+          path: results/  # Path ke folder results yang berisi output.xml, log.html, dan report.html
