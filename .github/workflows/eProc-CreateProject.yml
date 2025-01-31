@@ -50,11 +50,4 @@ jobs:
       - name: Run Robot Framework Tests
         run: |
           source .venv/bin/activate
-          robot /home/runner/work/eProc-Web/eProc-Web/testSuite/Tim_OP/test_createProject.robot --outputdir $GITHUB_WORKSPACE/results
-
-      # Langkah 7: Upload Test Report
-      - name: Upload Test Report
-        uses: actions/upload-artifact@v4.3.1
-        with:
-          name: rf-results
-          path: results/
+          robot /home/runner/work/eProc-Web/eProc-Web/testSuite/Tim_OP/test_createProject.robot
