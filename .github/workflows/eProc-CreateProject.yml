@@ -58,7 +58,7 @@
 #           name: rf-results  # Nama artifact
 #           path: results/  # Path ke folder results yang berisi output.xml, log.html, dan report.html
 
-name: Run Robot Framework Web Tests
+name: Run Robot Framework Tests
 
 on:
   push:
@@ -69,30 +69,21 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    
+
     steps:
       # Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Install dependencies
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: 3.12.5
-
-      - name: Install dependencies
+      # Debugging: Cek direktori setelah checkout
+      - name: List directory contents
         run: |
-          python -m venv .venv
-          source .venv/bin/activate
-          pip install -r requirements.txt
+          echo "Current working directory:"
+          pwd
+          echo "Listing all files:"
+          ls -R
 
-      # List files to verify folder and file existence
-      - name: List contents of testSuite
-        run: |
-          ls -R eProc-Web/testSuite/
-
-      # Verify if the file exists
+      # Verifikasi file yang dicari ada
       - name: Check if test_createProject.robot exists
         run: |
           if [ -f "eProc-Web/testSuite/Tim OP/test_createProject.robot" ]; then
