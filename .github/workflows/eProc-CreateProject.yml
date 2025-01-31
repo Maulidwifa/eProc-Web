@@ -129,7 +129,7 @@ jobs:
           echo "Current directory:"
           pwd  # Menampilkan direktori kerja
           echo "Listing contents of eProc-Web/testSuite/Tim_OP"
-          ls -l eProc-Web/testSuite/Tim_OP  # Menampilkan file di dalam testSuite/Tim OP
+          ls -l eProc-Web/testSuite  # Menampilkan file di dalam testSuite/Tim OP
 
       # Langkah 5: Verifikasi apakah file ada
       - name: Check if test_createProject.robot exists
