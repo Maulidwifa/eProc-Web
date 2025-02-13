@@ -38,7 +38,7 @@ jobs:
         id: extract
         run: |
           # Mengambil baris pertama (misalnya, "Test Login")
-          summary=$(head -n 1 robot_output.log | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+          summary=$(sed -n '2p' robot_output.log | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
           
           # Mengambil baris yang berisi pola "6 tests, 6 passed, 0 failed"
           details=$(grep -E '[0-9]+ tests, [0-9]+ passed, [0-9]+ failed' robot_output.log | tail -n1)
