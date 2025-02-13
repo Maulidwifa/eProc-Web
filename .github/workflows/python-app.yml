@@ -31,3 +31,10 @@ jobs:
       - name: Run Robot Framework Test (test_login)
         run: |
           robot --outputdir results testSuite/Tim_OP/test_login.robot
+
+      - name: Upload Robot Framework Reports
+        if: always()  # Pastikan langkah ini selalu dijalankan meskipun test gagal
+        uses: actions/upload-artifact@v4
+        with:
+          name: robot-reports
+          path: results/
