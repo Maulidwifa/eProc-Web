@@ -1,7 +1,8 @@
 *** Settings ***
 Library        SeleniumLibrary
-Library    ../.venv/Lib/site-packages/robot/libraries/String.py
-Library    ../.venv/Lib/site-packages/robot/libraries/Collections.py
+Library        String
+Library        Collections
+
 
 *** Variables ***
 # Users
