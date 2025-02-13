@@ -53,3 +53,23 @@ jobs:
         with:
           name: robot-reports
           path: results/
+
+      - name: Send Email with Test Summary via SendGrid
+        if: always()
+        run: |
+          echo "Sending email with summary: ${{ steps.extract.outputs.summary }}"
+          curl --request POST \
+            --url https://api.sendgrid.com/v3/mail/send \
+            --header "Authorization: Bearer ${{ secrets.MAULID_APIKEYSENDGRID }}" \
+            --header "Content-Type: application/json" \
+            --data '{
+              "personalizations": [{
+                "to": [{"email": "maulidwifairuz@gmail.com"}],
+                "subject": "Test Web - '"${{ steps.extract.outputs.summary }}"'"
+              }],
+              "from": {"email": "'"${{ secrets.SENDGRID_EMAIL }}"'"},
+              "content": [{
+                "type": "text/plain",
+                "value": "Result Test: '"${{ steps.extract.outputs.details }}"'"
+              }]
+            }'
