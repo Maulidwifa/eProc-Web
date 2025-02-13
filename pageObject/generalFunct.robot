@@ -57,11 +57,11 @@ scroll ke atas
 
 general Wait Until
     [Arguments]    ${locator}
-    Wait Until Element Is Visible    ${locator}    timeout=2s
+    Wait Until Element Is Visible    ${locator}    timeout=5s
 
 general return status
     [Arguments]    ${locator}
-    ${res}    Run Keyword And Return Status    Wait Until Element Is Visible    ${locator}    timeout=2s
+    ${res}    Run Keyword And Return Status    Wait Until Element Is Visible    ${locator}    timeout=5s
     RETURN    ${res}
 
 # Error General for no handphone or password not filled    
@@ -119,7 +119,7 @@ button accept on dialog form ubah
 # Pop Up Dialog
 show pop up dialog
     [Arguments]    ${locator}
-    Wait Until Element Is Visible    ${locator}    timeout=2s
+    Wait Until Element Is Visible    ${locator}    timeout=5s
     ${textDesc}    Get Text    xpath=//div[@class='text-center']/p[2]
     user input text    xpath=//div[@class='text-center']/textarea    Ubah Data
     Log To Console    Desc: ${textDesc}
