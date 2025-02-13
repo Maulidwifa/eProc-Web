@@ -31,3 +31,9 @@ jobs:
       - name: Run Robot Framework Test (test_login)
         run: |
           robot --outputdir results testSuite/Tim_OP/test_login.robot
+
+      - name: Upload Robot Framework Reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: robot-reports
+          path: results/
