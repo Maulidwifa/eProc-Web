@@ -29,11 +29,21 @@ jobs:
       #  run: sudo apt-get install -y chromium-chromedriver
 
       - name: Run Robot Framework Test (test_login)
+        id: robot
         run: |
-          robot --outputdir results testSuite/Tim_OP/test_login.robot
+          # Menjalankan test dan menyimpan output ke file log
+          robot --outputdir results testSuite/Tim_OP/test_login.robot | tee robot_output.log
+
+      - name: Extract Test Summary
+        id: extract
+        run: |
+          # Mengambil baris yang mengandung summary test (sesuaikan pattern jika perlu)
+          summary=$(grep "Test Login" robot_output.log | tail -n1)
+          echo "summary=$summary" >> $GITHUB_OUTPUT
+          echo "Extracted summary: $summary"
 
       - name: Upload Robot Framework Reports
-        if: always()  # Pastikan langkah ini selalu dijalankan meskipun test gagal
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: robot-reports
