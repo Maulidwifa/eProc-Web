@@ -1,4 +1,4 @@
-name: Robot Test - Test Login
+name: Robot Test - Test Detail Project - Menunggu Persetujuan
 
 on:
   schedule:
@@ -7,9 +7,9 @@ on:
     - cron: '30 5 * * 2,4'  # Menjalankan setiap Selasa dan Kamis pukul 5:30 AM UTC
 
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+     branches: [ master ]
+     paths:
+      - "testSuite/Tim_OP/test_detailProject_MenungguPersetujuan.robot"
 
 jobs:
   robot-tests:
