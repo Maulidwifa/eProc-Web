@@ -35,10 +35,23 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y google-chrome-stable
 
+      - name: Install Matching ChromeDriver
+        run: |
+          # Mendapatkan versi Chrome yang terinstall
+          CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+\.\d+')
+          echo "Chrome version: $CHROME_VERSION"
+          # Misalnya, gunakan mayor version untuk mendownload ChromeDriver yang sesuai
+          DRIVER_VERSION=$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE_$(echo $CHROME_VERSION | cut -d. -f1))
+          echo "ChromeDriver version: $DRIVER_VERSION"
+          wget -N https://chromedriver.storage.googleapis.com/${DRIVER_VERSION}/chromedriver_linux64.zip -P ~/
+          unzip ~/chromedriver_linux64.zip -d ~/
+          sudo mv -f ~/chromedriver /usr/local/bin/chromedriver
+          sudo chmod +x /usr/local/bin/chromedriver
+
       - name: Run Robot Framework Test (test_login)
         id: robot
         run: |
-          # Menggunakan xvfb-run untuk mensimulasikan display virtual agar browser non-headless dapat berjalan
+          # Menggunakan xvfb-run agar browser non-headless berjalan pada display virtual
           xvfb-run robot --outputdir results testSuite/Tim_OP/test_login.robot | tee robot_output.log
 
       - name: Extract Test Summaries
