@@ -12,7 +12,8 @@ ${URL}                  https://dev-proyek.1000saudara.com/Login
 *** Keywords ***
 Begin Web Test
     Open Browser                    about:blank            ${BROWSER}
-    Maximize Browser Window
+    # Maximize Browser Window
+    Execute JavaScript    document.body.style.transform = 'scale(0.67)'; document.body.style.transformOrigin = '0 0'; # untuk keperluan headless
     Go To                           ${URL}
 
 End Web Test
