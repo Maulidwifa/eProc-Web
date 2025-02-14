@@ -5,6 +5,7 @@ on:
     # - cron: '0 0 */4 * *'  # Menjalankan setiap 4 jam sekali pada waktu UTC
     - cron: '30 5 * * 1,3'  # Menjalankan setiap Senin dan Rabu pukul 5:30 AM UTC
     - cron: '30 5 * * 2,4'  # Menjalankan setiap Selasa dan Kamis pukul 5:30 AM UTC
+
   push:
     branches: [ master ]
   pull_request:
@@ -27,54 +28,24 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-
-      - name: Install Google Chrome
-        run: |
-          wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-          sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
-          sudo apt-get update
-          sudo apt-get install -y google-chrome-stable
-
-      - name: Remove Old ChromeDriver
-        run: |
-          # Hapus chromedriver yang mungkin terinstall melalui apt
-          sudo apt-get remove -y chromium-chromedriver || true
-          # Hapus chromedriver di PATH (/usr/local/bin)
-          sudo rm -f /usr/local/bin/chromedriver
-
-      - name: Install Matching ChromeDriver
-        run: |
-          # Dapatkan versi Google Chrome yang terinstall
-          CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+\.\d+')
-          echo "Chrome version: $CHROME_VERSION"
-          # Ambil major version
-          MAJOR_VERSION=$(echo $CHROME_VERSION | cut -d. -f1)
-          echo "Major version: $MAJOR_VERSION"
-          # Coba ambil ChromeDriver versi sesuai major version; jika gagal, gunakan fallback ke LATEST_RELEASE
-          DRIVER_VERSION=$(curl -fsS "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${MAJOR_VERSION}")
-          if [ -z "$DRIVER_VERSION" ]; then
-            DRIVER_VERSION=$(curl -fsS "https://chromedriver.storage.googleapis.com/LATEST_RELEASE")
-          fi
-          echo "ChromeDriver version: $DRIVER_VERSION"
-          wget -N "https://chromedriver.storage.googleapis.com/${DRIVER_VERSION}/chromedriver_linux64.zip" -P ~/
-          unzip -o ~/chromedriver_linux64.zip -d ~/
-          sudo mv -f ~/chromedriver /usr/local/bin/chromedriver
-          sudo chmod +x /usr/local/bin/chromedriver
-          # Tampilkan versi chromedriver untuk verifikasi
-          chromedriver --version
+      # Jika browser diperlukan, pastikan driver/browser sudah terinstall.
+      # Misalnya, jika menggunakan Chrome:
+      #- name: Install ChromeDriver
+      #  run: sudo apt-get install -y chromium-chromedriver
 
       - name: Run Robot Framework Test (test_login)
         id: robot
         run: |
-          # Gunakan xvfb-run agar browser non-headless berjalan pada display virtual
-          xvfb-run robot --outputdir results testSuite/Tim_OP/test_login.robot | tee robot_output.log
+          # Menjalankan test dan menyimpan output ke file log
+          robot --outputdir results testSuite/Tim_OP/test_login.robot | tee robot_output.log
 
       - name: Extract Test Summaries
         id: extract
         run: |
-          # Ambil baris kedua (misalnya, "Test Login")
+          # Mengambil baris pertama (misalnya, "Test Login")
           summary=$(sed -n '2p' robot_output.log | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
-          # Ambil baris yang mengandung pola "6 tests, 6 passed, 0 failed"
+          
+          # Mengambil baris yang berisi pola "6 tests, 6 passed, 0 failed"
           details=$(grep -E '[0-9]+ tests, [0-9]+ passed, [0-9]+ failed' robot_output.log | tail -n1)
           echo "summary=$summary" >> $GITHUB_OUTPUT
           echo "details=$details" >> $GITHUB_OUTPUT
