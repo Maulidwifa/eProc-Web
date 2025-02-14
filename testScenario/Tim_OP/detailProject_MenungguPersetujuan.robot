@@ -13,7 +13,7 @@ User go to detail Project Page
 
 User change data alamat project
     Given User go to detail Project Page
-    When click button ubah
+    When user ubah project
     And user ubah alamat project
     And user click element    ${buttonSimpan}
     Then show pop up dialog    ${ubahProject_MenungguPersetujuan}
@@ -21,7 +21,7 @@ User change data alamat project
 
 User change data Start Date project
     Given User go to detail Project Page
-    When click button ubah
+    When user ubah project
     And user ubah startDate project
     And user click element    ${buttonSimpan}
     Then show pop up dialog    ${ubahProject_MenungguPersetujuan}
@@ -29,14 +29,14 @@ User change data Start Date project
 
 User change data End Date project before the start date
     Given User go to detail Project Page
-    When click button ubah
+    When user ubah project
     And user ubah tanggal akhir sebelum tanggal mulai
     And user click element    ${buttonSimpan}
     Then error for startDate and endDate
 
 User change PIC same to each other
     Given User go to detail Project Page
-    When click button ubah
+    When user ubah project
     And user ubah pic yang sama satu sama lain
     And Sleep    4
 

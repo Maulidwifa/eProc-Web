@@ -1,8 +1,8 @@
 *** Settings ***
 Library    RequestsLibrary
 Library    BuiltIn
-Library    JSONLibrary
-Library    ../.venv/Lib/site-packages/robot/libraries/Collections.py
+# Library    JSONLibrary
+Library    Collections
 Resource    ./generalFunct.robot
 Library    ssl_helper.py
 

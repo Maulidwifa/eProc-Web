@@ -38,16 +38,19 @@ user input text
     Wait Until Element Is Visible    ${locator}
     ${input_text}    Input Text    ${locator}    ${text}
     RETURN    ${input_text}
+
 user input password
     [Arguments]    ${locator}    ${text}
     Wait Until Element Is Visible    ${locator}
     ${input_password}    Input Password    ${locator}    ${text}
     RETURN    ${input_password}
+
 user click element
     [Arguments]    ${element}
     Wait Until Element Is Visible    ${element}
     ${clickElement}    Click Element    ${element}
     RETURN    ${clickElement}
+    
 user scroll element
     [Arguments]    ${locator}
     Scroll Element Into View    ${locator}

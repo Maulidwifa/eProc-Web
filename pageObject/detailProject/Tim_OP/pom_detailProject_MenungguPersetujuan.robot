@@ -2,7 +2,6 @@
 Library                SeleniumLibrary
 Resource        ../../generalFunct.robot
 Resource        ../../API_listKecamatan.robot
-# Resource        ./pom_createProject.robot
 Resource        ../../detailProject/Tim_OP/pom_createProject.robot
 
 *** Variables ***
@@ -38,7 +37,7 @@ check in project list
         IF    ${res}
             ${text}    Get Text    xpath=//tbody/tr[${counter}]/td[1]
             ${status}    Get Text    xpath=//tbody/tr[${counter}]/td[5]
-            user click element    xpath=//tbody/tr[${counter}]/td[6]
+            user click element    xpath=//tbody/tr[${counter}]/td[6]/span
             general Wait Until    xpath=//span[normalize-space()='Detail Project']
 
             # User in Detail Page
@@ -92,9 +91,39 @@ user click button Riwayat
         END
     END
 
+user ubah project
+    click button ubah
+    ${res}    general return status    ${iconDeleteCity}
+    IF    ${res}
+        Element Should Be Visible    ${iconDeleteCity}
+    ELSE
+        reload_thePage    ${iconDeleteCity}
+        Sleep    3
+        click button ubah
+    END  
+
 user ubah alamat project
     user click element    ${iconDeleteCity}
     user choose kecamatan list
+
+reload_thePage
+    [Arguments]    ${location}
+    # ${res}    general return status    ${location}
+    # WHILE    ${res} == $False
+    #     Reload Page
+    #     Wait Until Element Is Visible    ${location}
+    #     ${res}    general return status    ${location}
+    # END
+    FOR    ${counter}    IN RANGE    1    3
+        ${res}    general return status    ${location}
+        IF    ${res}
+            BREAK
+        ELSE
+            Reload Page
+            ${res}    general return status    ${location}
+        END
+        
+    END
 
 user ubah startDate project
     general Wait Until    ${inputNamaProject}
@@ -102,9 +131,19 @@ user ubah startDate project
     ${a}    Get Text    ${fieldPICmanager}
     user click element    ${fieldPICmanager}
     Sleep    2
-    user click element    xpath=//p[normalize-space()='${a}']
+    pilih PIC    ${a}
     Sleep    2
     tanggal mulai
+
+pilih PIC
+    [Arguments]    ${location}
+    ${res}    general return status    xpath=//div[@class='dvContentSearch']
+    IF    ${res}
+        user input text       xpath=//input[@id='searchUser']    ${location}
+        user click element    xpath=//p[normalize-space()='${location}']
+    ELSE
+        user click element    ${fieldPICmanager}
+    END
 
 user ubah tanggal akhir sebelum tanggal mulai
     user ubah startDate project
@@ -116,7 +155,7 @@ user ubah pic yang sama satu sama lain
     ${a}    Get Text    ${fieldPICmanager}
     user click element    ${fieldPICadmin}
     Sleep    2
-    user click element    xpath=//p[normalize-space()='${a}']
+    pilih PIC    ${a}
 
     # Verify Error State
     Element Should Be Visible    ${labelErr_PICsame}
@@ -128,7 +167,7 @@ user ubah nama project dengan nama yang sudah digunakan
     [Arguments]    ${StatusProject}
     Get list Project Manajemen
     user click Detail on Project    ${StatusProject}
-    click button ubah
+    user ubah project
     general Wait Until    ${inputNamaProject}
     user click element    ${inputNamaProject}
     Run Keyword If    '${nameProject_MenungguPersetujuan}' == '${projectName}'    Get list Project Manajemen
