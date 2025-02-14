@@ -8,8 +8,8 @@ on:
 
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    paths:
+      - "testSuite/Tim_OP/test_login.robot"
 
 jobs:
   robot-tests:
