@@ -5,8 +5,8 @@ Library    BuiltIn
 Library    OperatingSystem
 
 *** Variables ***
-# ${BROWSER}                  chrome
-${BROWSER}                  headlesschrome
+${BROWSER}                  chrome
+# ${BROWSER}                  headlesschrome
 ${URL}                  https://dev-proyek.1000saudara.com/Login
 
 *** Keywords ***
