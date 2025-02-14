@@ -40,8 +40,9 @@ jobs:
           # Mendapatkan versi Chrome yang terinstall
           CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+\.\d+')
           echo "Chrome version: $CHROME_VERSION"
-          # Misalnya, gunakan mayor version untuk mendownload ChromeDriver yang sesuai
-          DRIVER_VERSION=$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE_$(echo $CHROME_VERSION | cut -d. -f1))
+          MAJOR_VERSION=$(echo $CHROME_VERSION | cut -d. -f1)
+          # Coba ambil versi driver sesuai major version, jika gagal gunakan fallback
+          DRIVER_VERSION=$(curl -sS https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${MAJOR_VERSION} || curl -sS https://chromedriver.storage.googleapis.com/LATEST_RELEASE)
           echo "ChromeDriver version: $DRIVER_VERSION"
           wget -N https://chromedriver.storage.googleapis.com/${DRIVER_VERSION}/chromedriver_linux64.zip -P ~/
           unzip ~/chromedriver_linux64.zip -d ~/
