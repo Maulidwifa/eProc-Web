@@ -1,4 +1,4 @@
-name: Robot Test - Test Login
+name: Robot Test - Test Detail Project - Menunggu Persetujuan
 
 on:
   schedule:
@@ -7,9 +7,9 @@ on:
     - cron: '30 5 * * 2,4'  # Menjalankan setiap Selasa dan Kamis pukul 5:30 AM UTC
 
   push:
-    branches: [ master ]
-    paths:
-      - "testSuite/Tim_OP/test_login.robot"
+     branches: [ master ]
+     paths:
+      - "testSuite/Tim_OP/test_detailProject_MenungguPersetujuan.robot"
 
 jobs:
   robot-tests:
@@ -37,7 +37,7 @@ jobs:
         id: robot
         run: |
           # Menjalankan test dan menyimpan output ke file log
-          robot --outputdir results testSuite/Tim_OP/test_login.robot | tee robot_output.log
+          robot --outputdir results testSuite/Tim_OP/test_detailProject_MenungguPersetujuan.robot | tee robot_output.log
 
       - name: Extract Test Summaries
         id: extract
