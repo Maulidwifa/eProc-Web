@@ -1,6 +1,7 @@
 # Mengabaikan folder venv
-.venv
+WEB_VENV
 report
+*.vscode
 
 # Mengabaikan file Python bytecode
 *.pyc
