@@ -60,6 +60,7 @@ without filling any of them
         general Wait Until    ${loc_text}
         Sleep    4
         user input text       ${loc_text}    ${text}
+        Sleep    4
         user click element    ${buttonMasuk}
     ELSE
         user visit E-Proc1000s Login Page
@@ -75,6 +76,7 @@ input error no telp
         Sleep    4
         user input text        ${id}    ${text_id}
         user input password    ${pass}    ${text_pass}
+        Sleep    4
         user click element     ${buttonMasuk}
     ELSE
         user visit E-Proc1000s Login Page
