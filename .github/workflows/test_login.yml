@@ -29,9 +29,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       # Jika browser diperlukan, pastikan driver/browser sudah terinstall.
-      Misalnya, jika menggunakan Chrome:
+      # Misalnya, jika menggunakan Chrome:
       - name: Install ChromeDriver
-       run: sudo apt-get install -y chromium-chromedriver
+        run: sudo apt-get install -y chromium-chromedriver
 
       - name: Run Robot Framework Test (test_login)
         id: robot
