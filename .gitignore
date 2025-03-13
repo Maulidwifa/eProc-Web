@@ -1,5 +1,5 @@
 # Mengabaikan folder venv
-.venv
+WEB_VENV
 report
 
 # Mengabaikan file Python bytecode

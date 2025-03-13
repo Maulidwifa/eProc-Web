@@ -36,17 +36,18 @@ ${buttonBatalkan_onNotes}                xpath=//div[contains(@class,'UpdateNote
 user input text
     [Arguments]    ${locator}    ${text}
     Wait Until Element Is Visible    ${locator}
-    ${input_text}    Input Text    ${locator}    ${text}
-    RETURN    ${input_text}
+    Input Text    ${locator}    ${text}
+    Sleep    5
 
 user input password
     [Arguments]    ${locator}    ${text}
     Wait Until Element Is Visible    ${locator}
-    ${input_password}    Input Password    ${locator}    ${text}
-    RETURN    ${input_password}
+    Input Password    ${locator}    ${text}
+    Sleep    5
 
 user click element
     [Arguments]    ${element}
+    Sleep    5
     Wait Until Element Is Visible    ${element}
     ${clickElement}    Click Element    ${element}
     RETURN    ${clickElement}
@@ -61,6 +62,7 @@ scroll ke atas
 general Wait Until
     [Arguments]    ${locator}
     Wait Until Element Is Visible    ${locator}    timeout=5s
+    Sleep    5
 
 general return status
     [Arguments]    ${locator}
@@ -73,10 +75,12 @@ show message error
     IF    ${label}
         general Wait Until    ${errMessageLabel}
         ${err}    Get Text    ${errMessageLabel}
+        Set Global Variable    ${err_text}     ${err}
         Log To Console    ${\n}Error Message : ${err}
     ELSE
         general Wait Until    ${errMessageLabel}
         ${err}    Get Text    ${errMessageLabel}
+        Set Global Variable    ${err_text}     ${err}
         Log To Console    ${\n}Error Message : ${err}
     END
 
