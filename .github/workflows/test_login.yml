@@ -124,7 +124,8 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run Tests
-        run: robot --outputdir results testSuite/Tim_OP/test_login.robot | tee robot_output.log
+        run: $GITHUB_WORKSPACE/.venv/bin/python3.12 -m robot.run --suite test-automation-101-rf.tests.smoke.login --outputdir $GITHUB_WORKSPACE/results .
+        # run: robot --outputdir results testSuite/Tim_OP/test_login.robot | tee robot_output.log
 
       - name: Extract Test Summaries
         id: extract
