@@ -92,6 +92,7 @@ reload_pages
             BREAK
         ELSE
             Reload Page
+            Sleep    5
             ${res}    general return status    ${location}
         END
         

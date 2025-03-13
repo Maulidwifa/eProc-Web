@@ -41,6 +41,7 @@ user login E-Proc1000s Page
 
 without fill no handphone and password
     general Wait Until    ${buttonMasuk}
+    Sleep    4
     user click element    ${buttonMasuk}
     ${res}    general return status    ${inputPassword}
     IF    ${res}
@@ -54,7 +55,6 @@ without fill no handphone and password
 without filling any of them
     [Arguments]    ${loc_text}    ${text}
     general Wait Until    ${loc_text}
-    # Element Should Be Visible       ${loc_text}    ${text}
     reload_pages       ${loc_text}
     ${res}    general return status    ${inputPassword}
     IF    ${res}
@@ -70,7 +70,6 @@ without filling any of them
 input error no telp
     [Arguments]    ${id}    ${text_id}    ${pass}    ${text_pass}
     general Wait Until    ${id}
-    # Element Should Be Visible        ${id}    ${text_id}
     reload_pages       ${id}
     ${res}    general return status    ${inputPassword}
     IF    ${res}
