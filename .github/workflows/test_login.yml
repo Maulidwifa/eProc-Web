@@ -118,12 +118,24 @@ jobs:
           pip install -r requirements.txt
    
       - name: Test with RobotFramework
-        # run: robot .  
         run: robot --outputdir results testSuite/Tim_OP/test_login.robot | tee robot_output.log
          
-      - name: Test Report Generation
+      - name: Extract Test Summaries
+        id: extract
+        run: |
+          # Mengambil baris pertama (misalnya, "Test Login")
+          summary=$(sed -n '2p' robot_output.log | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+          
+          # Mengambil baris yang berisi pola "6 tests, 6 passed, 0 failed"
+          details=$(grep -E '[0-9]+ tests, [0-9]+ passed, [0-9]+ failed' robot_output.log | tail -n1)
+          echo "summary=$summary" >> $GITHUB_OUTPUT
+          echo "details=$details" >> $GITHUB_OUTPUT
+          echo "Extracted summary: $summary"
+          echo "Extracted details: $details"
+
+      - name: Upload Robot Framework Reports
+        if: always()
         uses: actions/upload-artifact@v4
-        if: success() || failure()
         with:
-          name: Report                # Name of the folder
-          path: report.html           # Path to test results
+          name: robot-reports
+          path: results/
