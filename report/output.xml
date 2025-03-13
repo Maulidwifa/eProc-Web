@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-03-13T08:41:08.424835" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-03-13T13:16:08.775284" rpa="false" schemaversion="5">
 <suite id="s1" name="Test Login" source="C:\Users\1000Saudara45\Documents\Automation\eProc_Web\testSuite\Tim_OP\test_login.robot">
 <test id="s1-t1" name="Test Login Success" line="12">
 <kw name="Begin Web Test" owner="web_eProc" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:41:09.177413" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<msg time="2025-03-13T13:16:09.505502" level="INFO">Opening browser 'headlesschrome' to base url 'about:blank'.</msg>
 <arg>about:blank</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-03-13T08:41:09.177025" elapsed="2.473655"/>
+<status status="PASS" start="2025-03-13T13:16:09.505055" elapsed="9.250977"/>
 </kw>
 <kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:41:11.652157" level="INFO">Executing JavaScript:
+<msg time="2025-03-13T13:16:18.758159" level="INFO">Executing JavaScript:
 document.body.style.transform = 'scale(0.67)'; document.body.style.transformOrigin = '0 0';
 Without any arguments.</msg>
 <arg>document.body.style.transform = 'scale(0.67)'; document.body.style.transformOrigin = '0 0';</arg>
 <doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2025-03-13T08:41:11.651213" elapsed="0.021502"/>
+<status status="PASS" start="2025-03-13T13:16:18.756902" elapsed="0.013789"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:41:11.673479" level="INFO">Opening url 'https://developer.1000saudara.com/project1000s'</msg>
+<msg time="2025-03-13T13:16:18.771633" level="INFO">Opening url 'https://developer.1000saudara.com/project1000s'</msg>
 <arg>${URL_DEV}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-03-13T08:41:11.673120" elapsed="4.160971"/>
+<status status="PASS" start="2025-03-13T13:16:18.771166" elapsed="3.405223"/>
 </kw>
-<status status="PASS" start="2025-03-13T08:41:09.175622" elapsed="6.658851"/>
+<status status="PASS" start="2025-03-13T13:16:09.503569" elapsed="12.673111"/>
 </kw>
 <kw name="User can access Home Login 1000s" owner="login">
 <kw name="Then user go to home page E-Proc1000s" owner="pom_login_eProc">
 <kw name="user visit E-Proc1000s Login Page" owner="pom_login_eProc">
 <kw name="Get Location" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:41:15.849529" level="INFO">${current_url} = https://developer.1000saudara.com/project1000s</msg>
+<msg time="2025-03-13T13:16:22.188353" level="INFO">${current_url} = https://developer.1000saudara.com/project1000s</msg>
 <var>${current_url}</var>
 <doc>Returns the current browser window URL.</doc>
-<status status="PASS" start="2025-03-13T08:41:15.837921" elapsed="0.011681"/>
+<status status="PASS" start="2025-03-13T13:16:22.179899" elapsed="0.008523"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-13T08:41:15.850498" level="INFO">Current Path: https://developer.1000saudara.com/project1000s</msg>
+<msg time="2025-03-13T13:16:22.188920" level="INFO">Current Path: https://developer.1000saudara.com/project1000s</msg>
 <arg>Current Path: ${current_url}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-13T08:41:15.850006" elapsed="0.000617"/>
+<status status="PASS" start="2025-03-13T13:16:22.188668" elapsed="0.000390"/>
 </kw>
 <kw name="general return status" owner="generalFunct">
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
@@ -47,46 +47,46 @@ Without any arguments.</msg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:41:15.853245" elapsed="0.459964"/>
+<status status="PASS" start="2025-03-13T13:16:22.192032" elapsed="0.039617"/>
 </kw>
-<msg time="2025-03-13T08:41:16.313431" level="INFO">${res} = True</msg>
+<msg time="2025-03-13T13:16:22.231976" level="INFO">${res} = True</msg>
 <var>${res}</var>
 <arg>Wait Until Element Is Visible</arg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-03-13T08:41:15.852102" elapsed="0.461380"/>
+<status status="PASS" start="2025-03-13T13:16:22.191403" elapsed="0.040632"/>
 </kw>
 <return>
 <value>${res}</value>
-<status status="PASS" start="2025-03-13T08:41:16.313604" elapsed="0.000097"/>
+<status status="PASS" start="2025-03-13T13:16:22.232155" elapsed="0.000097"/>
 </return>
-<msg time="2025-03-13T08:41:16.313951" level="INFO">${res} = True</msg>
+<msg time="2025-03-13T13:16:22.232505" level="INFO">${res} = True</msg>
 <var>${res}</var>
 <arg>${headerLogin}</arg>
-<status status="PASS" start="2025-03-13T08:41:15.851043" elapsed="0.462954"/>
+<status status="PASS" start="2025-03-13T13:16:22.189910" elapsed="0.042642"/>
 </kw>
 <while condition="${res} == $False">
 <iter>
 <kw name="Reload Page" owner="SeleniumLibrary">
 <doc>Simulates user reloading page.</doc>
-<status status="NOT RUN" start="2025-03-13T08:41:16.314667" elapsed="0.000049"/>
+<status status="NOT RUN" start="2025-03-13T13:16:22.233249" elapsed="0.000053"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2025-03-13T08:41:16.314879" elapsed="0.000045"/>
+<status status="NOT RUN" start="2025-03-13T13:16:22.233458" elapsed="0.000068"/>
 </kw>
 <kw name="general return status" owner="generalFunct">
 <var>${res}</var>
 <arg>${headerLogin}</arg>
-<status status="NOT RUN" start="2025-03-13T08:41:16.315140" elapsed="0.000049"/>
+<status status="NOT RUN" start="2025-03-13T13:16:22.233749" elapsed="0.000050"/>
 </kw>
-<status status="NOT RUN" start="2025-03-13T08:41:16.314110" elapsed="0.001143"/>
+<status status="NOT RUN" start="2025-03-13T13:16:22.232666" elapsed="0.001198"/>
 </iter>
-<status status="NOT RUN" start="2025-03-13T08:41:16.314104" elapsed="0.001210"/>
+<status status="NOT RUN" start="2025-03-13T13:16:22.232663" elapsed="0.001267"/>
 </while>
-<status status="PASS" start="2025-03-13T08:41:15.837369" elapsed="0.478049"/>
+<status status="PASS" start="2025-03-13T13:16:22.179220" elapsed="0.054825"/>
 </kw>
 <kw name="user login E-Proc1000s Page" owner="pom_login_eProc">
 <kw name="general Wait Until" owner="generalFunct">
@@ -94,39 +94,39 @@ Without any arguments.</msg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:41:16.316513" elapsed="0.037005"/>
+<status status="PASS" start="2025-03-13T13:16:22.235300" elapsed="0.032834"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-13T08:41:21.354978" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-03-13T13:16:27.269453" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-13T08:41:16.353774" elapsed="5.001346"/>
+<status status="PASS" start="2025-03-13T13:16:22.268406" elapsed="5.001518"/>
 </kw>
 <arg>${inputPassword}</arg>
-<status status="PASS" start="2025-03-13T08:41:16.316092" elapsed="5.039171"/>
+<status status="PASS" start="2025-03-13T13:16:22.234729" elapsed="5.035661"/>
 </kw>
 <kw name="user input text" owner="generalFunct">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:41:21.356576" elapsed="0.033606"/>
+<status status="PASS" start="2025-03-13T13:16:27.272626" elapsed="0.066129"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:41:21.390834" level="INFO">Typing text '085210758864' into text field 'xpath=//input[@id='TxtPhone']'.</msg>
+<msg time="2025-03-13T13:16:27.339757" level="INFO">Typing text '085210758864' into text field 'xpath=//input[@id='TxtPhone']'.</msg>
 <arg>${locator}</arg>
 <arg>${text}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-13T08:41:21.390466" elapsed="0.239021"/>
+<status status="PASS" start="2025-03-13T13:16:27.339198" elapsed="0.194318"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-13T08:41:26.631565" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-03-13T13:16:32.534758" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-13T08:41:21.630214" elapsed="5.001555"/>
+<status status="PASS" start="2025-03-13T13:16:27.533768" elapsed="5.001369"/>
 </kw>
 <arg>${inputUsername}</arg>
 <arg>${ROLE_ADMIN}</arg>
-<status status="PASS" start="2025-03-13T08:41:21.355564" elapsed="5.276387"/>
+<status status="PASS" start="2025-03-13T13:16:27.271075" elapsed="5.264478"/>
 </kw>
 <kw name="general return status" owner="generalFunct">
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
@@ -134,194 +134,194 @@ Without any arguments.</msg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:41:26.634186" elapsed="0.030297"/>
+<status status="PASS" start="2025-03-13T13:16:32.538363" elapsed="0.061056"/>
 </kw>
-<msg time="2025-03-13T08:41:26.664690" level="INFO">${res} = True</msg>
+<msg time="2025-03-13T13:16:32.599975" level="INFO">${res} = True</msg>
 <var>${res}</var>
 <arg>Wait Until Element Is Visible</arg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-03-13T08:41:26.633543" elapsed="0.031200"/>
+<status status="PASS" start="2025-03-13T13:16:32.537618" elapsed="0.062505"/>
 </kw>
 <return>
 <value>${res}</value>
-<status status="PASS" start="2025-03-13T08:41:26.664857" elapsed="0.000089"/>
+<status status="PASS" start="2025-03-13T13:16:32.600461" elapsed="0.000281"/>
 </return>
-<msg time="2025-03-13T08:41:26.665298" level="INFO">${res} = True</msg>
+<msg time="2025-03-13T13:16:32.601600" level="INFO">${res} = True</msg>
 <var>${res}</var>
 <arg>${inputPassword}</arg>
-<status status="PASS" start="2025-03-13T08:41:26.632334" elapsed="0.033086"/>
+<status status="PASS" start="2025-03-13T13:16:32.536340" elapsed="0.065404"/>
 </kw>
 <if>
 <branch type="IF" condition="${res}">
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-13T08:41:30.667166" level="INFO">Slept 4 seconds.</msg>
+<msg time="2025-03-13T13:16:36.604394" level="INFO">Slept 4 seconds.</msg>
 <arg>4</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-13T08:41:26.666106" elapsed="4.001469"/>
+<status status="PASS" start="2025-03-13T13:16:32.602888" elapsed="4.002540"/>
 </kw>
 <kw name="user input text" owner="generalFunct">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:41:30.670086" elapsed="0.042636"/>
+<status status="PASS" start="2025-03-13T13:16:36.610392" elapsed="0.045324"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:41:30.713717" level="INFO">Typing text '085210758864' into text field 'xpath=//input[@id='TxtPhone']'.</msg>
+<msg time="2025-03-13T13:16:36.656627" level="INFO">Typing text '085210758864' into text field 'xpath=//input[@id='TxtPhone']'.</msg>
 <arg>${locator}</arg>
 <arg>${text}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-13T08:41:30.713161" elapsed="0.151199"/>
+<status status="PASS" start="2025-03-13T13:16:36.656108" elapsed="0.152390"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-13T08:41:35.865621" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-03-13T13:16:41.809229" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-13T08:41:30.864607" elapsed="5.001381"/>
+<status status="PASS" start="2025-03-13T13:16:36.808760" elapsed="5.000853"/>
 </kw>
 <arg>${inputUsername}</arg>
 <arg>${ROLE_ADMIN}</arg>
-<status status="PASS" start="2025-03-13T08:41:30.668439" elapsed="5.198020"/>
+<status status="PASS" start="2025-03-13T13:16:36.607475" elapsed="5.202545"/>
 </kw>
 <kw name="user input password" owner="generalFunct">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:41:35.868911" elapsed="0.050326"/>
+<status status="PASS" start="2025-03-13T13:16:41.812117" elapsed="0.052276"/>
 </kw>
 <kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:41:35.920147" level="INFO">Typing password into text field 'xpath=//input[@id='pwd']'.</msg>
-<msg time="2025-03-13T08:41:35.974599" level="INFO">Temporally setting log level to: NONE</msg>
+<msg time="2025-03-13T13:16:41.865381" level="INFO">Typing password into text field 'xpath=//input[@id='pwd']'.</msg>
+<msg time="2025-03-13T13:16:41.949180" level="INFO">Temporally setting log level to: NONE</msg>
 <arg>${locator}</arg>
 <arg>${text}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-13T08:41:35.919624" elapsed="0.141412"/>
+<status status="PASS" start="2025-03-13T13:16:41.864817" elapsed="0.167563"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-13T08:41:41.062168" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-03-13T13:16:47.033874" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-13T08:41:36.061287" elapsed="5.001103"/>
+<status status="PASS" start="2025-03-13T13:16:42.032646" elapsed="5.001473"/>
 </kw>
 <arg>${inputPassword}</arg>
 <arg>${PASSWORD}</arg>
-<status status="PASS" start="2025-03-13T08:41:35.867275" elapsed="5.195328"/>
+<status status="PASS" start="2025-03-13T13:16:41.810752" elapsed="5.223613"/>
 </kw>
 <kw name="Press Key" owner="SeleniumLibrary">
 <arg>${inputPassword}</arg>
 <arg>\\13</arg>
 <doc>Simulates user pressing key on element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-13T08:41:41.062974" elapsed="0.076326"/>
+<status status="PASS" start="2025-03-13T13:16:47.034750" elapsed="0.056291"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${listFilter}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:41:41.139584" elapsed="3.995529"/>
+<status status="PASS" start="2025-03-13T13:16:47.091524" elapsed="4.574660"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-13T08:41:48.136583" level="INFO">Slept 3 seconds.</msg>
+<msg time="2025-03-13T13:16:54.667256" level="INFO">Slept 3 seconds.</msg>
 <arg>3</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-13T08:41:45.135565" elapsed="3.001384"/>
+<status status="PASS" start="2025-03-13T13:16:51.666473" elapsed="3.001228"/>
 </kw>
-<status status="PASS" start="2025-03-13T08:41:26.665687" elapsed="21.471569"/>
+<status status="PASS" start="2025-03-13T13:16:32.602182" elapsed="22.065839"/>
 </branch>
 <branch type="ELSE">
 <kw name="Exit For Loop" owner="BuiltIn">
 <doc>Stops executing the enclosing FOR loop.</doc>
-<status status="NOT RUN" start="2025-03-13T08:41:48.138222" elapsed="0.000180"/>
+<status status="NOT RUN" start="2025-03-13T13:16:54.668902" elapsed="0.000165"/>
 </kw>
-<status status="NOT RUN" start="2025-03-13T08:41:48.137574" elapsed="0.001024"/>
+<status status="NOT RUN" start="2025-03-13T13:16:54.668324" elapsed="0.000936"/>
 </branch>
-<status status="PASS" start="2025-03-13T08:41:26.665632" elapsed="21.473161"/>
+<status status="PASS" start="2025-03-13T13:16:32.602064" elapsed="22.067365"/>
 </if>
-<status status="PASS" start="2025-03-13T08:41:16.315722" elapsed="31.823332"/>
+<status status="PASS" start="2025-03-13T13:16:22.234358" elapsed="32.435322"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${listFilter}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:41:48.139589" elapsed="0.049147"/>
+<status status="PASS" start="2025-03-13T13:16:54.670182" elapsed="0.057071"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${titleProject}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:41:48.189219" elapsed="0.047877"/>
+<status status="PASS" start="2025-03-13T13:16:54.728015" elapsed="0.035138"/>
 </kw>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:41:48.273966" level="INFO">${title} = Manajemen Project</msg>
+<msg time="2025-03-13T13:16:54.792602" level="INFO">${title} = Manajemen Project</msg>
 <var>${title}</var>
 <arg>${titleProject}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-13T08:41:48.237780" elapsed="0.036277"/>
+<status status="PASS" start="2025-03-13T13:16:54.763420" elapsed="0.029250"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${\n}${title}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-03-13T08:41:48.274341" elapsed="0.001132"/>
+<status status="PASS" start="2025-03-13T13:16:54.792918" elapsed="0.001042"/>
 </kw>
-<status status="PASS" start="2025-03-13T08:41:15.836444" elapsed="32.439331"/>
+<status status="PASS" start="2025-03-13T13:16:22.178389" elapsed="32.615809"/>
 </kw>
-<status status="PASS" start="2025-03-13T08:41:15.835484" elapsed="32.440411"/>
+<status status="PASS" start="2025-03-13T13:16:22.177452" elapsed="32.616851"/>
 </kw>
 <kw name="End Web Test" owner="web_eProc" type="TEARDOWN">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-13T08:41:48.277266" level="INFO">Suite teardown initiated</msg>
+<msg time="2025-03-13T13:16:54.795558" level="INFO">Suite teardown initiated</msg>
 <arg>Suite teardown initiated</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-13T08:41:48.277073" elapsed="0.000289"/>
+<status status="PASS" start="2025-03-13T13:16:54.795378" elapsed="0.000263"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-03-13T08:41:48.277583" elapsed="2.339675"/>
+<status status="PASS" start="2025-03-13T13:16:54.795820" elapsed="2.212548"/>
 </kw>
 <doc>Closes the browser after all tests in the suite have run</doc>
-<status status="PASS" start="2025-03-13T08:41:48.276593" elapsed="2.341137"/>
+<status status="PASS" start="2025-03-13T13:16:54.794928" elapsed="2.213959"/>
 </kw>
 <doc>This scenario test User can access URL Home Page</doc>
 <tag>1000s</tag>
 <tag>home</tag>
 <tag>test</tag>
-<status status="PASS" start="2025-03-13T08:41:09.174210" elapsed="41.444373"/>
+<status status="PASS" start="2025-03-13T13:16:09.502065" elapsed="47.507651"/>
 </test>
 <test id="s1-t2" name="Test Login Without fill No Handphone and Password" line="17">
 <kw name="Begin Web Test" owner="web_eProc" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:41:50.627011" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<msg time="2025-03-13T13:16:57.018443" level="INFO">Opening browser 'headlesschrome' to base url 'about:blank'.</msg>
 <arg>about:blank</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-03-13T08:41:50.626245" elapsed="2.028139"/>
+<status status="PASS" start="2025-03-13T13:16:57.017623" elapsed="2.078312"/>
 </kw>
 <kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:41:52.656472" level="INFO">Executing JavaScript:
+<msg time="2025-03-13T13:16:59.097210" level="INFO">Executing JavaScript:
 document.body.style.transform = 'scale(0.67)'; document.body.style.transformOrigin = '0 0';
 Without any arguments.</msg>
 <arg>document.body.style.transform = 'scale(0.67)'; document.body.style.transformOrigin = '0 0';</arg>
 <doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2025-03-13T08:41:52.655470" elapsed="0.013569"/>
+<status status="PASS" start="2025-03-13T13:16:59.096354" elapsed="0.015225"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:41:52.669868" level="INFO">Opening url 'https://developer.1000saudara.com/project1000s'</msg>
+<msg time="2025-03-13T13:16:59.112447" level="INFO">Opening url 'https://developer.1000saudara.com/project1000s'</msg>
 <arg>${URL_DEV}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-03-13T08:41:52.669468" elapsed="3.113414"/>
+<status status="PASS" start="2025-03-13T13:16:59.112005" elapsed="3.628505"/>
 </kw>
-<status status="PASS" start="2025-03-13T08:41:50.625027" elapsed="5.158508"/>
+<status status="PASS" start="2025-03-13T13:16:57.016389" elapsed="5.724296"/>
 </kw>
 <kw name="User login without fill no handphone and password" owner="login">
 <kw name="Given user visit E-Proc1000s Login Page" owner="pom_login_eProc">
 <kw name="Get Location" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:41:55.796257" level="INFO">${current_url} = https://developer.1000saudara.com/project1000s</msg>
+<msg time="2025-03-13T13:17:02.751297" level="INFO">${current_url} = https://developer.1000saudara.com/project1000s</msg>
 <var>${current_url}</var>
 <doc>Returns the current browser window URL.</doc>
-<status status="PASS" start="2025-03-13T08:41:55.786052" elapsed="0.010274"/>
+<status status="PASS" start="2025-03-13T13:17:02.742546" elapsed="0.008827"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-13T08:41:55.796809" level="INFO">Current Path: https://developer.1000saudara.com/project1000s</msg>
+<msg time="2025-03-13T13:17:02.751945" level="INFO">Current Path: https://developer.1000saudara.com/project1000s</msg>
 <arg>Current Path: ${current_url}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-13T08:41:55.796560" elapsed="0.000325"/>
+<status status="PASS" start="2025-03-13T13:17:02.751641" elapsed="0.000407"/>
 </kw>
 <kw name="general return status" owner="generalFunct">
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
@@ -329,46 +329,46 @@ Without any arguments.</msg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:41:55.797838" elapsed="0.039377"/>
+<status status="PASS" start="2025-03-13T13:17:02.754155" elapsed="0.047314"/>
 </kw>
-<msg time="2025-03-13T08:41:55.837896" level="INFO">${res} = True</msg>
+<msg time="2025-03-13T13:17:02.801667" level="INFO">${res} = True</msg>
 <var>${res}</var>
 <arg>Wait Until Element Is Visible</arg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-03-13T08:41:55.797521" elapsed="0.040492"/>
+<status status="PASS" start="2025-03-13T13:17:02.753452" elapsed="0.048268"/>
 </kw>
 <return>
 <value>${res}</value>
-<status status="PASS" start="2025-03-13T08:41:55.838542" elapsed="0.000148"/>
+<status status="PASS" start="2025-03-13T13:17:02.802003" elapsed="0.000082"/>
 </return>
-<msg time="2025-03-13T08:41:55.839078" level="INFO">${res} = True</msg>
+<msg time="2025-03-13T13:17:02.802304" level="INFO">${res} = True</msg>
 <var>${res}</var>
 <arg>${headerLogin}</arg>
-<status status="PASS" start="2025-03-13T08:41:55.797114" elapsed="0.042025"/>
+<status status="PASS" start="2025-03-13T13:17:02.752471" elapsed="0.049881"/>
 </kw>
 <while condition="${res} == $False">
 <iter>
 <kw name="Reload Page" owner="SeleniumLibrary">
 <doc>Simulates user reloading page.</doc>
-<status status="NOT RUN" start="2025-03-13T08:41:55.839949" elapsed="0.000051"/>
+<status status="NOT RUN" start="2025-03-13T13:17:02.802963" elapsed="0.000049"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2025-03-13T08:41:55.840156" elapsed="0.000044"/>
+<status status="NOT RUN" start="2025-03-13T13:17:02.803172" elapsed="0.000047"/>
 </kw>
 <kw name="general return status" owner="generalFunct">
 <var>${res}</var>
 <arg>${headerLogin}</arg>
-<status status="NOT RUN" start="2025-03-13T08:41:55.840419" elapsed="0.000050"/>
+<status status="NOT RUN" start="2025-03-13T13:17:02.803439" elapsed="0.000051"/>
 </kw>
-<status status="NOT RUN" start="2025-03-13T08:41:55.839268" elapsed="0.001266"/>
+<status status="NOT RUN" start="2025-03-13T13:17:02.802456" elapsed="0.001116"/>
 </iter>
-<status status="NOT RUN" start="2025-03-13T08:41:55.839264" elapsed="0.001327"/>
+<status status="NOT RUN" start="2025-03-13T13:17:02.802453" elapsed="0.001179"/>
 </while>
-<status status="PASS" start="2025-03-13T08:41:55.785443" elapsed="0.055255"/>
+<status status="PASS" start="2025-03-13T13:17:02.742008" elapsed="0.061733"/>
 </kw>
 <kw name="When without fill no handphone and password" owner="pom_login_eProc">
 <kw name="general Wait Until" owner="generalFunct">
@@ -376,43 +376,43 @@ Without any arguments.</msg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:41:55.841811" elapsed="0.028887"/>
+<status status="PASS" start="2025-03-13T13:17:02.804827" elapsed="0.032419"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-13T08:42:00.872582" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-03-13T13:17:07.838745" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-13T08:41:55.871136" elapsed="5.001768"/>
+<status status="PASS" start="2025-03-13T13:17:02.837655" elapsed="5.001468"/>
 </kw>
 <arg>${buttonMasuk}</arg>
-<status status="PASS" start="2025-03-13T08:41:55.841398" elapsed="5.031914"/>
+<status status="PASS" start="2025-03-13T13:17:02.804447" elapsed="5.035131"/>
 </kw>
 <kw name="user click element" owner="generalFunct">
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-13T08:42:05.876616" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-03-13T13:17:12.843216" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-13T08:42:00.875284" elapsed="5.001503"/>
+<status status="PASS" start="2025-03-13T13:17:07.841888" elapsed="5.001558"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${element}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:42:05.877195" elapsed="0.024506"/>
+<status status="PASS" start="2025-03-13T13:17:12.843892" elapsed="0.025952"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:42:05.902249" level="INFO">Clicking element 'xpath=//button[@type='button']//span[contains(text(), 'Masuk')]//ancestor::button'.</msg>
-<msg time="2025-03-13T08:42:06.009147" level="INFO">${clickElement} = None</msg>
+<msg time="2025-03-13T13:17:12.870804" level="INFO">Clicking element 'xpath=//button[@type='button']//span[contains(text(), 'Masuk')]//ancestor::button'.</msg>
+<msg time="2025-03-13T13:17:12.967145" level="INFO">${clickElement} = None</msg>
 <var>${clickElement}</var>
 <arg>${element}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-13T08:42:05.901960" elapsed="0.107438"/>
+<status status="PASS" start="2025-03-13T13:17:12.870305" elapsed="0.096952"/>
 </kw>
 <return>
 <value>${clickElement}</value>
-<status status="PASS" start="2025-03-13T08:42:06.009641" elapsed="0.000144"/>
+<status status="PASS" start="2025-03-13T13:17:12.967449" elapsed="0.000108"/>
 </return>
 <arg>${buttonMasuk}</arg>
-<status status="PASS" start="2025-03-13T08:42:00.874077" elapsed="5.136082"/>
+<status status="PASS" start="2025-03-13T13:17:07.840428" elapsed="5.127465"/>
 </kw>
 <kw name="general return status" owner="generalFunct">
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
@@ -420,24 +420,24 @@ Without any arguments.</msg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:42:06.011274" elapsed="0.030106"/>
+<status status="PASS" start="2025-03-13T13:17:12.969215" elapsed="0.034535"/>
 </kw>
-<msg time="2025-03-13T08:42:06.041688" level="INFO">${res} = True</msg>
+<msg time="2025-03-13T13:17:13.004051" level="INFO">${res} = True</msg>
 <var>${res}</var>
 <arg>Wait Until Element Is Visible</arg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-03-13T08:42:06.011027" elapsed="0.030747"/>
+<status status="PASS" start="2025-03-13T13:17:12.968941" elapsed="0.035230"/>
 </kw>
 <return>
 <value>${res}</value>
-<status status="PASS" start="2025-03-13T08:42:06.041963" elapsed="0.000108"/>
+<status status="PASS" start="2025-03-13T13:17:13.004401" elapsed="0.000128"/>
 </return>
-<msg time="2025-03-13T08:42:06.042440" level="INFO">${res} = True</msg>
+<msg time="2025-03-13T13:17:13.005280" level="INFO">${res} = True</msg>
 <var>${res}</var>
 <arg>${inputPassword}</arg>
-<status status="PASS" start="2025-03-13T08:42:06.010541" elapsed="0.031982"/>
+<status status="PASS" start="2025-03-13T13:17:12.968299" elapsed="0.037136"/>
 </kw>
 <if>
 <branch type="IF" condition="${res}">
@@ -446,61 +446,61 @@ Without any arguments.</msg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:42:06.043550" elapsed="0.023658"/>
+<status status="PASS" start="2025-03-13T13:17:13.006687" elapsed="0.027456"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-13T08:42:11.068466" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-03-13T13:17:18.035551" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-13T08:42:06.067472" elapsed="5.001451"/>
+<status status="PASS" start="2025-03-13T13:17:13.034560" elapsed="5.001367"/>
 </kw>
 <arg>${buttonMasuk}</arg>
-<status status="PASS" start="2025-03-13T08:42:06.043129" elapsed="5.026240"/>
+<status status="PASS" start="2025-03-13T13:17:13.006207" elapsed="5.030125"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-13T08:42:15.071102" level="INFO">Slept 4 seconds.</msg>
+<msg time="2025-03-13T13:17:22.038448" level="INFO">Slept 4 seconds.</msg>
 <arg>4</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-13T08:42:11.069921" elapsed="4.001547"/>
+<status status="PASS" start="2025-03-13T13:17:18.036983" elapsed="4.001842"/>
 </kw>
 <kw name="user click element" owner="generalFunct">
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-13T08:42:20.075054" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-03-13T13:17:27.041795" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-13T08:42:15.073782" elapsed="5.001645"/>
+<status status="PASS" start="2025-03-13T13:17:22.040928" elapsed="5.001249"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${element}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:42:20.076139" elapsed="0.043054"/>
+<status status="PASS" start="2025-03-13T13:17:27.042951" elapsed="0.054044"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:42:20.120076" level="INFO">Clicking element 'xpath=//button[@type='button']//span[contains(text(), 'Masuk')]//ancestor::button'.</msg>
-<msg time="2025-03-13T08:42:20.232344" level="INFO">${clickElement} = None</msg>
+<msg time="2025-03-13T13:17:27.097926" level="INFO">Clicking element 'xpath=//button[@type='button']//span[contains(text(), 'Masuk')]//ancestor::button'.</msg>
+<msg time="2025-03-13T13:17:27.199529" level="INFO">${clickElement} = None</msg>
 <var>${clickElement}</var>
 <arg>${element}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-13T08:42:20.119602" elapsed="0.112857"/>
+<status status="PASS" start="2025-03-13T13:17:27.097423" elapsed="0.102178"/>
 </kw>
 <return>
 <value>${clickElement}</value>
-<status status="PASS" start="2025-03-13T08:42:20.232666" elapsed="0.000125"/>
+<status status="PASS" start="2025-03-13T13:17:27.199736" elapsed="0.000082"/>
 </return>
 <arg>${buttonMasuk}</arg>
-<status status="PASS" start="2025-03-13T08:42:15.072376" elapsed="5.160764"/>
+<status status="PASS" start="2025-03-13T13:17:22.039717" elapsed="5.160311"/>
 </kw>
-<status status="PASS" start="2025-03-13T08:42:06.042771" elapsed="14.190566"/>
+<status status="PASS" start="2025-03-13T13:17:13.005808" elapsed="14.194301"/>
 </branch>
 <branch type="ELSE">
 <kw name="user visit E-Proc1000s Login Page" owner="pom_login_eProc">
-<status status="NOT RUN" start="2025-03-13T08:42:20.234159" elapsed="0.000134"/>
+<status status="NOT RUN" start="2025-03-13T13:17:27.200490" elapsed="0.000058"/>
 </kw>
-<status status="NOT RUN" start="2025-03-13T08:42:20.233580" elapsed="0.000839"/>
+<status status="NOT RUN" start="2025-03-13T13:17:27.200186" elapsed="0.000422"/>
 </branch>
-<status status="PASS" start="2025-03-13T08:42:06.042708" elapsed="14.191841"/>
+<status status="PASS" start="2025-03-13T13:17:13.005741" elapsed="14.194926"/>
 </if>
-<status status="PASS" start="2025-03-13T08:41:55.840999" elapsed="24.393743"/>
+<status status="PASS" start="2025-03-13T13:17:02.804076" elapsed="24.396682"/>
 </kw>
 <kw name="Then show message error" owner="generalFunct">
 <kw name="general return status" owner="generalFunct">
@@ -509,24 +509,24 @@ Without any arguments.</msg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:42:20.237528" elapsed="0.028048"/>
+<status status="PASS" start="2025-03-13T13:17:27.202181" elapsed="0.030353"/>
 </kw>
-<msg time="2025-03-13T08:42:20.265785" level="INFO">${res} = True</msg>
+<msg time="2025-03-13T13:17:27.232735" level="INFO">${res} = True</msg>
 <var>${res}</var>
 <arg>Wait Until Element Is Visible</arg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-03-13T08:42:20.237003" elapsed="0.028836"/>
+<status status="PASS" start="2025-03-13T13:17:27.201920" elapsed="0.030866"/>
 </kw>
 <return>
 <value>${res}</value>
-<status status="PASS" start="2025-03-13T08:42:20.265961" elapsed="0.000075"/>
+<status status="PASS" start="2025-03-13T13:17:27.232891" elapsed="0.000083"/>
 </return>
-<msg time="2025-03-13T08:42:20.266273" level="INFO">${label} = True</msg>
+<msg time="2025-03-13T13:17:27.233206" level="INFO">${label} = True</msg>
 <var>${label}</var>
 <arg>xpath=//div[@class='mb-20px']//parent::div/label[contains(text(), 'Nomor')]</arg>
-<status status="PASS" start="2025-03-13T08:42:20.236404" elapsed="0.029927"/>
+<status status="PASS" start="2025-03-13T13:17:27.201510" elapsed="0.031743"/>
 </kw>
 <if>
 <branch type="IF" condition="${label}">
@@ -535,126 +535,126 @@ Without any arguments.</msg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:42:20.267999" elapsed="0.027775"/>
+<status status="PASS" start="2025-03-13T13:17:27.234172" elapsed="0.038726"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-13T08:42:25.297020" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-03-13T13:17:32.274077" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-13T08:42:20.296083" elapsed="5.001306"/>
+<status status="PASS" start="2025-03-13T13:17:27.273153" elapsed="5.001300"/>
 </kw>
 <arg>${errMessageLabel}</arg>
-<status status="PASS" start="2025-03-13T08:42:20.267253" elapsed="5.030532"/>
+<status status="PASS" start="2025-03-13T13:17:27.233757" elapsed="5.041096"/>
 </kw>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:42:25.377888" level="INFO">${err} = No. Handphone harus diisi</msg>
+<msg time="2025-03-13T13:17:32.350654" level="INFO">${err} = No. Handphone harus diisi</msg>
 <var>${err}</var>
 <arg>${errMessageLabel}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-13T08:42:25.298458" elapsed="0.079597"/>
+<status status="PASS" start="2025-03-13T13:17:32.275453" elapsed="0.075303"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2025-03-13T08:42:25.381628" level="INFO">${err_text} = No. Handphone harus diisi</msg>
+<msg time="2025-03-13T13:17:32.353184" level="INFO">${err_text} = No. Handphone harus diisi</msg>
 <arg>${err_text}</arg>
 <arg>${err}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2025-03-13T08:42:25.378614" elapsed="0.003126"/>
+<status status="PASS" start="2025-03-13T13:17:32.351146" elapsed="0.002166"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${\n}Error Message : ${err}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-03-13T08:42:25.382005" elapsed="0.001284"/>
+<status status="PASS" start="2025-03-13T13:17:32.353610" elapsed="0.001393"/>
 </kw>
-<status status="PASS" start="2025-03-13T08:42:20.266708" elapsed="5.116822"/>
+<status status="PASS" start="2025-03-13T13:17:27.233479" elapsed="5.121831"/>
 </branch>
 <branch type="ELSE">
 <kw name="general Wait Until" owner="generalFunct">
 <arg>${errMessageLabel}</arg>
-<status status="NOT RUN" start="2025-03-13T08:42:25.384075" elapsed="0.000074"/>
+<status status="NOT RUN" start="2025-03-13T13:17:32.356004" elapsed="0.000103"/>
 </kw>
 <kw name="Get Text" owner="SeleniumLibrary">
 <var>${err}</var>
 <arg>${errMessageLabel}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-03-13T08:42:25.384388" elapsed="0.000060"/>
+<status status="NOT RUN" start="2025-03-13T13:17:32.356386" elapsed="0.000068"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
 <arg>${err_text}</arg>
 <arg>${err}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="NOT RUN" start="2025-03-13T08:42:25.384675" elapsed="0.000059"/>
+<status status="NOT RUN" start="2025-03-13T13:17:32.356710" elapsed="0.000071"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${\n}Error Message : ${err}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2025-03-13T08:42:25.384935" elapsed="0.000063"/>
+<status status="NOT RUN" start="2025-03-13T13:17:32.357027" elapsed="0.000063"/>
 </kw>
-<status status="NOT RUN" start="2025-03-13T08:42:25.383733" elapsed="0.001348"/>
+<status status="NOT RUN" start="2025-03-13T13:17:32.355533" elapsed="0.001650"/>
 </branch>
-<status status="PASS" start="2025-03-13T08:42:20.266666" elapsed="5.118490"/>
+<status status="PASS" start="2025-03-13T13:17:27.233443" elapsed="5.123827"/>
 </if>
-<status status="PASS" start="2025-03-13T08:42:20.235638" elapsed="5.149647"/>
+<status status="PASS" start="2025-03-13T13:17:27.201092" elapsed="5.156310"/>
 </kw>
-<status status="PASS" start="2025-03-13T08:41:55.784462" elapsed="29.600936"/>
+<status status="PASS" start="2025-03-13T13:17:02.741300" elapsed="29.616228"/>
 </kw>
 <kw name="End Web Test" owner="web_eProc" type="TEARDOWN">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-13T08:42:25.386882" level="INFO">Suite teardown initiated</msg>
+<msg time="2025-03-13T13:17:32.359145" level="INFO">Suite teardown initiated</msg>
 <arg>Suite teardown initiated</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-13T08:42:25.386648" elapsed="0.000346"/>
+<status status="PASS" start="2025-03-13T13:17:32.358897" elapsed="0.000383"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-03-13T08:42:25.387237" elapsed="2.224258"/>
+<status status="PASS" start="2025-03-13T13:17:32.359546" elapsed="2.212350"/>
 </kw>
 <doc>Closes the browser after all tests in the suite have run</doc>
-<status status="PASS" start="2025-03-13T08:42:25.386113" elapsed="2.225625"/>
+<status status="PASS" start="2025-03-13T13:17:32.358324" elapsed="2.214049"/>
 </kw>
 <doc>This scenario test User login without fill no handphone and password</doc>
 <tag>1000s</tag>
 <tag>login invalid</tag>
 <tag>test</tag>
-<status status="PASS" start="2025-03-13T08:41:50.622654" elapsed="36.989614"/>
+<status status="PASS" start="2025-03-13T13:16:57.013987" elapsed="37.559214"/>
 </test>
 <test id="s1-t3" name="Test Login Without fill Password" line="22">
 <kw name="Begin Web Test" owner="web_eProc" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:42:27.616564" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<msg time="2025-03-13T13:17:34.581479" level="INFO">Opening browser 'headlesschrome' to base url 'about:blank'.</msg>
 <arg>about:blank</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-03-13T08:42:27.616173" elapsed="2.039240"/>
+<status status="PASS" start="2025-03-13T13:17:34.580709" elapsed="2.110204"/>
 </kw>
 <kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:42:29.656754" level="INFO">Executing JavaScript:
+<msg time="2025-03-13T13:17:36.691821" level="INFO">Executing JavaScript:
 document.body.style.transform = 'scale(0.67)'; document.body.style.transformOrigin = '0 0';
 Without any arguments.</msg>
 <arg>document.body.style.transform = 'scale(0.67)'; document.body.style.transformOrigin = '0 0';</arg>
 <doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2025-03-13T08:42:29.655861" elapsed="0.016549"/>
+<status status="PASS" start="2025-03-13T13:17:36.691176" elapsed="0.014062"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:42:29.673221" level="INFO">Opening url 'https://developer.1000saudara.com/project1000s'</msg>
+<msg time="2025-03-13T13:17:36.705972" level="INFO">Opening url 'https://developer.1000saudara.com/project1000s'</msg>
 <arg>${URL_DEV}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-03-13T08:42:29.672805" elapsed="5.986086"/>
+<status status="PASS" start="2025-03-13T13:17:36.705640" elapsed="2.124424"/>
 </kw>
-<status status="PASS" start="2025-03-13T08:42:27.615546" elapsed="8.043570"/>
+<status status="PASS" start="2025-03-13T13:17:34.579507" elapsed="4.250788"/>
 </kw>
 <kw name="User login without fill password" owner="login">
 <kw name="Given user visit E-Proc1000s Login Page" owner="pom_login_eProc">
 <kw name="Get Location" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:42:35.685864" level="INFO">${current_url} = https://developer.1000saudara.com/project1000s</msg>
+<msg time="2025-03-13T13:17:38.866120" level="INFO">${current_url} = https://developer.1000saudara.com/project1000s</msg>
 <var>${current_url}</var>
 <doc>Returns the current browser window URL.</doc>
-<status status="PASS" start="2025-03-13T08:42:35.661576" elapsed="0.024363"/>
+<status status="PASS" start="2025-03-13T13:17:38.832745" elapsed="0.033472"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-13T08:42:35.686467" level="INFO">Current Path: https://developer.1000saudara.com/project1000s</msg>
+<msg time="2025-03-13T13:17:38.866920" level="INFO">Current Path: https://developer.1000saudara.com/project1000s</msg>
 <arg>Current Path: ${current_url}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-13T08:42:35.686226" elapsed="0.000318"/>
+<status status="PASS" start="2025-03-13T13:17:38.866574" elapsed="0.000474"/>
 </kw>
 <kw name="general return status" owner="generalFunct">
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
@@ -662,46 +662,46 @@ Without any arguments.</msg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:42:35.687416" elapsed="0.706083"/>
+<status status="PASS" start="2025-03-13T13:17:38.868407" elapsed="0.244509"/>
 </kw>
-<msg time="2025-03-13T08:42:36.393716" level="INFO">${res} = True</msg>
+<msg time="2025-03-13T13:17:39.113131" level="INFO">${res} = True</msg>
 <var>${res}</var>
 <arg>Wait Until Element Is Visible</arg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-03-13T08:42:35.687186" elapsed="0.706581"/>
+<status status="PASS" start="2025-03-13T13:17:38.868048" elapsed="0.245134"/>
 </kw>
 <return>
 <value>${res}</value>
-<status status="PASS" start="2025-03-13T08:42:36.393884" elapsed="0.000107"/>
+<status status="PASS" start="2025-03-13T13:17:39.113298" elapsed="0.000078"/>
 </return>
-<msg time="2025-03-13T08:42:36.394211" level="INFO">${res} = True</msg>
+<msg time="2025-03-13T13:17:39.113598" level="INFO">${res} = True</msg>
 <var>${res}</var>
 <arg>${headerLogin}</arg>
-<status status="PASS" start="2025-03-13T08:42:35.686781" elapsed="0.707478"/>
+<status status="PASS" start="2025-03-13T13:17:38.867409" elapsed="0.246236"/>
 </kw>
 <while condition="${res} == $False">
 <iter>
 <kw name="Reload Page" owner="SeleniumLibrary">
 <doc>Simulates user reloading page.</doc>
-<status status="NOT RUN" start="2025-03-13T08:42:36.394852" elapsed="0.000050"/>
+<status status="NOT RUN" start="2025-03-13T13:17:39.114221" elapsed="0.000047"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2025-03-13T08:42:36.395065" elapsed="0.000045"/>
+<status status="NOT RUN" start="2025-03-13T13:17:39.114420" elapsed="0.000050"/>
 </kw>
 <kw name="general return status" owner="generalFunct">
 <var>${res}</var>
 <arg>${headerLogin}</arg>
-<status status="NOT RUN" start="2025-03-13T08:42:36.395341" elapsed="0.000051"/>
+<status status="NOT RUN" start="2025-03-13T13:17:39.114691" elapsed="0.000049"/>
 </kw>
-<status status="NOT RUN" start="2025-03-13T08:42:36.394361" elapsed="0.001096"/>
+<status status="NOT RUN" start="2025-03-13T13:17:39.113746" elapsed="0.001058"/>
 </iter>
-<status status="NOT RUN" start="2025-03-13T08:42:36.394358" elapsed="0.001159"/>
+<status status="NOT RUN" start="2025-03-13T13:17:39.113744" elapsed="0.001114"/>
 </while>
-<status status="PASS" start="2025-03-13T08:42:35.661020" elapsed="0.734686"/>
+<status status="PASS" start="2025-03-13T13:17:38.831960" elapsed="0.283136"/>
 </kw>
 <kw name="When without filling any of them" owner="pom_login_eProc">
 <kw name="general Wait Until" owner="generalFunct">
@@ -709,23 +709,23 @@ Without any arguments.</msg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:42:36.396835" elapsed="0.029402"/>
+<status status="PASS" start="2025-03-13T13:17:39.116234" elapsed="0.030933"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-13T08:42:41.427523" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-03-13T13:17:44.148372" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-13T08:42:36.426497" elapsed="5.001319"/>
+<status status="PASS" start="2025-03-13T13:17:39.147427" elapsed="5.001315"/>
 </kw>
 <arg>${loc_text}</arg>
-<status status="PASS" start="2025-03-13T08:42:36.396471" elapsed="5.031643"/>
+<status status="PASS" start="2025-03-13T13:17:39.115880" elapsed="5.033263"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:42:41.467124" level="INFO">Element 'xpath=//input[@id='TxtPhone']' is displayed.</msg>
+<msg time="2025-03-13T13:17:44.197017" level="INFO">Element 'xpath=//input[@id='TxtPhone']' is displayed.</msg>
 <arg>${loc_text}</arg>
 <arg>${text}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:42:41.428654" elapsed="0.038670"/>
+<status status="PASS" start="2025-03-13T13:17:44.149808" elapsed="0.047441"/>
 </kw>
 <kw name="general return status" owner="generalFunct">
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
@@ -733,24 +733,24 @@ Without any arguments.</msg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:42:41.468980" elapsed="0.037873"/>
+<status status="PASS" start="2025-03-13T13:17:44.199160" elapsed="0.044561"/>
 </kw>
-<msg time="2025-03-13T08:42:41.507167" level="INFO">${res} = True</msg>
+<msg time="2025-03-13T13:17:44.243929" level="INFO">${res} = True</msg>
 <var>${res}</var>
 <arg>Wait Until Element Is Visible</arg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-03-13T08:42:41.468594" elapsed="0.038636"/>
+<status status="PASS" start="2025-03-13T13:17:44.198693" elapsed="0.045286"/>
 </kw>
 <return>
 <value>${res}</value>
-<status status="PASS" start="2025-03-13T08:42:41.507372" elapsed="0.000094"/>
+<status status="PASS" start="2025-03-13T13:17:44.244091" elapsed="0.000073"/>
 </return>
-<msg time="2025-03-13T08:42:41.507727" level="INFO">${res} = True</msg>
+<msg time="2025-03-13T13:17:44.244387" level="INFO">${res} = True</msg>
 <var>${res}</var>
 <arg>${inputPassword}</arg>
-<status status="PASS" start="2025-03-13T08:42:41.467796" elapsed="0.039981"/>
+<status status="PASS" start="2025-03-13T13:17:44.197773" elapsed="0.046661"/>
 </kw>
 <if>
 <branch type="IF" condition="${res}">
@@ -759,86 +759,86 @@ Without any arguments.</msg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:42:41.508612" elapsed="0.020044"/>
+<status status="PASS" start="2025-03-13T13:17:44.245285" elapsed="0.021071"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-13T08:42:46.529694" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-03-13T13:17:49.267231" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-13T08:42:41.528918" elapsed="5.001216"/>
+<status status="PASS" start="2025-03-13T13:17:44.266627" elapsed="5.000758"/>
 </kw>
 <arg>${loc_text}</arg>
-<status status="PASS" start="2025-03-13T08:42:41.508201" elapsed="5.022470"/>
+<status status="PASS" start="2025-03-13T13:17:44.244845" elapsed="5.022698"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-13T08:42:50.532315" level="INFO">Slept 4 seconds.</msg>
+<msg time="2025-03-13T13:17:53.268330" level="INFO">Slept 4 seconds.</msg>
 <arg>4</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-13T08:42:46.531263" elapsed="4.001419"/>
+<status status="PASS" start="2025-03-13T13:17:49.267788" elapsed="4.000694"/>
 </kw>
 <kw name="user input text" owner="generalFunct">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:42:50.534817" elapsed="0.035388"/>
+<status status="PASS" start="2025-03-13T13:17:53.269362" elapsed="0.028843"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:42:50.571015" level="INFO">Typing text '085210758864' into text field 'xpath=//input[@id='TxtPhone']'.</msg>
+<msg time="2025-03-13T13:17:53.299126" level="INFO">Typing text '085210758864' into text field 'xpath=//input[@id='TxtPhone']'.</msg>
 <arg>${locator}</arg>
 <arg>${text}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-13T08:42:50.570544" elapsed="0.176150"/>
+<status status="PASS" start="2025-03-13T13:17:53.298598" elapsed="0.223358"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-13T08:42:55.748129" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-03-13T13:17:58.523306" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-13T08:42:50.747120" elapsed="5.001377"/>
+<status status="PASS" start="2025-03-13T13:17:53.522333" elapsed="5.001278"/>
 </kw>
 <arg>${loc_text}</arg>
 <arg>${text}</arg>
-<status status="PASS" start="2025-03-13T08:42:50.533479" elapsed="5.215421"/>
+<status status="PASS" start="2025-03-13T13:17:53.268794" elapsed="5.255173"/>
 </kw>
 <kw name="user click element" owner="generalFunct">
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-13T08:43:00.751822" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-03-13T13:18:03.526212" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-13T08:42:55.751058" elapsed="5.000959"/>
+<status status="PASS" start="2025-03-13T13:17:58.525287" elapsed="5.001296"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${element}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:43:00.752360" elapsed="0.034837"/>
+<status status="PASS" start="2025-03-13T13:18:03.527332" elapsed="0.061419"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:43:00.787746" level="INFO">Clicking element 'xpath=//button[@type='button']//span[contains(text(), 'Masuk')]//ancestor::button'.</msg>
-<msg time="2025-03-13T08:43:00.882457" level="INFO">${clickElement} = None</msg>
+<msg time="2025-03-13T13:18:03.589830" level="INFO">Clicking element 'xpath=//button[@type='button']//span[contains(text(), 'Masuk')]//ancestor::button'.</msg>
+<msg time="2025-03-13T13:18:03.687599" level="INFO">${clickElement} = None</msg>
 <var>${clickElement}</var>
 <arg>${element}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-13T08:43:00.787454" elapsed="0.095076"/>
+<status status="PASS" start="2025-03-13T13:18:03.589231" elapsed="0.098510"/>
 </kw>
 <return>
 <value>${clickElement}</value>
-<status status="PASS" start="2025-03-13T08:43:00.882649" elapsed="0.000077"/>
+<status status="PASS" start="2025-03-13T13:18:03.687872" elapsed="0.000123"/>
 </return>
 <arg>${buttonMasuk}</arg>
-<status status="PASS" start="2025-03-13T08:42:55.749770" elapsed="5.133151"/>
+<status status="PASS" start="2025-03-13T13:17:58.524569" elapsed="5.163764"/>
 </kw>
-<status status="PASS" start="2025-03-13T08:42:41.507932" elapsed="19.375066"/>
+<status status="PASS" start="2025-03-13T13:17:44.244569" elapsed="19.443852"/>
 </branch>
 <branch type="ELSE">
 <kw name="user visit E-Proc1000s Login Page" owner="pom_login_eProc">
-<status status="NOT RUN" start="2025-03-13T08:43:00.883354" elapsed="0.000053"/>
+<status status="NOT RUN" start="2025-03-13T13:18:03.688807" elapsed="0.000058"/>
 </kw>
-<status status="NOT RUN" start="2025-03-13T08:43:00.883066" elapsed="0.000397"/>
+<status status="NOT RUN" start="2025-03-13T13:18:03.688498" elapsed="0.000432"/>
 </branch>
-<status status="PASS" start="2025-03-13T08:42:41.507896" elapsed="19.375624"/>
+<status status="PASS" start="2025-03-13T13:17:44.244537" elapsed="19.444452"/>
 </if>
 <arg>${inputUsername}</arg>
 <arg>${ROLE_ADMIN}</arg>
-<status status="PASS" start="2025-03-13T08:42:36.396013" elapsed="24.487593"/>
+<status status="PASS" start="2025-03-13T13:17:39.115411" elapsed="24.573826"/>
 </kw>
 <kw name="Then show message error" owner="generalFunct">
 <kw name="general return status" owner="generalFunct">
@@ -847,24 +847,24 @@ Without any arguments.</msg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:43:00.884943" elapsed="0.030211"/>
+<status status="PASS" start="2025-03-13T13:18:03.691467" elapsed="0.031417"/>
 </kw>
-<msg time="2025-03-13T08:43:00.915457" level="INFO">${res} = True</msg>
+<msg time="2025-03-13T13:18:03.723192" level="INFO">${res} = True</msg>
 <var>${res}</var>
 <arg>Wait Until Element Is Visible</arg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-03-13T08:43:00.884704" elapsed="0.030841"/>
+<status status="PASS" start="2025-03-13T13:18:03.691078" elapsed="0.032204"/>
 </kw>
 <return>
 <value>${res}</value>
-<status status="PASS" start="2025-03-13T08:43:00.915735" elapsed="0.000119"/>
+<status status="PASS" start="2025-03-13T13:18:03.723469" elapsed="0.000113"/>
 </return>
-<msg time="2025-03-13T08:43:00.916206" level="INFO">${label} = True</msg>
+<msg time="2025-03-13T13:18:03.723943" level="INFO">${label} = True</msg>
 <var>${label}</var>
 <arg>xpath=//div[@class='mb-20px']//parent::div/label[contains(text(), 'Nomor')]</arg>
-<status status="PASS" start="2025-03-13T08:43:00.884334" elapsed="0.031959"/>
+<status status="PASS" start="2025-03-13T13:18:03.690601" elapsed="0.033427"/>
 </kw>
 <if>
 <branch type="IF" condition="${label}">
@@ -873,132 +873,132 @@ Without any arguments.</msg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:43:00.917673" elapsed="0.722521"/>
+<status status="PASS" start="2025-03-13T13:18:03.725442" elapsed="0.931986"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-13T08:43:06.641618" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-03-13T13:18:09.659317" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-13T08:43:01.640596" elapsed="5.001392"/>
+<status status="PASS" start="2025-03-13T13:18:04.658078" elapsed="5.001608"/>
 </kw>
 <arg>${errMessageLabel}</arg>
-<status status="PASS" start="2025-03-13T08:43:00.916998" elapsed="5.725409"/>
+<status status="PASS" start="2025-03-13T13:18:03.724693" elapsed="5.935398"/>
 </kw>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:43:06.696743" level="INFO">${err} = Password harus diisi</msg>
+<msg time="2025-03-13T13:18:09.741297" level="INFO">${err} = Password harus diisi</msg>
 <var>${err}</var>
 <arg>${errMessageLabel}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-13T08:43:06.643336" elapsed="0.053479"/>
+<status status="PASS" start="2025-03-13T13:18:09.660967" elapsed="0.080413"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2025-03-13T08:43:06.697624" level="INFO">${err_text} = Password harus diisi</msg>
+<msg time="2025-03-13T13:18:09.742125" level="INFO">${err_text} = Password harus diisi</msg>
 <arg>${err_text}</arg>
 <arg>${err}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2025-03-13T08:43:06.697066" elapsed="0.000691"/>
+<status status="PASS" start="2025-03-13T13:18:09.741693" elapsed="0.000534"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${\n}Error Message : ${err}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-03-13T08:43:06.698117" elapsed="0.001112"/>
+<status status="PASS" start="2025-03-13T13:18:09.742462" elapsed="0.001156"/>
 </kw>
-<status status="PASS" start="2025-03-13T08:43:00.916521" elapsed="5.782899"/>
+<status status="PASS" start="2025-03-13T13:18:03.724256" elapsed="6.019575"/>
 </branch>
 <branch type="ELSE">
 <kw name="general Wait Until" owner="generalFunct">
 <arg>${errMessageLabel}</arg>
-<status status="NOT RUN" start="2025-03-13T08:43:06.699806" elapsed="0.000054"/>
+<status status="NOT RUN" start="2025-03-13T13:18:09.744260" elapsed="0.000092"/>
 </kw>
 <kw name="Get Text" owner="SeleniumLibrary">
 <var>${err}</var>
 <arg>${errMessageLabel}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-03-13T08:43:06.700045" elapsed="0.000051"/>
+<status status="NOT RUN" start="2025-03-13T13:18:09.744582" elapsed="0.000054"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
 <arg>${err_text}</arg>
 <arg>${err}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="NOT RUN" start="2025-03-13T08:43:06.700270" elapsed="0.000044"/>
+<status status="NOT RUN" start="2025-03-13T13:18:09.744856" elapsed="0.000057"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${\n}Error Message : ${err}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2025-03-13T08:43:06.700465" elapsed="0.000042"/>
+<status status="NOT RUN" start="2025-03-13T13:18:09.745099" elapsed="0.000049"/>
 </kw>
-<status status="NOT RUN" start="2025-03-13T08:43:06.699544" elapsed="0.001023"/>
+<status status="NOT RUN" start="2025-03-13T13:18:09.743939" elapsed="0.001282"/>
 </branch>
-<status status="PASS" start="2025-03-13T08:43:00.916470" elapsed="5.784154"/>
+<status status="PASS" start="2025-03-13T13:18:03.724204" elapsed="6.021086"/>
 </if>
-<status status="PASS" start="2025-03-13T08:43:00.883933" elapsed="5.816781"/>
+<status status="PASS" start="2025-03-13T13:18:03.689920" elapsed="6.055478"/>
 </kw>
 <kw name="And Should Be Equal" owner="BuiltIn">
 <arg>${err_text}</arg>
 <arg>Password harus diisi</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2025-03-13T08:43:06.700896" elapsed="0.000294"/>
+<status status="PASS" start="2025-03-13T13:18:09.745625" elapsed="0.000353"/>
 </kw>
-<status status="PASS" start="2025-03-13T08:42:35.660086" elapsed="31.041217"/>
+<status status="PASS" start="2025-03-13T13:17:38.830959" elapsed="30.915157"/>
 </kw>
 <kw name="End Web Test" owner="web_eProc" type="TEARDOWN">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-13T08:43:06.702406" level="INFO">Suite teardown initiated</msg>
+<msg time="2025-03-13T13:18:09.747439" level="INFO">Suite teardown initiated</msg>
 <arg>Suite teardown initiated</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-13T08:43:06.702256" elapsed="0.000239"/>
+<status status="PASS" start="2025-03-13T13:18:09.747251" elapsed="0.000281"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-03-13T08:43:06.702681" elapsed="2.226524"/>
+<status status="PASS" start="2025-03-13T13:18:09.747750" elapsed="2.579130"/>
 </kw>
 <doc>Closes the browser after all tests in the suite have run</doc>
-<status status="PASS" start="2025-03-13T08:43:06.701857" elapsed="2.227822"/>
+<status status="PASS" start="2025-03-13T13:18:09.746770" elapsed="2.580586"/>
 </kw>
 <doc>This scenario test User login without fill password</doc>
 <tag>1000s</tag>
 <tag>login invalid</tag>
 <tag>test</tag>
-<status status="PASS" start="2025-03-13T08:42:27.614453" elapsed="41.316038"/>
+<status status="PASS" start="2025-03-13T13:17:34.577219" elapsed="37.750963"/>
 </test>
 <test id="s1-t4" name="Test Login Without fill No Handphone" line="27">
 <kw name="Begin Web Test" owner="web_eProc" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:43:08.938594" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<msg time="2025-03-13T13:18:12.336209" level="INFO">Opening browser 'headlesschrome' to base url 'about:blank'.</msg>
 <arg>about:blank</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-03-13T08:43:08.937831" elapsed="1.984566"/>
+<status status="PASS" start="2025-03-13T13:18:12.335428" elapsed="1.924218"/>
 </kw>
 <kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:43:10.923750" level="INFO">Executing JavaScript:
+<msg time="2025-03-13T13:18:14.261360" level="INFO">Executing JavaScript:
 document.body.style.transform = 'scale(0.67)'; document.body.style.transformOrigin = '0 0';
 Without any arguments.</msg>
 <arg>document.body.style.transform = 'scale(0.67)'; document.body.style.transformOrigin = '0 0';</arg>
 <doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2025-03-13T08:43:10.922854" elapsed="0.015190"/>
+<status status="PASS" start="2025-03-13T13:18:14.260304" elapsed="0.014152"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:43:10.939157" level="INFO">Opening url 'https://developer.1000saudara.com/project1000s'</msg>
+<msg time="2025-03-13T13:18:14.275437" level="INFO">Opening url 'https://developer.1000saudara.com/project1000s'</msg>
 <arg>${URL_DEV}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-03-13T08:43:10.938588" elapsed="1.663187"/>
+<status status="PASS" start="2025-03-13T13:18:14.274996" elapsed="3.373000"/>
 </kw>
-<status status="PASS" start="2025-03-13T08:43:08.936640" elapsed="3.665303"/>
+<status status="PASS" start="2025-03-13T13:18:12.334236" elapsed="5.313938"/>
 </kw>
 <kw name="User login without fill no handphone" owner="login">
 <kw name="Given user visit E-Proc1000s Login Page" owner="pom_login_eProc">
 <kw name="Get Location" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:43:12.618023" level="INFO">${current_url} = https://developer.1000saudara.com/project1000s</msg>
+<msg time="2025-03-13T13:18:17.660272" level="INFO">${current_url} = https://developer.1000saudara.com/project1000s</msg>
 <var>${current_url}</var>
 <doc>Returns the current browser window URL.</doc>
-<status status="PASS" start="2025-03-13T08:43:12.604039" elapsed="0.014091"/>
+<status status="PASS" start="2025-03-13T13:18:17.650129" elapsed="0.010257"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-13T08:43:12.618893" level="INFO">Current Path: https://developer.1000saudara.com/project1000s</msg>
+<msg time="2025-03-13T13:18:17.661235" level="INFO">Current Path: https://developer.1000saudara.com/project1000s</msg>
 <arg>Current Path: ${current_url}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-13T08:43:12.618520" elapsed="0.000528"/>
+<status status="PASS" start="2025-03-13T13:18:17.660824" elapsed="0.000577"/>
 </kw>
 <kw name="general return status" owner="generalFunct">
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
@@ -1006,46 +1006,46 @@ Without any arguments.</msg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:43:12.624018" elapsed="0.041896"/>
+<status status="PASS" start="2025-03-13T13:18:17.664577" elapsed="0.037841"/>
 </kw>
-<msg time="2025-03-13T08:43:12.666136" level="INFO">${res} = True</msg>
+<msg time="2025-03-13T13:18:17.702632" level="INFO">${res} = True</msg>
 <var>${res}</var>
 <arg>Wait Until Element Is Visible</arg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-03-13T08:43:12.620681" elapsed="0.045518"/>
+<status status="PASS" start="2025-03-13T13:18:17.662651" elapsed="0.040035"/>
 </kw>
 <return>
 <value>${res}</value>
-<status status="PASS" start="2025-03-13T08:43:12.666330" elapsed="0.000080"/>
+<status status="PASS" start="2025-03-13T13:18:17.702799" elapsed="0.000077"/>
 </return>
-<msg time="2025-03-13T08:43:12.666655" level="INFO">${res} = True</msg>
+<msg time="2025-03-13T13:18:17.703090" level="INFO">${res} = True</msg>
 <var>${res}</var>
 <arg>${headerLogin}</arg>
-<status status="PASS" start="2025-03-13T08:43:12.619595" elapsed="0.047106"/>
+<status status="PASS" start="2025-03-13T13:18:17.661835" elapsed="0.041308"/>
 </kw>
 <while condition="${res} == $False">
 <iter>
 <kw name="Reload Page" owner="SeleniumLibrary">
 <doc>Simulates user reloading page.</doc>
-<status status="NOT RUN" start="2025-03-13T08:43:12.667274" elapsed="0.000054"/>
+<status status="NOT RUN" start="2025-03-13T13:18:17.704276" elapsed="0.000146"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2025-03-13T08:43:12.667513" elapsed="0.000049"/>
+<status status="NOT RUN" start="2025-03-13T13:18:17.704744" elapsed="0.000065"/>
 </kw>
 <kw name="general return status" owner="generalFunct">
 <var>${res}</var>
 <arg>${headerLogin}</arg>
-<status status="NOT RUN" start="2025-03-13T08:43:12.667796" elapsed="0.000049"/>
+<status status="NOT RUN" start="2025-03-13T13:18:17.705079" elapsed="0.000097"/>
 </kw>
-<status status="NOT RUN" start="2025-03-13T08:43:12.666799" elapsed="0.001111"/>
+<status status="NOT RUN" start="2025-03-13T13:18:17.703244" elapsed="0.002132"/>
 </iter>
-<status status="NOT RUN" start="2025-03-13T08:43:12.666796" elapsed="0.001165"/>
+<status status="NOT RUN" start="2025-03-13T13:18:17.703241" elapsed="0.002255"/>
 </while>
-<status status="PASS" start="2025-03-13T08:43:12.603596" elapsed="0.064459"/>
+<status status="PASS" start="2025-03-13T13:18:17.649440" elapsed="0.056179"/>
 </kw>
 <kw name="When without filling any of them" owner="pom_login_eProc">
 <kw name="general Wait Until" owner="generalFunct">
@@ -1053,23 +1053,23 @@ Without any arguments.</msg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:43:12.669196" elapsed="0.027771"/>
+<status status="PASS" start="2025-03-13T13:18:17.706794" elapsed="0.026694"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-13T08:43:17.697822" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-03-13T13:18:22.734925" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-13T08:43:12.697226" elapsed="5.001097"/>
+<status status="PASS" start="2025-03-13T13:18:17.733884" elapsed="5.001450"/>
 </kw>
 <arg>${loc_text}</arg>
-<status status="PASS" start="2025-03-13T08:43:12.668825" elapsed="5.030183"/>
+<status status="PASS" start="2025-03-13T13:18:17.706411" elapsed="5.029786"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:43:17.746142" level="INFO">Element 'xpath=//input[@id='pwd']' is displayed.</msg>
+<msg time="2025-03-13T13:18:22.793247" level="INFO">Element 'xpath=//input[@id='pwd']' is displayed.</msg>
 <arg>${loc_text}</arg>
 <arg>${text}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:43:17.699600" elapsed="0.046778"/>
+<status status="PASS" start="2025-03-13T13:18:22.736854" elapsed="0.056730"/>
 </kw>
 <kw name="general return status" owner="generalFunct">
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
@@ -1077,24 +1077,24 @@ Without any arguments.</msg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:43:17.748149" elapsed="0.025959"/>
+<status status="PASS" start="2025-03-13T13:18:22.796458" elapsed="0.042502"/>
 </kw>
-<msg time="2025-03-13T08:43:17.774429" level="INFO">${res} = True</msg>
+<msg time="2025-03-13T13:18:22.839307" level="INFO">${res} = True</msg>
 <var>${res}</var>
 <arg>Wait Until Element Is Visible</arg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-03-13T08:43:17.747695" elapsed="0.026822"/>
+<status status="PASS" start="2025-03-13T13:18:22.795735" elapsed="0.043666"/>
 </kw>
 <return>
 <value>${res}</value>
-<status status="PASS" start="2025-03-13T08:43:17.774753" elapsed="0.000117"/>
+<status status="PASS" start="2025-03-13T13:18:22.839579" elapsed="0.000124"/>
 </return>
-<msg time="2025-03-13T08:43:17.775116" level="INFO">${res} = True</msg>
+<msg time="2025-03-13T13:18:22.840083" level="INFO">${res} = True</msg>
 <var>${res}</var>
 <arg>${inputPassword}</arg>
-<status status="PASS" start="2025-03-13T08:43:17.746907" elapsed="0.028255"/>
+<status status="PASS" start="2025-03-13T13:18:22.794409" elapsed="0.045774"/>
 </kw>
 <if>
 <branch type="IF" condition="${res}">
@@ -1103,86 +1103,86 @@ Without any arguments.</msg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:43:17.776706" elapsed="0.021700"/>
+<status status="PASS" start="2025-03-13T13:18:22.841650" elapsed="0.023221"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-13T08:43:22.799560" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-03-13T13:18:27.866069" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-13T08:43:17.798672" elapsed="5.001325"/>
+<status status="PASS" start="2025-03-13T13:18:22.865132" elapsed="5.001307"/>
 </kw>
 <arg>${loc_text}</arg>
-<status status="PASS" start="2025-03-13T08:43:17.775788" elapsed="5.024631"/>
+<status status="PASS" start="2025-03-13T13:18:22.840926" elapsed="5.025915"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-13T08:43:26.802551" level="INFO">Slept 4 seconds.</msg>
+<msg time="2025-03-13T13:18:31.868434" level="INFO">Slept 4 seconds.</msg>
 <arg>4</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-13T08:43:22.801033" elapsed="4.002253"/>
+<status status="PASS" start="2025-03-13T13:18:27.867426" elapsed="4.001466"/>
 </kw>
 <kw name="user input text" owner="generalFunct">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:43:26.807635" elapsed="0.036393"/>
+<status status="PASS" start="2025-03-13T13:18:31.871475" elapsed="0.056929"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:43:26.844811" level="INFO">Typing text '123456' into text field 'xpath=//input[@id='pwd']'.</msg>
+<msg time="2025-03-13T13:18:31.929864" level="INFO">Typing text '123456' into text field 'xpath=//input[@id='pwd']'.</msg>
 <arg>${locator}</arg>
 <arg>${text}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-13T08:43:26.844359" elapsed="0.156491"/>
+<status status="PASS" start="2025-03-13T13:18:31.929020" elapsed="0.183138"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-13T08:43:32.001619" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-03-13T13:18:37.113589" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-13T08:43:27.001111" elapsed="5.000928"/>
+<status status="PASS" start="2025-03-13T13:18:32.112545" elapsed="5.001425"/>
 </kw>
 <arg>${loc_text}</arg>
 <arg>${text}</arg>
-<status status="PASS" start="2025-03-13T08:43:26.805072" elapsed="5.197380"/>
+<status status="PASS" start="2025-03-13T13:18:31.869800" elapsed="5.244590"/>
 </kw>
 <kw name="user click element" owner="generalFunct">
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-13T08:43:37.006063" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-03-13T13:18:42.117362" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-13T08:43:32.004662" elapsed="5.001769"/>
+<status status="PASS" start="2025-03-13T13:18:37.116566" elapsed="5.001177"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${element}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:43:37.007139" elapsed="0.047188"/>
+<status status="PASS" start="2025-03-13T13:18:42.118411" elapsed="0.061234"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:43:37.054886" level="INFO">Clicking element 'xpath=//button[@type='button']//span[contains(text(), 'Masuk')]//ancestor::button'.</msg>
-<msg time="2025-03-13T08:43:37.148672" level="INFO">${clickElement} = None</msg>
+<msg time="2025-03-13T13:18:42.180443" level="INFO">Clicking element 'xpath=//button[@type='button']//span[contains(text(), 'Masuk')]//ancestor::button'.</msg>
+<msg time="2025-03-13T13:18:42.318185" level="INFO">${clickElement} = None</msg>
 <var>${clickElement}</var>
 <arg>${element}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-13T08:43:37.054589" elapsed="0.094187"/>
+<status status="PASS" start="2025-03-13T13:18:42.180024" elapsed="0.138278"/>
 </kw>
 <return>
 <value>${clickElement}</value>
-<status status="PASS" start="2025-03-13T08:43:37.148924" elapsed="0.000092"/>
+<status status="PASS" start="2025-03-13T13:18:42.318576" elapsed="0.000157"/>
 </return>
 <arg>${buttonMasuk}</arg>
-<status status="PASS" start="2025-03-13T08:43:32.003231" elapsed="5.146034"/>
+<status status="PASS" start="2025-03-13T13:18:37.115169" elapsed="5.204197"/>
 </kw>
-<status status="PASS" start="2025-03-13T08:43:17.775302" elapsed="19.374054"/>
+<status status="PASS" start="2025-03-13T13:18:22.840469" elapsed="19.479100"/>
 </branch>
 <branch type="ELSE">
 <kw name="user visit E-Proc1000s Login Page" owner="pom_login_eProc">
-<status status="NOT RUN" start="2025-03-13T08:43:37.149746" elapsed="0.000055"/>
+<status status="NOT RUN" start="2025-03-13T13:18:42.320392" elapsed="0.000120"/>
 </kw>
-<status status="NOT RUN" start="2025-03-13T08:43:37.149439" elapsed="0.000421"/>
+<status status="NOT RUN" start="2025-03-13T13:18:42.319762" elapsed="0.000873"/>
 </branch>
-<status status="PASS" start="2025-03-13T08:43:17.775269" elapsed="19.374646"/>
+<status status="PASS" start="2025-03-13T13:18:22.840410" elapsed="19.480351"/>
 </if>
 <arg>${inputPassword}</arg>
 <arg>${PASSWORD}</arg>
-<status status="PASS" start="2025-03-13T08:43:12.668364" elapsed="24.481637"/>
+<status status="PASS" start="2025-03-13T13:18:17.705923" elapsed="24.615033"/>
 </kw>
 <kw name="Then show message error" owner="generalFunct">
 <kw name="general return status" owner="generalFunct">
@@ -1191,24 +1191,24 @@ Without any arguments.</msg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:43:37.151466" elapsed="0.030851"/>
+<status status="PASS" start="2025-03-13T13:18:42.323910" elapsed="0.048589"/>
 </kw>
-<msg time="2025-03-13T08:43:37.182523" level="INFO">${res} = True</msg>
+<msg time="2025-03-13T13:18:42.372831" level="INFO">${res} = True</msg>
 <var>${res}</var>
 <arg>Wait Until Element Is Visible</arg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-03-13T08:43:37.151208" elapsed="0.031365"/>
+<status status="PASS" start="2025-03-13T13:18:42.323240" elapsed="0.049680"/>
 </kw>
 <return>
 <value>${res}</value>
-<status status="PASS" start="2025-03-13T08:43:37.182689" elapsed="0.000074"/>
+<status status="PASS" start="2025-03-13T13:18:42.373110" elapsed="0.000113"/>
 </return>
-<msg time="2025-03-13T08:43:37.182973" level="INFO">${label} = True</msg>
+<msg time="2025-03-13T13:18:42.373593" level="INFO">${label} = True</msg>
 <var>${label}</var>
 <arg>xpath=//div[@class='mb-20px']//parent::div/label[contains(text(), 'Nomor')]</arg>
-<status status="PASS" start="2025-03-13T08:43:37.150804" elapsed="0.032213"/>
+<status status="PASS" start="2025-03-13T13:18:42.322395" elapsed="0.051259"/>
 </kw>
 <if>
 <branch type="IF" condition="${label}">
@@ -1217,132 +1217,132 @@ Without any arguments.</msg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:43:37.183962" elapsed="0.718663"/>
+<status status="PASS" start="2025-03-13T13:18:42.374534" elapsed="0.754889"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-13T08:43:42.903948" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-03-13T13:18:48.130987" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-13T08:43:37.903022" elapsed="5.001289"/>
+<status status="PASS" start="2025-03-13T13:18:43.129841" elapsed="5.001860"/>
 </kw>
 <arg>${errMessageLabel}</arg>
-<status status="PASS" start="2025-03-13T08:43:37.183433" elapsed="5.721285"/>
+<status status="PASS" start="2025-03-13T13:18:42.374105" elapsed="5.758587"/>
 </kw>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:43:42.954353" level="INFO">${err} = No. Handphone harus diisi</msg>
+<msg time="2025-03-13T13:18:48.207196" level="INFO">${err} = No. Handphone harus diisi</msg>
 <var>${err}</var>
 <arg>${errMessageLabel}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-13T08:43:42.905417" elapsed="0.049013"/>
+<status status="PASS" start="2025-03-13T13:18:48.133768" elapsed="0.073534"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2025-03-13T08:43:42.955092" level="INFO">${err_text} = No. Handphone harus diisi</msg>
+<msg time="2025-03-13T13:18:48.208199" level="INFO">${err_text} = No. Handphone harus diisi</msg>
 <arg>${err_text}</arg>
 <arg>${err}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2025-03-13T08:43:42.954704" elapsed="0.000470"/>
+<status status="PASS" start="2025-03-13T13:18:48.207690" elapsed="0.000628"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${\n}Error Message : ${err}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-03-13T08:43:42.955480" elapsed="0.001038"/>
+<status status="PASS" start="2025-03-13T13:18:48.208859" elapsed="0.001489"/>
 </kw>
-<status status="PASS" start="2025-03-13T08:43:37.183150" elapsed="5.773555"/>
+<status status="PASS" start="2025-03-13T13:18:42.373829" elapsed="5.836843"/>
 </branch>
 <branch type="ELSE">
 <kw name="general Wait Until" owner="generalFunct">
 <arg>${errMessageLabel}</arg>
-<status status="NOT RUN" start="2025-03-13T08:43:42.957108" elapsed="0.000059"/>
+<status status="NOT RUN" start="2025-03-13T13:18:48.211315" elapsed="0.000087"/>
 </kw>
 <kw name="Get Text" owner="SeleniumLibrary">
 <var>${err}</var>
 <arg>${errMessageLabel}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-03-13T08:43:42.957364" elapsed="0.000050"/>
+<status status="NOT RUN" start="2025-03-13T13:18:48.211703" elapsed="0.000073"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
 <arg>${err_text}</arg>
 <arg>${err}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="NOT RUN" start="2025-03-13T08:43:42.957596" elapsed="0.000049"/>
+<status status="NOT RUN" start="2025-03-13T13:18:48.212062" elapsed="0.000074"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${\n}Error Message : ${err}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2025-03-13T08:43:42.957813" elapsed="0.000053"/>
+<status status="NOT RUN" start="2025-03-13T13:18:48.212386" elapsed="0.000073"/>
 </kw>
-<status status="NOT RUN" start="2025-03-13T08:43:42.956837" elapsed="0.001098"/>
+<status status="NOT RUN" start="2025-03-13T13:18:48.210900" elapsed="0.001660"/>
 </branch>
-<status status="PASS" start="2025-03-13T08:43:37.183117" elapsed="5.774878"/>
+<status status="PASS" start="2025-03-13T13:18:42.373791" elapsed="5.838858"/>
 </if>
-<status status="PASS" start="2025-03-13T08:43:37.150349" elapsed="5.807742"/>
+<status status="PASS" start="2025-03-13T13:18:42.321677" elapsed="5.891109"/>
 </kw>
 <kw name="And Should Be Equal" owner="BuiltIn">
 <arg>${err_text}</arg>
 <arg>No. Handphone harus diisi</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2025-03-13T08:43:42.958281" elapsed="0.000308"/>
+<status status="PASS" start="2025-03-13T13:18:48.213086" elapsed="0.000455"/>
 </kw>
-<status status="PASS" start="2025-03-13T08:43:12.602597" elapsed="30.356112"/>
+<status status="PASS" start="2025-03-13T13:18:17.648751" elapsed="30.564984"/>
 </kw>
 <kw name="End Web Test" owner="web_eProc" type="TEARDOWN">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-13T08:43:42.959880" level="INFO">Suite teardown initiated</msg>
+<msg time="2025-03-13T13:18:48.215469" level="INFO">Suite teardown initiated</msg>
 <arg>Suite teardown initiated</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-13T08:43:42.959713" elapsed="0.000261"/>
+<status status="PASS" start="2025-03-13T13:18:48.215204" elapsed="0.000398"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-03-13T08:43:42.960175" elapsed="2.222683"/>
+<status status="PASS" start="2025-03-13T13:18:48.215928" elapsed="2.239052"/>
 </kw>
 <doc>Closes the browser after all tests in the suite have run</doc>
-<status status="PASS" start="2025-03-13T08:43:42.959296" elapsed="2.223979"/>
+<status status="PASS" start="2025-03-13T13:18:48.214556" elapsed="2.240920"/>
 </kw>
 <doc>This scenario test User login without fill no handphone</doc>
 <tag>1000s</tag>
 <tag>login invalid</tag>
 <tag>test</tag>
-<status status="PASS" start="2025-03-13T08:43:08.934385" elapsed="36.249712"/>
+<status status="PASS" start="2025-03-13T13:18:12.332026" elapsed="38.124332"/>
 </test>
 <test id="s1-t5" name="Test Login With invalid No Handphone" line="32">
 <kw name="Begin Web Test" owner="web_eProc" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:43:45.192112" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<msg time="2025-03-13T13:18:50.464869" level="INFO">Opening browser 'headlesschrome' to base url 'about:blank'.</msg>
 <arg>about:blank</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-03-13T08:43:45.191355" elapsed="2.083265"/>
+<status status="PASS" start="2025-03-13T13:18:50.464115" elapsed="2.099925"/>
 </kw>
 <kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:43:47.275979" level="INFO">Executing JavaScript:
+<msg time="2025-03-13T13:18:52.565839" level="INFO">Executing JavaScript:
 document.body.style.transform = 'scale(0.67)'; document.body.style.transformOrigin = '0 0';
 Without any arguments.</msg>
 <arg>document.body.style.transform = 'scale(0.67)'; document.body.style.transformOrigin = '0 0';</arg>
 <doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2025-03-13T08:43:47.275142" elapsed="0.018187"/>
+<status status="PASS" start="2025-03-13T13:18:52.564537" elapsed="0.014530"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:43:47.294161" level="INFO">Opening url 'https://developer.1000saudara.com/project1000s'</msg>
+<msg time="2025-03-13T13:18:52.579870" level="INFO">Opening url 'https://developer.1000saudara.com/project1000s'</msg>
 <arg>${URL_DEV}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-03-13T08:43:47.293758" elapsed="1.963595"/>
+<status status="PASS" start="2025-03-13T13:18:52.579470" elapsed="2.533018"/>
 </kw>
-<status status="PASS" start="2025-03-13T08:43:45.190128" elapsed="4.067507"/>
+<status status="PASS" start="2025-03-13T13:18:50.462911" elapsed="4.649893"/>
 </kw>
 <kw name="User login with invalid no handphone" owner="login">
 <kw name="Given user visit E-Proc1000s Login Page" owner="pom_login_eProc">
 <kw name="Get Location" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:43:49.274185" level="INFO">${current_url} = https://developer.1000saudara.com/project1000s</msg>
+<msg time="2025-03-13T13:18:55.128627" level="INFO">${current_url} = https://developer.1000saudara.com/project1000s</msg>
 <var>${current_url}</var>
 <doc>Returns the current browser window URL.</doc>
-<status status="PASS" start="2025-03-13T08:43:49.259503" elapsed="0.014853"/>
+<status status="PASS" start="2025-03-13T13:18:55.115093" elapsed="0.013633"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-13T08:43:49.275199" level="INFO">Current Path: https://developer.1000saudara.com/project1000s</msg>
+<msg time="2025-03-13T13:18:55.129977" level="INFO">Current Path: https://developer.1000saudara.com/project1000s</msg>
 <arg>Current Path: ${current_url}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-13T08:43:49.274756" elapsed="0.000615"/>
+<status status="PASS" start="2025-03-13T13:18:55.129389" elapsed="0.000760"/>
 </kw>
 <kw name="general return status" owner="generalFunct">
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
@@ -1350,46 +1350,46 @@ Without any arguments.</msg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:43:49.277486" elapsed="0.044446"/>
+<status status="PASS" start="2025-03-13T13:18:55.132652" elapsed="0.036945"/>
 </kw>
-<msg time="2025-03-13T08:43:49.322147" level="INFO">${res} = True</msg>
+<msg time="2025-03-13T13:18:55.169797" level="INFO">${res} = True</msg>
 <var>${res}</var>
 <arg>Wait Until Element Is Visible</arg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-03-13T08:43:49.277064" elapsed="0.045134"/>
+<status status="PASS" start="2025-03-13T13:18:55.132077" elapsed="0.037770"/>
 </kw>
 <return>
 <value>${res}</value>
-<status status="PASS" start="2025-03-13T08:43:49.322305" elapsed="0.000074"/>
+<status status="PASS" start="2025-03-13T13:18:55.169974" elapsed="0.000075"/>
 </return>
-<msg time="2025-03-13T08:43:49.322601" level="INFO">${res} = True</msg>
+<msg time="2025-03-13T13:18:55.170262" level="INFO">${res} = True</msg>
 <var>${res}</var>
 <arg>${headerLogin}</arg>
-<status status="PASS" start="2025-03-13T08:43:49.275893" elapsed="0.046753"/>
+<status status="PASS" start="2025-03-13T13:18:55.131160" elapsed="0.039149"/>
 </kw>
 <while condition="${res} == $False">
 <iter>
 <kw name="Reload Page" owner="SeleniumLibrary">
 <doc>Simulates user reloading page.</doc>
-<status status="NOT RUN" start="2025-03-13T08:43:49.323207" elapsed="0.000047"/>
+<status status="NOT RUN" start="2025-03-13T13:18:55.170904" elapsed="0.000056"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2025-03-13T08:43:49.323411" elapsed="0.000044"/>
+<status status="NOT RUN" start="2025-03-13T13:18:55.171130" elapsed="0.000046"/>
 </kw>
 <kw name="general return status" owner="generalFunct">
 <var>${res}</var>
 <arg>${headerLogin}</arg>
-<status status="NOT RUN" start="2025-03-13T08:43:49.323673" elapsed="0.000049"/>
+<status status="NOT RUN" start="2025-03-13T13:18:55.171384" elapsed="0.000048"/>
 </kw>
-<status status="NOT RUN" start="2025-03-13T08:43:49.322746" elapsed="0.001043"/>
+<status status="NOT RUN" start="2025-03-13T13:18:55.170417" elapsed="0.001091"/>
 </iter>
-<status status="NOT RUN" start="2025-03-13T08:43:49.322743" elapsed="0.001100"/>
+<status status="NOT RUN" start="2025-03-13T13:18:55.170414" elapsed="0.001150"/>
 </while>
-<status status="PASS" start="2025-03-13T08:43:49.259075" elapsed="0.064869"/>
+<status status="PASS" start="2025-03-13T13:18:55.114321" elapsed="0.057343"/>
 </kw>
 <kw name="When input error no telp" owner="pom_login_eProc">
 <kw name="general Wait Until" owner="generalFunct">
@@ -1397,23 +1397,23 @@ Without any arguments.</msg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:43:49.325139" elapsed="0.027923"/>
+<status status="PASS" start="2025-03-13T13:18:55.173243" elapsed="0.031755"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-13T08:43:54.354367" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-03-13T13:19:00.205897" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-13T08:43:49.353333" elapsed="5.001400"/>
+<status status="PASS" start="2025-03-13T13:18:55.205417" elapsed="5.000863"/>
 </kw>
 <arg>${id}</arg>
-<status status="PASS" start="2025-03-13T08:43:49.324781" elapsed="5.030365"/>
+<status status="PASS" start="2025-03-13T13:18:55.172813" elapsed="5.033905"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:43:54.404531" level="INFO">Element 'xpath=//input[@id='TxtPhone']' is displayed.</msg>
+<msg time="2025-03-13T13:19:00.245110" level="INFO">Element 'xpath=//input[@id='TxtPhone']' is displayed.</msg>
 <arg>${id}</arg>
 <arg>${text_id}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:43:54.355743" elapsed="0.048972"/>
+<status status="PASS" start="2025-03-13T13:19:00.207360" elapsed="0.037904"/>
 </kw>
 <kw name="general return status" owner="generalFunct">
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
@@ -1421,24 +1421,24 @@ Without any arguments.</msg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:43:54.406491" elapsed="0.039443"/>
+<status status="PASS" start="2025-03-13T13:19:00.246663" elapsed="0.031475"/>
 </kw>
-<msg time="2025-03-13T08:43:54.446255" level="INFO">${res} = True</msg>
+<msg time="2025-03-13T13:19:00.278366" level="INFO">${res} = True</msg>
 <var>${res}</var>
 <arg>Wait Until Element Is Visible</arg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-03-13T08:43:54.405904" elapsed="0.040441"/>
+<status status="PASS" start="2025-03-13T13:19:00.246112" elapsed="0.032311"/>
 </kw>
 <return>
 <value>${res}</value>
-<status status="PASS" start="2025-03-13T08:43:54.446514" elapsed="0.000110"/>
+<status status="PASS" start="2025-03-13T13:19:00.278542" elapsed="0.000083"/>
 </return>
-<msg time="2025-03-13T08:43:54.446948" level="INFO">${res} = True</msg>
+<msg time="2025-03-13T13:19:00.278868" level="INFO">${res} = True</msg>
 <var>${res}</var>
 <arg>${inputPassword}</arg>
-<status status="PASS" start="2025-03-13T08:43:54.405190" elapsed="0.041831"/>
+<status status="PASS" start="2025-03-13T13:19:00.245591" elapsed="0.033328"/>
 </kw>
 <if>
 <branch type="IF" condition="${res}">
@@ -1447,112 +1447,112 @@ Without any arguments.</msg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:43:54.448297" elapsed="0.032691"/>
+<status status="PASS" start="2025-03-13T13:19:00.279835" elapsed="0.023243"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-13T08:43:59.482340" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-03-13T13:19:05.304259" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-13T08:43:54.481402" elapsed="5.001265"/>
+<status status="PASS" start="2025-03-13T13:19:00.303384" elapsed="5.001026"/>
 </kw>
 <arg>${id}</arg>
-<status status="PASS" start="2025-03-13T08:43:54.447643" elapsed="5.035379"/>
+<status status="PASS" start="2025-03-13T13:19:00.279364" elapsed="5.025204"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-13T08:44:03.484449" level="INFO">Slept 4 seconds.</msg>
+<msg time="2025-03-13T13:19:09.305120" level="INFO">Slept 4 seconds.</msg>
 <arg>4</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-13T08:43:59.483477" elapsed="4.001217"/>
+<status status="PASS" start="2025-03-13T13:19:05.304783" elapsed="4.000492"/>
 </kw>
 <kw name="user input text" owner="generalFunct">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:44:03.486306" elapsed="0.023807"/>
+<status status="PASS" start="2025-03-13T13:19:09.306147" elapsed="0.019647"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:44:03.511079" level="INFO">Typing text '12345' into text field 'xpath=//input[@id='TxtPhone']'.</msg>
+<msg time="2025-03-13T13:19:09.326790" level="INFO">Typing text '12345' into text field 'xpath=//input[@id='TxtPhone']'.</msg>
 <arg>${locator}</arg>
 <arg>${text}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-13T08:44:03.510561" elapsed="0.156418"/>
+<status status="PASS" start="2025-03-13T13:19:09.326222" elapsed="0.172795"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-13T08:44:08.668469" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-03-13T13:19:14.500524" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-13T08:44:03.667411" elapsed="5.001426"/>
+<status status="PASS" start="2025-03-13T13:19:09.499479" elapsed="5.001418"/>
 </kw>
 <arg>${id}</arg>
 <arg>${text_id}</arg>
-<status status="PASS" start="2025-03-13T08:44:03.485283" elapsed="5.184009"/>
+<status status="PASS" start="2025-03-13T13:19:09.305582" elapsed="5.195783"/>
 </kw>
 <kw name="user input password" owner="generalFunct">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:44:08.671045" elapsed="0.031825"/>
+<status status="PASS" start="2025-03-13T13:19:14.503644" elapsed="0.061402"/>
 </kw>
 <kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:44:08.703785" level="INFO">Typing password into text field 'xpath=//input[@id='pwd']'.</msg>
-<msg time="2025-03-13T08:44:08.766320" level="INFO">Temporally setting log level to: NONE</msg>
+<msg time="2025-03-13T13:19:14.566667" level="INFO">Typing password into text field 'xpath=//input[@id='pwd']'.</msg>
+<msg time="2025-03-13T13:19:14.648684" level="INFO">Temporally setting log level to: NONE</msg>
 <arg>${locator}</arg>
 <arg>${text}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-13T08:44:08.703269" elapsed="0.138644"/>
+<status status="PASS" start="2025-03-13T13:19:14.565728" elapsed="0.186515"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-13T08:44:13.842637" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-03-13T13:19:19.753475" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-13T08:44:08.842166" elapsed="5.000882"/>
+<status status="PASS" start="2025-03-13T13:19:14.752577" elapsed="5.001273"/>
 </kw>
 <arg>${pass}</arg>
 <arg>${text_pass}</arg>
-<status status="PASS" start="2025-03-13T08:44:08.670098" elapsed="5.173390"/>
+<status status="PASS" start="2025-03-13T13:19:14.502080" elapsed="5.252245"/>
 </kw>
 <kw name="user click element" owner="generalFunct">
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-13T08:44:18.846699" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-03-13T13:19:24.757779" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-13T08:44:13.845496" elapsed="5.001568"/>
+<status status="PASS" start="2025-03-13T13:19:19.756564" elapsed="5.001618"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${element}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:44:18.847817" elapsed="0.073776"/>
+<status status="PASS" start="2025-03-13T13:19:24.758960" elapsed="0.058195"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:44:18.923243" level="INFO">Clicking element 'xpath=//button[@type='button']//span[contains(text(), 'Masuk')]//ancestor::button'.</msg>
-<msg time="2025-03-13T08:44:19.112129" level="INFO">${clickElement} = None</msg>
+<msg time="2025-03-13T13:19:24.818024" level="INFO">Clicking element 'xpath=//button[@type='button']//span[contains(text(), 'Masuk')]//ancestor::button'.</msg>
+<msg time="2025-03-13T13:19:24.930331" level="INFO">${clickElement} = None</msg>
 <var>${clickElement}</var>
 <arg>${element}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-13T08:44:18.922294" elapsed="0.189967"/>
+<status status="PASS" start="2025-03-13T13:19:24.817581" elapsed="0.112854"/>
 </kw>
 <return>
 <value>${clickElement}</value>
-<status status="PASS" start="2025-03-13T08:44:19.112483" elapsed="0.000134"/>
+<status status="PASS" start="2025-03-13T13:19:24.930618" elapsed="0.000104"/>
 </return>
 <arg>${buttonMasuk}</arg>
-<status status="PASS" start="2025-03-13T08:44:13.844275" elapsed="5.268703"/>
+<status status="PASS" start="2025-03-13T13:19:19.755180" elapsed="5.175831"/>
 </kw>
-<status status="PASS" start="2025-03-13T08:43:54.447225" elapsed="24.665882"/>
+<status status="PASS" start="2025-03-13T13:19:00.279067" elapsed="24.652063"/>
 </branch>
 <branch type="ELSE">
 <kw name="user visit E-Proc1000s Login Page" owner="pom_login_eProc">
-<status status="NOT RUN" start="2025-03-13T08:44:19.113670" elapsed="0.000170"/>
+<status status="NOT RUN" start="2025-03-13T13:19:24.931705" elapsed="0.000083"/>
 </kw>
-<status status="NOT RUN" start="2025-03-13T08:44:19.113219" elapsed="0.000898"/>
+<status status="NOT RUN" start="2025-03-13T13:19:24.931250" elapsed="0.000632"/>
 </branch>
-<status status="PASS" start="2025-03-13T08:43:54.447176" elapsed="24.667153"/>
+<status status="PASS" start="2025-03-13T13:19:00.279032" elapsed="24.652941"/>
 </if>
 <arg>${inputUsername}</arg>
 <arg>12345</arg>
 <arg>${inputPassword}</arg>
 <arg>${PASSWORD}</arg>
-<status status="PASS" start="2025-03-13T08:43:49.324258" elapsed="29.790364"/>
+<status status="PASS" start="2025-03-13T13:18:55.171971" elapsed="29.760137"/>
 </kw>
 <kw name="Then show message error" owner="generalFunct">
 <kw name="general return status" owner="generalFunct">
@@ -1561,24 +1561,24 @@ Without any arguments.</msg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:44:19.118040" elapsed="0.035659"/>
+<status status="PASS" start="2025-03-13T13:19:24.934772" elapsed="0.045292"/>
 </kw>
-<msg time="2025-03-13T08:44:19.153903" level="INFO">${res} = True</msg>
+<msg time="2025-03-13T13:19:24.980455" level="INFO">${res} = True</msg>
 <var>${res}</var>
 <arg>Wait Until Element Is Visible</arg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-03-13T08:44:19.117613" elapsed="0.036340"/>
+<status status="PASS" start="2025-03-13T13:19:24.934321" elapsed="0.046237"/>
 </kw>
 <return>
 <value>${res}</value>
-<status status="PASS" start="2025-03-13T08:44:19.154063" elapsed="0.000074"/>
+<status status="PASS" start="2025-03-13T13:19:24.980784" elapsed="0.000117"/>
 </return>
-<msg time="2025-03-13T08:44:19.154352" level="INFO">${label} = True</msg>
+<msg time="2025-03-13T13:19:24.981306" level="INFO">${label} = True</msg>
 <var>${label}</var>
 <arg>xpath=//div[@class='mb-20px']//parent::div/label[contains(text(), 'Nomor')]</arg>
-<status status="PASS" start="2025-03-13T08:44:19.116702" elapsed="0.037695"/>
+<status status="PASS" start="2025-03-13T13:19:24.933524" elapsed="0.047875"/>
 </kw>
 <if>
 <branch type="IF" condition="${label}">
@@ -1587,132 +1587,132 @@ Without any arguments.</msg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:44:19.155213" elapsed="0.027998"/>
+<status status="PASS" start="2025-03-13T13:19:24.982919" elapsed="0.036153"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-13T08:44:24.184690" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-03-13T13:19:30.020520" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-13T08:44:19.183686" elapsed="5.001373"/>
+<status status="PASS" start="2025-03-13T13:19:25.019322" elapsed="5.001423"/>
 </kw>
 <arg>${errMessageLabel}</arg>
-<status status="PASS" start="2025-03-13T08:44:19.154792" elapsed="5.030703"/>
+<status status="PASS" start="2025-03-13T13:19:24.982145" elapsed="5.038839"/>
 </kw>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:44:24.249151" level="INFO">${err} = No. handphone harus diawali dengan 08</msg>
+<msg time="2025-03-13T13:19:30.072059" level="INFO">${err} = No. handphone harus diawali dengan 08</msg>
 <var>${err}</var>
 <arg>${errMessageLabel}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-13T08:44:24.186094" elapsed="0.063309"/>
+<status status="PASS" start="2025-03-13T13:19:30.021353" elapsed="0.050950"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2025-03-13T08:44:24.250112" level="INFO">${err_text} = No. handphone harus diawali dengan 08</msg>
+<msg time="2025-03-13T13:19:30.073255" level="INFO">${err_text} = No. handphone harus diawali dengan 08</msg>
 <arg>${err_text}</arg>
 <arg>${err}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2025-03-13T08:44:24.249692" elapsed="0.000505"/>
+<status status="PASS" start="2025-03-13T13:19:30.072708" elapsed="0.000676"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${\n}Error Message : ${err}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-03-13T08:44:24.250418" elapsed="0.001021"/>
+<status status="PASS" start="2025-03-13T13:19:30.073713" elapsed="0.001587"/>
 </kw>
-<status status="PASS" start="2025-03-13T08:44:19.154529" elapsed="5.097099"/>
+<status status="PASS" start="2025-03-13T13:19:24.981654" elapsed="5.093936"/>
 </branch>
 <branch type="ELSE">
 <kw name="general Wait Until" owner="generalFunct">
 <arg>${errMessageLabel}</arg>
-<status status="NOT RUN" start="2025-03-13T08:44:24.252011" elapsed="0.000057"/>
+<status status="NOT RUN" start="2025-03-13T13:19:30.076255" elapsed="0.000096"/>
 </kw>
 <kw name="Get Text" owner="SeleniumLibrary">
 <var>${err}</var>
 <arg>${errMessageLabel}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-03-13T08:44:24.252256" elapsed="0.000046"/>
+<status status="NOT RUN" start="2025-03-13T13:19:30.076673" elapsed="0.000080"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
 <arg>${err_text}</arg>
 <arg>${err}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="NOT RUN" start="2025-03-13T08:44:24.252481" elapsed="0.000049"/>
+<status status="NOT RUN" start="2025-03-13T13:19:30.077089" elapsed="0.000089"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${\n}Error Message : ${err}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2025-03-13T08:44:24.252690" elapsed="0.000044"/>
+<status status="NOT RUN" start="2025-03-13T13:19:30.077460" elapsed="0.000082"/>
 </kw>
-<status status="NOT RUN" start="2025-03-13T08:44:24.251748" elapsed="0.001052"/>
+<status status="NOT RUN" start="2025-03-13T13:19:30.075819" elapsed="0.001909"/>
 </branch>
-<status status="PASS" start="2025-03-13T08:44:19.154499" elapsed="5.098361"/>
+<status status="PASS" start="2025-03-13T13:19:24.981596" elapsed="5.096270"/>
 </if>
-<status status="PASS" start="2025-03-13T08:44:19.115865" elapsed="5.137090"/>
+<status status="PASS" start="2025-03-13T13:19:24.932808" elapsed="5.145241"/>
 </kw>
 <kw name="And Should Be Equal" owner="BuiltIn">
 <arg>${err_text}</arg>
 <arg>No. handphone harus diawali dengan 08</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2025-03-13T08:44:24.253135" elapsed="0.000284"/>
+<status status="PASS" start="2025-03-13T13:19:30.078372" elapsed="0.000566"/>
 </kw>
-<status status="PASS" start="2025-03-13T08:43:49.258447" elapsed="34.995090"/>
+<status status="PASS" start="2025-03-13T13:18:55.113436" elapsed="34.965708"/>
 </kw>
 <kw name="End Web Test" owner="web_eProc" type="TEARDOWN">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-13T08:44:24.254666" level="INFO">Suite teardown initiated</msg>
+<msg time="2025-03-13T13:19:30.080978" level="INFO">Suite teardown initiated</msg>
 <arg>Suite teardown initiated</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-13T08:44:24.254495" elapsed="0.000255"/>
+<status status="PASS" start="2025-03-13T13:19:30.080772" elapsed="0.000297"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-03-13T08:44:24.254947" elapsed="2.212453"/>
+<status status="PASS" start="2025-03-13T13:19:30.081274" elapsed="2.204797"/>
 </kw>
 <doc>Closes the browser after all tests in the suite have run</doc>
-<status status="PASS" start="2025-03-13T08:44:24.254101" elapsed="2.213831"/>
+<status status="PASS" start="2025-03-13T13:19:30.080053" elapsed="2.206479"/>
 </kw>
 <doc>This scenario test User login with invalid no handphone</doc>
 <tag>1000s</tag>
 <tag>login invalid</tag>
 <tag>test</tag>
-<status status="PASS" start="2025-03-13T08:43:45.187959" elapsed="41.280806"/>
+<status status="PASS" start="2025-03-13T13:18:50.460413" elapsed="41.826996"/>
 </test>
 <test id="s1-t6" name="Test Login With No Handphone not Listed" line="37">
 <kw name="Begin Web Test" owner="web_eProc" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:44:26.478001" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<msg time="2025-03-13T13:19:32.295564" level="INFO">Opening browser 'headlesschrome' to base url 'about:blank'.</msg>
 <arg>about:blank</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-03-13T08:44:26.477222" elapsed="1.988165"/>
+<status status="PASS" start="2025-03-13T13:19:32.294818" elapsed="2.020329"/>
 </kw>
 <kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:44:28.466989" level="INFO">Executing JavaScript:
+<msg time="2025-03-13T13:19:34.316702" level="INFO">Executing JavaScript:
 document.body.style.transform = 'scale(0.67)'; document.body.style.transformOrigin = '0 0';
 Without any arguments.</msg>
 <arg>document.body.style.transform = 'scale(0.67)'; document.body.style.transformOrigin = '0 0';</arg>
 <doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2025-03-13T08:44:28.465994" elapsed="0.012555"/>
+<status status="PASS" start="2025-03-13T13:19:34.315733" elapsed="0.013682"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:44:28.479808" level="INFO">Opening url 'https://developer.1000saudara.com/project1000s'</msg>
+<msg time="2025-03-13T13:19:34.329935" level="INFO">Opening url 'https://developer.1000saudara.com/project1000s'</msg>
 <arg>${URL_DEV}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-03-13T08:44:28.478934" elapsed="5.823990"/>
+<status status="PASS" start="2025-03-13T13:19:34.329687" elapsed="4.401011"/>
 </kw>
-<status status="PASS" start="2025-03-13T08:44:26.475679" elapsed="7.827535"/>
+<status status="PASS" start="2025-03-13T13:19:32.293636" elapsed="6.437384"/>
 </kw>
 <kw name="User login with no handphone not listed" owner="login">
 <kw name="Given user visit E-Proc1000s Login Page" owner="pom_login_eProc">
 <kw name="Get Location" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:44:34.315255" level="INFO">${current_url} = https://developer.1000saudara.com/project1000s</msg>
+<msg time="2025-03-13T13:19:38.745622" level="INFO">${current_url} = https://developer.1000saudara.com/project1000s</msg>
 <var>${current_url}</var>
 <doc>Returns the current browser window URL.</doc>
-<status status="PASS" start="2025-03-13T08:44:34.304995" elapsed="0.010383"/>
+<status status="PASS" start="2025-03-13T13:19:38.733607" elapsed="0.012132"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-13T08:44:34.316287" level="INFO">Current Path: https://developer.1000saudara.com/project1000s</msg>
+<msg time="2025-03-13T13:19:38.746771" level="INFO">Current Path: https://developer.1000saudara.com/project1000s</msg>
 <arg>Current Path: ${current_url}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-13T08:44:34.315823" elapsed="0.000659"/>
+<status status="PASS" start="2025-03-13T13:19:38.746235" elapsed="0.000704"/>
 </kw>
 <kw name="general return status" owner="generalFunct">
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
@@ -1720,46 +1720,46 @@ Without any arguments.</msg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:44:34.318507" elapsed="0.706386"/>
+<status status="PASS" start="2025-03-13T13:19:38.749963" elapsed="0.527398"/>
 </kw>
-<msg time="2025-03-13T08:44:35.025107" level="INFO">${res} = True</msg>
+<msg time="2025-03-13T13:19:39.277866" level="INFO">${res} = True</msg>
 <var>${res}</var>
 <arg>Wait Until Element Is Visible</arg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-03-13T08:44:34.317938" elapsed="0.707220"/>
+<status status="PASS" start="2025-03-13T13:19:38.749267" elapsed="0.528758"/>
 </kw>
 <return>
 <value>${res}</value>
-<status status="PASS" start="2025-03-13T08:44:35.025291" elapsed="0.000084"/>
+<status status="PASS" start="2025-03-13T13:19:39.278327" elapsed="0.000185"/>
 </return>
-<msg time="2025-03-13T08:44:35.025594" level="INFO">${res} = True</msg>
+<msg time="2025-03-13T13:19:39.279128" level="INFO">${res} = True</msg>
 <var>${res}</var>
 <arg>${headerLogin}</arg>
-<status status="PASS" start="2025-03-13T08:44:34.316985" elapsed="0.708654"/>
+<status status="PASS" start="2025-03-13T13:19:38.748069" elapsed="0.531199"/>
 </kw>
 <while condition="${res} == $False">
 <iter>
 <kw name="Reload Page" owner="SeleniumLibrary">
 <doc>Simulates user reloading page.</doc>
-<status status="NOT RUN" start="2025-03-13T08:44:35.026217" elapsed="0.000049"/>
+<status status="NOT RUN" start="2025-03-13T13:19:39.280852" elapsed="0.000270"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2025-03-13T08:44:35.026445" elapsed="0.000044"/>
+<status status="NOT RUN" start="2025-03-13T13:19:39.281894" elapsed="0.000130"/>
 </kw>
 <kw name="general return status" owner="generalFunct">
 <var>${res}</var>
 <arg>${headerLogin}</arg>
-<status status="NOT RUN" start="2025-03-13T08:44:35.026698" elapsed="0.000049"/>
+<status status="NOT RUN" start="2025-03-13T13:19:39.282486" elapsed="0.000102"/>
 </kw>
-<status status="NOT RUN" start="2025-03-13T08:44:35.025737" elapsed="0.001076"/>
+<status status="NOT RUN" start="2025-03-13T13:19:39.279559" elapsed="0.003168"/>
 </iter>
-<status status="NOT RUN" start="2025-03-13T08:44:35.025734" elapsed="0.001138"/>
+<status status="NOT RUN" start="2025-03-13T13:19:39.279551" elapsed="0.003277"/>
 </while>
-<status status="PASS" start="2025-03-13T08:44:34.304523" elapsed="0.722445"/>
+<status status="PASS" start="2025-03-13T13:19:38.732799" elapsed="0.550225"/>
 </kw>
 <kw name="When input error no telp" owner="pom_login_eProc">
 <kw name="general Wait Until" owner="generalFunct">
@@ -1767,23 +1767,23 @@ Without any arguments.</msg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:44:35.028787" elapsed="0.030255"/>
+<status status="PASS" start="2025-03-13T13:19:39.286396" elapsed="0.033916"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-13T08:44:40.059791" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-03-13T13:19:44.321417" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-13T08:44:35.059325" elapsed="5.000702"/>
+<status status="PASS" start="2025-03-13T13:19:39.320571" elapsed="5.001072"/>
 </kw>
 <arg>${id}</arg>
-<status status="PASS" start="2025-03-13T08:44:35.028297" elapsed="5.032238"/>
+<status status="PASS" start="2025-03-13T13:19:39.285557" elapsed="5.036454"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:44:40.104175" level="INFO">Element 'xpath=//input[@id='TxtPhone']' is displayed.</msg>
+<msg time="2025-03-13T13:19:44.351552" level="INFO">Element 'xpath=//input[@id='TxtPhone']' is displayed.</msg>
 <arg>${id}</arg>
 <arg>${text_id}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:44:40.061459" elapsed="0.042923"/>
+<status status="PASS" start="2025-03-13T13:19:44.322432" elapsed="0.029321"/>
 </kw>
 <kw name="general return status" owner="generalFunct">
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
@@ -1791,24 +1791,24 @@ Without any arguments.</msg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:44:40.106076" elapsed="0.031433"/>
+<status status="PASS" start="2025-03-13T13:19:44.353637" elapsed="0.052058"/>
 </kw>
-<msg time="2025-03-13T08:44:40.137738" level="INFO">${res} = True</msg>
+<msg time="2025-03-13T13:19:44.406309" level="INFO">${res} = True</msg>
 <var>${res}</var>
 <arg>Wait Until Element Is Visible</arg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-03-13T08:44:40.105662" elapsed="0.032133"/>
+<status status="PASS" start="2025-03-13T13:19:44.353094" elapsed="0.053337"/>
 </kw>
 <return>
 <value>${res}</value>
-<status status="PASS" start="2025-03-13T08:44:40.137921" elapsed="0.000080"/>
+<status status="PASS" start="2025-03-13T13:19:44.406679" elapsed="0.000130"/>
 </return>
-<msg time="2025-03-13T08:44:40.138246" level="INFO">${res} = True</msg>
+<msg time="2025-03-13T13:19:44.407298" level="INFO">${res} = True</msg>
 <var>${res}</var>
 <arg>${inputPassword}</arg>
-<status status="PASS" start="2025-03-13T08:44:40.104893" elapsed="0.033405"/>
+<status status="PASS" start="2025-03-13T13:19:44.352245" elapsed="0.055178"/>
 </kw>
 <if>
 <branch type="IF" condition="${res}">
@@ -1817,112 +1817,112 @@ Without any arguments.</msg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:44:40.139223" elapsed="0.021153"/>
+<status status="PASS" start="2025-03-13T13:19:44.409539" elapsed="0.039292"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-13T08:44:45.161778" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-03-13T13:19:49.450426" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-13T08:44:40.160839" elapsed="5.001110"/>
+<status status="PASS" start="2025-03-13T13:19:44.449238" elapsed="5.001404"/>
 </kw>
 <arg>${id}</arg>
-<status status="PASS" start="2025-03-13T08:44:40.138786" elapsed="5.023347"/>
+<status status="PASS" start="2025-03-13T13:19:44.408370" elapsed="5.042532"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-13T08:44:49.163378" level="INFO">Slept 4 seconds.</msg>
+<msg time="2025-03-13T13:19:53.452612" level="INFO">Slept 4 seconds.</msg>
 <arg>4</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-13T08:44:45.162397" elapsed="4.001348"/>
+<status status="PASS" start="2025-03-13T13:19:49.451273" elapsed="4.001506"/>
 </kw>
 <kw name="user input text" owner="generalFunct">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:44:49.166266" elapsed="0.048448"/>
+<status status="PASS" start="2025-03-13T13:19:53.453598" elapsed="0.027368"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:44:49.215686" level="INFO">Typing text '08983186457345' into text field 'xpath=//input[@id='TxtPhone']'.</msg>
+<msg time="2025-03-13T13:19:53.481837" level="INFO">Typing text '08983186457345' into text field 'xpath=//input[@id='TxtPhone']'.</msg>
 <arg>${locator}</arg>
 <arg>${text}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-13T08:44:49.215124" elapsed="0.175516"/>
+<status status="PASS" start="2025-03-13T13:19:53.481224" elapsed="0.172249"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-13T08:44:54.391843" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-03-13T13:19:58.654642" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-13T08:44:49.390893" elapsed="5.001322"/>
+<status status="PASS" start="2025-03-13T13:19:53.653716" elapsed="5.001294"/>
 </kw>
 <arg>${id}</arg>
 <arg>${text_id}</arg>
-<status status="PASS" start="2025-03-13T08:44:49.164595" elapsed="5.228051"/>
+<status status="PASS" start="2025-03-13T13:19:53.453103" elapsed="5.202316"/>
 </kw>
 <kw name="user input password" owner="generalFunct">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:44:54.395122" elapsed="0.047240"/>
+<status status="PASS" start="2025-03-13T13:19:58.657640" elapsed="0.041378"/>
 </kw>
 <kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:44:54.443709" level="INFO">Typing password into text field 'xpath=//input[@id='pwd']'.</msg>
-<msg time="2025-03-13T08:44:54.497583" level="INFO">Temporally setting log level to: NONE</msg>
+<msg time="2025-03-13T13:19:58.700033" level="INFO">Typing password into text field 'xpath=//input[@id='pwd']'.</msg>
+<msg time="2025-03-13T13:19:58.757911" level="INFO">Temporally setting log level to: NONE</msg>
 <arg>${locator}</arg>
 <arg>${text}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-13T08:44:54.442939" elapsed="0.149236"/>
+<status status="PASS" start="2025-03-13T13:19:58.699440" elapsed="0.133585"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-13T08:44:59.593384" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-03-13T13:20:03.834256" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-13T08:44:54.592624" elapsed="5.000957"/>
+<status status="PASS" start="2025-03-13T13:19:58.833291" elapsed="5.001340"/>
 </kw>
 <arg>${pass}</arg>
 <arg>${text_pass}</arg>
-<status status="PASS" start="2025-03-13T08:44:54.393599" elapsed="5.200202"/>
+<status status="PASS" start="2025-03-13T13:19:58.656164" elapsed="5.179090"/>
 </kw>
 <kw name="user click element" owner="generalFunct">
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-13T08:45:04.595937" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-03-13T13:20:08.839120" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-13T08:44:59.594900" elapsed="5.001404"/>
+<status status="PASS" start="2025-03-13T13:20:03.838013" elapsed="5.001478"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${element}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:45:04.596974" elapsed="0.047910"/>
+<status status="PASS" start="2025-03-13T13:20:08.840234" elapsed="0.057006"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:45:04.645617" level="INFO">Clicking element 'xpath=//button[@type='button']//span[contains(text(), 'Masuk')]//ancestor::button'.</msg>
-<msg time="2025-03-13T08:45:04.772113" level="INFO">${clickElement} = None</msg>
+<msg time="2025-03-13T13:20:08.898091" level="INFO">Clicking element 'xpath=//button[@type='button']//span[contains(text(), 'Masuk')]//ancestor::button'.</msg>
+<msg time="2025-03-13T13:20:09.033418" level="INFO">${clickElement} = None</msg>
 <var>${clickElement}</var>
 <arg>${element}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-13T08:45:04.645223" elapsed="0.126962"/>
+<status status="PASS" start="2025-03-13T13:20:08.897633" elapsed="0.135913"/>
 </kw>
 <return>
 <value>${clickElement}</value>
-<status status="PASS" start="2025-03-13T08:45:04.772306" elapsed="0.000089"/>
+<status status="PASS" start="2025-03-13T13:20:09.033813" elapsed="0.000125"/>
 </return>
 <arg>${buttonMasuk}</arg>
-<status status="PASS" start="2025-03-13T08:44:59.594219" elapsed="5.178368"/>
+<status status="PASS" start="2025-03-13T13:20:03.836633" elapsed="5.197687"/>
 </kw>
-<status status="PASS" start="2025-03-13T08:44:40.138451" elapsed="24.634207"/>
+<status status="PASS" start="2025-03-13T13:19:44.407737" elapsed="24.626738"/>
 </branch>
 <branch type="ELSE">
 <kw name="user visit E-Proc1000s Login Page" owner="pom_login_eProc">
-<status status="NOT RUN" start="2025-03-13T08:45:04.773287" elapsed="0.000119"/>
+<status status="NOT RUN" start="2025-03-13T13:20:09.034943" elapsed="0.000060"/>
 </kw>
-<status status="NOT RUN" start="2025-03-13T08:45:04.772731" elapsed="0.000764"/>
+<status status="NOT RUN" start="2025-03-13T13:20:09.034595" elapsed="0.000478"/>
 </branch>
-<status status="PASS" start="2025-03-13T08:44:40.138414" elapsed="24.635156"/>
+<status status="PASS" start="2025-03-13T13:19:44.407664" elapsed="24.627700"/>
 </if>
 <arg>${inputUsername}</arg>
 <arg>08983186457345</arg>
 <arg>${inputPassword}</arg>
 <arg>${PASSWORD}</arg>
-<status status="PASS" start="2025-03-13T08:44:35.027273" elapsed="29.746415"/>
+<status status="PASS" start="2025-03-13T13:19:39.283622" elapsed="29.751940"/>
 </kw>
 <kw name="Then show message error" owner="generalFunct">
 <kw name="general return status" owner="generalFunct">
@@ -1931,24 +1931,24 @@ Without any arguments.</msg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:45:04.775833" elapsed="0.027340"/>
+<status status="PASS" start="2025-03-13T13:20:09.039413" elapsed="0.069593"/>
 </kw>
-<msg time="2025-03-13T08:45:04.803391" level="INFO">${res} = True</msg>
+<msg time="2025-03-13T13:20:09.109289" level="INFO">${res} = True</msg>
 <var>${res}</var>
 <arg>Wait Until Element Is Visible</arg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-03-13T08:45:04.775569" elapsed="0.027874"/>
+<status status="PASS" start="2025-03-13T13:20:09.038669" elapsed="0.070687"/>
 </kw>
 <return>
 <value>${res}</value>
-<status status="PASS" start="2025-03-13T08:45:04.803551" elapsed="0.000074"/>
+<status status="PASS" start="2025-03-13T13:20:09.109509" elapsed="0.000097"/>
 </return>
-<msg time="2025-03-13T08:45:04.803833" level="INFO">${label} = True</msg>
+<msg time="2025-03-13T13:20:09.109918" level="INFO">${label} = True</msg>
 <var>${label}</var>
 <arg>xpath=//div[@class='mb-20px']//parent::div/label[contains(text(), 'Nomor')]</arg>
-<status status="PASS" start="2025-03-13T08:45:04.775145" elapsed="0.028732"/>
+<status status="PASS" start="2025-03-13T13:20:09.037490" elapsed="0.072483"/>
 </kw>
 <if>
 <branch type="IF" condition="${label}">
@@ -1957,95 +1957,95 @@ Without any arguments.</msg>
 <arg>${locator}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-13T08:45:04.804680" elapsed="0.746763"/>
+<status status="PASS" start="2025-03-13T13:20:09.111012" elapsed="0.680755"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-13T08:45:10.552681" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-03-13T13:20:14.793206" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-13T08:45:05.551777" elapsed="5.001096"/>
+<status status="PASS" start="2025-03-13T13:20:09.792100" elapsed="5.001783"/>
 </kw>
 <arg>${errMessageLabel}</arg>
-<status status="PASS" start="2025-03-13T08:45:04.804270" elapsed="5.748790"/>
+<status status="PASS" start="2025-03-13T13:20:09.110564" elapsed="5.684130"/>
 </kw>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-03-13T08:45:10.610750" level="INFO">${err} = No. handphone tidak terdaftar</msg>
+<msg time="2025-03-13T13:20:14.847679" level="INFO">${err} = No. handphone tidak terdaftar</msg>
 <var>${err}</var>
 <arg>${errMessageLabel}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-13T08:45:10.553334" elapsed="0.057532"/>
+<status status="PASS" start="2025-03-13T13:20:14.796589" elapsed="0.051208"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2025-03-13T08:45:10.611737" level="INFO">${err_text} = No. handphone tidak terdaftar</msg>
+<msg time="2025-03-13T13:20:14.848874" level="INFO">${err_text} = No. handphone tidak terdaftar</msg>
 <arg>${err_text}</arg>
 <arg>${err}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2025-03-13T08:45:10.611233" elapsed="0.000631"/>
+<status status="PASS" start="2025-03-13T13:20:14.848213" elapsed="0.000799"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${\n}Error Message : ${err}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-03-13T08:45:10.612147" elapsed="0.001446"/>
+<status status="PASS" start="2025-03-13T13:20:14.849303" elapsed="0.001004"/>
 </kw>
-<status status="PASS" start="2025-03-13T08:45:04.804010" elapsed="5.809885"/>
+<status status="PASS" start="2025-03-13T13:20:09.110202" elapsed="5.740302"/>
 </branch>
 <branch type="ELSE">
 <kw name="general Wait Until" owner="generalFunct">
 <arg>${errMessageLabel}</arg>
-<status status="NOT RUN" start="2025-03-13T08:45:10.614547" elapsed="0.000097"/>
+<status status="NOT RUN" start="2025-03-13T13:20:14.850931" elapsed="0.000064"/>
 </kw>
 <kw name="Get Text" owner="SeleniumLibrary">
 <var>${err}</var>
 <arg>${errMessageLabel}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-03-13T08:45:10.614983" elapsed="0.000076"/>
+<status status="NOT RUN" start="2025-03-13T13:20:14.851214" elapsed="0.000047"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
 <arg>${err_text}</arg>
 <arg>${err}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="NOT RUN" start="2025-03-13T08:45:10.615338" elapsed="0.000071"/>
+<status status="NOT RUN" start="2025-03-13T13:20:14.851431" elapsed="0.000042"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${\n}Error Message : ${err}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2025-03-13T08:45:10.615656" elapsed="0.000067"/>
+<status status="NOT RUN" start="2025-03-13T13:20:14.851621" elapsed="0.000058"/>
 </kw>
-<status status="NOT RUN" start="2025-03-13T08:45:10.614118" elapsed="0.001708"/>
+<status status="NOT RUN" start="2025-03-13T13:20:14.850627" elapsed="0.001117"/>
 </branch>
-<status status="PASS" start="2025-03-13T08:45:04.803974" elapsed="5.811945"/>
+<status status="PASS" start="2025-03-13T13:20:09.110151" elapsed="5.741647"/>
 </if>
-<status status="PASS" start="2025-03-13T08:45:04.774490" elapsed="5.841572"/>
+<status status="PASS" start="2025-03-13T13:20:09.036419" elapsed="5.815471"/>
 </kw>
 <kw name="And Should Be Equal" owner="BuiltIn">
 <arg>${err_text}</arg>
 <arg>No. handphone tidak terdaftar</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2025-03-13T08:45:10.616340" elapsed="0.000433"/>
+<status status="PASS" start="2025-03-13T13:20:14.852062" elapsed="0.000282"/>
 </kw>
-<status status="PASS" start="2025-03-13T08:44:34.303854" elapsed="36.313105"/>
+<status status="PASS" start="2025-03-13T13:19:38.731765" elapsed="36.120690"/>
 </kw>
 <kw name="End Web Test" owner="web_eProc" type="TEARDOWN">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-13T08:45:10.618660" level="INFO">Suite teardown initiated</msg>
+<msg time="2025-03-13T13:20:14.853538" level="INFO">Suite teardown initiated</msg>
 <arg>Suite teardown initiated</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-13T08:45:10.618412" elapsed="0.000395"/>
+<status status="PASS" start="2025-03-13T13:20:14.853381" elapsed="0.000238"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-03-13T08:45:10.619104" elapsed="2.203890"/>
+<status status="PASS" start="2025-03-13T13:20:14.853805" elapsed="2.189270"/>
 </kw>
 <doc>Closes the browser after all tests in the suite have run</doc>
-<status status="PASS" start="2025-03-13T08:45:10.617786" elapsed="2.205677"/>
+<status status="PASS" start="2025-03-13T13:20:14.853002" elapsed="2.190573"/>
 </kw>
 <doc>This scenario test User login with no handphone not listed</doc>
 <tag>1000s</tag>
 <tag>login invalid</tag>
 <tag>test</tag>
-<status status="PASS" start="2025-03-13T08:44:26.472770" elapsed="46.351520"/>
+<status status="PASS" start="2025-03-13T13:19:32.291477" elapsed="44.752907"/>
 </test>
-<status status="PASS" start="2025-03-13T08:41:08.427487" elapsed="244.401524"/>
+<status status="PASS" start="2025-03-13T13:16:08.777756" elapsed="248.271458"/>
 </suite>
 <statistics>
 <total>
