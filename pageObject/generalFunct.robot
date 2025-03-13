@@ -84,6 +84,19 @@ show message error
         Log To Console    ${\n}Error Message : ${err}
     END
 
+reload_pages
+    [Arguments]    ${location}
+     FOR    ${counter}    IN RANGE    1    3
+        ${res}    general return status    ${location}
+        IF    ${res}
+            BREAK
+        ELSE
+            Reload Page
+            ${res}    general return status    ${location}
+        END
+        
+    END
+
 # Error State General for Buat Project
 show message error project
     ${label}    general return status    ${errMessageFormProject}
