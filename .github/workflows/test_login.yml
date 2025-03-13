@@ -118,7 +118,8 @@ jobs:
           pip install -r requirements.txt
    
       - name: Test with RobotFramework
-        run: robot .  
+        # run: robot .  
+        run: robot --outputdir results testSuite/Tim_OP/test_login.robot | tee robot_output.log
          
       - name: Test Report Generation
         uses: actions/upload-artifact@v4
