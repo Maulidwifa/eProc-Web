@@ -13,8 +13,8 @@ ${URL_BETA}                 https://beta.1000saudara.com/project1000s
 *** Keywords ***
 Begin Web Test
     Open Browser                    about:blank            ${BROWSER}
-    Execute JavaScript    document.body.style.transform = 'scale(0.67)'; document.body.style.transformOrigin = '0 0';
-    # Maximize Browser Window
+    # Execute JavaScript    document.body.style.transform = 'scale(0.67)'; document.body.style.transformOrigin = '0 0';
+    Maximize Browser Window
     Go To                           ${URL_DEV}
 
 End Web Test
