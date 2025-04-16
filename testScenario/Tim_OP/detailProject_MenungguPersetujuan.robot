@@ -15,9 +15,6 @@ User change data alamat project
     Given User go to detail Project Page
     When user ubah project
     And user ubah alamat project
-    And user click element    ${buttonSimpan}
-    Then show pop up dialog    ${ubahProject_MenungguPersetujuan}
-    # And button accept on dialog form ubah    Simpan
 
 User change data Start Date project
     Given User go to detail Project Page

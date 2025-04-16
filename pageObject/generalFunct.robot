@@ -64,6 +64,11 @@ general Wait Until
     Wait Until Element Is Visible    ${locator}    timeout=5s
     Sleep    5
 
+general wait until enable
+    [Arguments]    ${locator}
+    Wait Until Element Is Enabled     ${locator}    timeout=5s
+    Sleep    5
+
 general return status
     [Arguments]    ${locator}
     ${res}    Run Keyword And Return Status    Wait Until Element Is Visible    ${locator}    timeout=5s

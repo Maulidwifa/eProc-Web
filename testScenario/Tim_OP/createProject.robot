@@ -12,7 +12,7 @@ User click Buat Project
     And user choose kecamatan list
     And user choose address detail
     And user scroll element    ${PICfinance}
-    And tanggal mulai
+    And tanggal mulai    ${nextMonth}
     And tanggal berakhir    ${nextMonth}
     And user input anggaranMax
     And user pilih PIC
@@ -24,7 +24,7 @@ User create project without fill Name Project
     And user choose kecamatan list
     And user choose address detail
     And user scroll element    ${PICfinance}
-    And tanggal mulai
+    And tanggal mulai    ${nextMonth}
     And tanggal berakhir    ${nextMonth}
     And user input anggaranMax
     And user pilih PIC
@@ -37,7 +37,7 @@ User create project without fill Alamat Project
     And user input nama project
     And user choose address detail without fill kecamatan
     And user scroll element    ${PICfinance}
-    And tanggal mulai
+    And tanggal mulai    ${nextMonth}
     And tanggal berakhir    ${nextMonth}
     And user input anggaranMax
     And user pilih PIC
@@ -50,7 +50,7 @@ User create project without fill detail Alamat Project
     And user input nama project
     And user choose kecamatan list
     And user scroll element    ${PICfinance}
-    And tanggal mulai
+    And tanggal mulai    ${nextMonth}
     And tanggal berakhir    ${nextMonth}
     And user input anggaranMax
     And user pilih PIC
@@ -77,7 +77,7 @@ User create project without choose PIC Admin
     And user choose kecamatan list
     And user choose address detail
     And user scroll element    ${PICfinance}
-    And tanggal mulai
+    And tanggal mulai    ${nextMonth}
     And tanggal berakhir    ${nextMonth}
     And user input anggaranMax
     And user without selecting one of the PICs    ${fieldPICmanager}    ${fieldPICfinance}    ${2}    ${3}
@@ -91,7 +91,7 @@ User create project without choose PIC Manager
     And user choose kecamatan list
     And user choose address detail
     And user scroll element    ${PICfinance}
-    And tanggal mulai
+    And tanggal mulai    ${nextMonth}
     And tanggal berakhir    ${nextMonth}
     And user input anggaranMax
     And user without selecting one of the PICs    ${fieldPICadmin}    ${fieldPICfinance}    ${1}    ${3}
@@ -105,7 +105,7 @@ User create project without choose PIC Finance
     And user choose kecamatan list
     And user choose address detail
     And user scroll element    ${PICfinance}
-    And tanggal mulai
+    And tanggal mulai    ${nextMonth}
     And tanggal berakhir    ${nextMonth}
     And user input anggaranMax
     And user without selecting one of the PICs    ${fieldPICadmin}    ${fieldPICmanager}    ${1}    ${2}
@@ -119,7 +119,7 @@ User Create project with name has been Used
     And user choose kecamatan list
     And user choose address detail
     And user scroll element    ${PICfinance}
-    And tanggal mulai
+    And tanggal mulai     ${nextMonth}
     And tanggal berakhir    ${nextMonth}
     And user input anggaranMax
     And user pilih PIC
@@ -134,7 +134,7 @@ User Create project with the end date must be after the start date
     And user choose kecamatan list
     And user choose address detail
     And user scroll element    ${PICfinance}
-    And tanggal mulai
+    And tanggal mulai    ${nextMonth}
     And tanggal berakhir    ${prevMonth}
     And user input anggaranMax
     And user pilih PIC
@@ -149,7 +149,7 @@ User choose PIC same to each other
     And user choose kecamatan list
     And user choose address detail
     And user scroll element    ${PICfinance}
-    And tanggal mulai
+    And tanggal mulai    ${nextMonth}
     And tanggal berakhir    ${nextMonth}
     And user input anggaranMax
     And choose same PIC

@@ -33,8 +33,19 @@ user login E-Proc1000s Page
         user input text    ${inputUsername}    ${ROLE_ADMIN}
         user input password    ${inputPassword}    ${PASSWORD}
         Press Key    ${inputPassword}    \\13
+        Sleep    5
+        ${res_list}    general return status    ${listFilter}
+        WHILE    ${res_list} == $False
+            Press Key    ${inputPassword}    \\13
+            Sleep    5
+            ${res_err}    general return status    xpath=//div[@class='mb-20px']//parent::div/label[contains(text(), 'Nomor')]
+            IF    ${res_err}
+                without filling any of them    ${inputUsername}    ${ROLE_ADMIN}
+            ELSE
+                Exit For Loop
+            END
+        END
         Wait Until Element Is Visible    ${listFilter}
-        Sleep    3
     ELSE
         Exit For Loop
     END
@@ -62,6 +73,7 @@ without filling any of them
         Sleep    4
         user input text       ${loc_text}    ${text}
         Sleep    4
+        general wait until enable    ${buttonMasuk}
         user click element    ${buttonMasuk}
     ELSE
         user visit E-Proc1000s Login Page

@@ -72,8 +72,14 @@ user choose address detail without fill kecamatan
     user input text    ${alamatDetail}    ${kecamatan_name}
 
 tanggal mulai
+    [Arguments]    ${changeMonth}
     user click element    ${tanggalMulai_datePicker}
-    user click element    ${nextMonth}
+    # user click element    ${nextMonth}
+    # user click element    ${nextMonth}
+    FOR    ${counter}    IN RANGE    1    4
+        user click element    ${changeMonth}
+        Sleep    3
+    END
     Get Random Angka    28
     ${textHeaderCalendar}    Get Text    ${headerCalendar}
     user click element    xpath=//button[contains(@aria-label, '${randomAngka} ${textHeaderCalendar}')]

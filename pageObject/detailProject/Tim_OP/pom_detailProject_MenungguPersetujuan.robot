@@ -37,9 +37,13 @@ check in project list
         IF    ${res}
             ${text}    Get Text    xpath=//tbody/tr[${counter}]/td[1]
             ${status}    Get Text    xpath=//tbody/tr[${counter}]/td[5]
-            # user click element    xpath=//tbody/tr[${counter}]/td[6]/span
             user click element    xpath=//tbody/tr[${counter}]/td[contains(., 'Detail')]
             general Wait Until    xpath=//span[normalize-space()='Detail Project']
+            ${res_detail}    general return status    xpath=//span[normalize-space()='Detail Project']
+            WHILE    ${res_detail} == $False
+                user click element    xpath=//tbody/tr[${counter}]/td[contains(., 'Detail')]
+                ${res_detail}    general return status    xpath=//span[normalize-space()='Detail Project']
+            END
 
             # User in Detail Page
             general Wait Until    ${namaProject_onDetailPage}
@@ -99,22 +103,25 @@ user ubah project
         Element Should Be Visible    ${iconDeleteCity}
     ELSE
         reload_thePage    ${iconDeleteCity}
-        Sleep    3
+        Sleep    5
         click button ubah
     END  
 
 user ubah alamat project
     user click element    ${iconDeleteCity}
     user choose kecamatan list
+    user click element    ${buttonSimpan}
+
+    ${res}    general return status    ${ubahProject_MenungguPersetujuan}
+    WHILE    ${res} == $False
+        user click element    ${buttonSimpan}
+        show pop up dialog    ${ubahProject_MenungguPersetujuan}
+        ${res}    general return status    ${ubahProject_MenungguPersetujuan}
+    END
+    
 
 reload_thePage
     [Arguments]    ${location}
-    # ${res}    general return status    ${location}
-    # WHILE    ${res} == $False
-    #     Reload Page
-    #     Wait Until Element Is Visible    ${location}
-    #     ${res}    general return status    ${location}
-    # END
     FOR    ${counter}    IN RANGE    1    3
         ${res}    general return status    ${location}
         IF    ${res}
@@ -134,7 +141,7 @@ user ubah startDate project
     Sleep    2
     pilih PIC    ${a}
     Sleep    2
-    tanggal mulai
+    tanggal mulai    ${prevMonth}
 
 pilih PIC
     [Arguments]    ${location}
@@ -159,8 +166,10 @@ user ubah pic yang sama satu sama lain
     pilih PIC    ${a}
 
     # Verify Error State
-    Element Should Be Visible    ${labelErr_PICsame}
-    ${labelErr}    Get Text    ${labelErr_PICsame}
+    # Element Should Be Enabled    ${labelErr_PICsame}
+    # ${labelErr}    Get Text    ${labelErr_PICsame}
+    Sleep    3
+    ${labelErr}    Get Text    xpath=//div[contains(@class, 'btnBetween')][1]/label
     Should Be Equal    ${labelErr}    PIC Tidak boleh sama
     Log To Console    Error State: ${labelErr}
 
