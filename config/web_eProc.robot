@@ -17,8 +17,13 @@ Begin Web Test
     Maximize Browser Window
     Go To                           ${URL_DEV}
 
+Remove file Report PNG
+   @{png_file}=    List Directory    report/    *.png    absolute=${True}
+    Remove Files    @{png_file}
+
 End Web Test
     # Close Browser
     [Documentation]    Closes the browser after all tests in the suite have run
     Log    Suite teardown initiated
     Close Browser
+    Remove file Report PNG

@@ -36,4 +36,3 @@ Tim OP can Changes Data Name Project with name has been used
     [Documentation]            This scenario test User can change data name project with name has been used
     [Tags]                     1000s    detail_project    test
     User change name project with name has been used
-
