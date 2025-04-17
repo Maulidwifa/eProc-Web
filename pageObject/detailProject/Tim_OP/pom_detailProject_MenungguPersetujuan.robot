@@ -156,8 +156,12 @@ pilih PIC
 
 user ubah tanggal akhir sebelum tanggal mulai
     user ubah startDate project
-    tanggal berakhir    ${prevMonth}
-
+    FOR    ${counter}    IN RANGE    1    4
+        tanggal mulai        ${nextMonth}
+        tanggal berakhir     ${prevMonth}
+        
+    END
+    
 user ubah pic yang sama satu sama lain
     general Wait Until    ${inputNamaProject}
     Scroll Element Into View    ${fieldPICmanager}
