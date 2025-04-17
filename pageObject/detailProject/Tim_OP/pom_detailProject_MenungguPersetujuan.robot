@@ -185,5 +185,11 @@ user ubah nama project dengan nama yang sudah digunakan
     Run Keyword If    '${nameProject_MenungguPersetujuan}' == '${projectName}'    Get list Project Manajemen
     ${nameUsed}    Replace String    ${nameProject_MenungguPersetujuan}    ${nameProject_MenungguPersetujuan}    ${projectName}
     user input text    ${inputNamaProject}    ${nameUsed}
+    ${textName}    Get Text    ${inputNamaProject}
+    IF    "${textName}" == "${nameUsed}" 
+        Exit For Loop    # ini gimmik aja
+    ELSE
+        user input text    ${inputNamaProject}    ${nameUsed}
+    END
     detail information on detail page
     
