@@ -19,7 +19,7 @@ User change data alamat project
 User change data Start Date project
     Given User go to detail Project Page
     When user ubah project
-    And user ubah startDate project
+    And user ubah startDate project    ${prevMonth}
     And user click element    ${buttonSimpan}
     Then show pop up dialog    ${ubahProject_MenungguPersetujuan}
     # And button accept on dialog form ubah    Simpan

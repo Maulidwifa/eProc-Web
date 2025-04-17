@@ -135,6 +135,7 @@ reload_thePage
     END
 
 user ubah startDate project
+    [Arguments]    ${for_tanggal}
     general Wait Until    ${inputNamaProject}
     Scroll Element Into View    ${fieldPICmanager}
     ${a}    Get Text    ${fieldPICmanager}
@@ -142,7 +143,7 @@ user ubah startDate project
     Sleep    2
     pilih PIC    ${a}
     Sleep    2
-    tanggal mulai    ${prevMonth}
+    tanggal mulai    ${for_tanggal}
 
 pilih PIC
     [Arguments]    ${location}
@@ -155,13 +156,9 @@ pilih PIC
     END
 
 user ubah tanggal akhir sebelum tanggal mulai
-    user ubah startDate project
-    FOR    ${counter}    IN RANGE    1    4
-        tanggal mulai        ${nextMonth}
-        tanggal berakhir     ${prevMonth}
-        
-    END
-    
+    user ubah startDate project    ${nextMonth}
+    # tanggal berakhir    ${prevMonth}    #di comment dulu
+
 user ubah pic yang sama satu sama lain
     general Wait Until    ${inputNamaProject}
     Scroll Element Into View    ${fieldPICmanager}
