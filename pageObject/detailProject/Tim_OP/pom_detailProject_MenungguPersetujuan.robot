@@ -38,7 +38,7 @@ check in project list
             ${text}    Get Text    xpath=//tbody/tr[${counter}]/td[1]
             ${status}    Get Text    xpath=//tbody/tr[${counter}]/td[5]
             # user click element    xpath=//tbody/tr[${counter}]/td[contains(., 'Detail')]/span
-            user click element    xpath=//tbody/tr[3]/td[6]/span/span
+            user click element    xpath=//tbody/tr[${counter}]/td[6]/span/span
             general Wait Until    xpath=//span[normalize-space()='Detail Project']
             ${res_detail}    general return status    xpath=//span[normalize-space()='Detail Project']
             WHILE    ${res_detail} == $False

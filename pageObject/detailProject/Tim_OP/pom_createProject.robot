@@ -84,6 +84,14 @@ tanggal mulai
     ${textHeaderCalendar}    Get Text    ${headerCalendar}
     user click element    xpath=//button[contains(@aria-label, '${randomAngka} ${textHeaderCalendar}')]
 
+tanggal mulai (1x)
+    user click element    ${tanggalMulai_datePicker}
+    user click element    ${nextMonth}
+    Get Random Angka    28
+    Sleep    3s
+    ${textHeaderCalendar}    Get Text    ${headerCalendar}
+    user click element    xpath=//button[contains(@aria-label, '${randomAngka} ${textHeaderCalendar}')]
+
 Pilih tanggal hari ini
     Tanggal Hari ini
     ${textHeaderCalendar}    Get Text    ${headerCalendar}
@@ -100,6 +108,18 @@ tanggal berakhir
     general Wait Until    xpath=//button[contains(@aria-label, '${randomAngka} ${textHeaderCalendar}')]
     user click element    xpath=//button[contains(@aria-label, '${randomAngka} ${textHeaderCalendar}')]
 
+tanggal berakhir (3x)
+    [Arguments]    ${changeMonth}
+    user click element    ${tanggalBerakhir_datePicker}
+    # user click element    ${nextMonth}
+    FOR    ${counter}    IN RANGE    1    4
+        user click element    ${changeMonth}
+        Sleep    3
+    END
+    Get Random Angka    28
+    ${textHeaderCalendar}    Get Text    ${headerCalendar}
+    user click element    xpath=//button[contains(@aria-label, '${randomAngka} ${textHeaderCalendar}')]
+
 user input anggaranMax
     Random angka
     user input text    ${anggaranMax}    ${angka_acak}
@@ -113,38 +133,35 @@ user pilih seluruh pic
     FOR    ${counter}    IN RANGE    1    4
         IF    '${counter}' == '1'
             user click element    ${fieldPICadmin}
-            Random Number    ${totalUser}
-            func PIC    ${False}
-            varif func PIC    ${counter}
+            func PIC   ${counter}
+            verif func PIC    ${counter}
             Log To Console    PIC Admim : ${namePICtext}
+            ${PIC_admin}    Set Variable    ${namePICtext}
         ELSE IF    '${counter}' == '2'
             Scroll Element Into View    ${fieldPICfinance}
             user click element    ${fieldPICmanager}
-            Random Number    ${totalUser}
-            ${res}    general return status    xpath=//div[@class='dvContentSearch'][${randomAngka}]/p[@style='color:#4C4DDC']
+            Get list User Management (SITE)
+            WHILE    "${name_user_management}" == "${namePICtext}"
+                Log    ${namePICtext}
+                Get list User Management (SITE)
+            END
 
-            func PIC    ${res}
-            varif func PIC    ${counter}
+            func PIC   ${counter}
+            verif func PIC    ${counter}
             Log To Console    PIC Manager : ${namePICtext}
+            ${PIC_manager}    Set Variable    ${namePICtext}
         ELSE IF    '${counter}' == '3'
             user click element    ${fieldPICfinance} 
-            Random Number    ${totalUser}
-            ${res}    general return status    xpath=//div[@class='dvContentSearch'][${randomAngka}]/p[@style='color:#4C4DDC']
-            IF    ${res}
-                Random Number    ${totalUser}
-                ${res}    general return status    xpath=//div[@class='dvContentSearch'][${randomAngka}]/p[@style='color:#4C4DDC']
-        
-                func PIC    ${res}
-                varif func PIC    ${counter}
-                Log To Console    PIC Finance : ${namePICtext}
-            ELSE
-                Scroll Element Into View    xpath=//div[@class='dvContentSearch'][${randomAngka}]
-                ${namePICtext}    Get Text    xpath=//div[@class='dvContentSearch'][${randomAngka}]/p[contains(@class,'txtLgMedium')]
-                Set Global Variable    ${namePICtext}    ${namePICtext}
-                user click element    xpath=//div[@class='dvContentSearch'][${randomAngka}]
-                varif func PIC    ${counter}
-                Log To Console    PIC Finance : ${namePICtext}
+           
+            Get list User Management (SITE)
+            WHILE    '${name_user_management}' == '${PIC_manager}' and '${name_user_management}' == '${PIC_admin}'
+                Get list User Management (SITE)
+                Log    ${name_user_management}
             END
+
+            func PIC   ${counter}
+            verif func PIC    ${counter}
+            Log To Console    PIC Finance : ${namePICtext}
         END
     END
 
@@ -155,16 +172,17 @@ user without selecting one of the PICs
         IF    '${counter}' == '${start1}'
             user click element    ${pic1}
             Random Number    ${totalUser}
-            func PIC    ${False}
-            varif func PIC    ${counter}
+            func PIC   ${counter} 
+            verif func PIC    ${counter}
             Log To Console    Nama PIC : ${namePICtext}
         ELSE IF    '${counter}' == '${start2}'
+            Get list User Management (SITE)
             Scroll Element Into View    ${fieldPICfinance}
             user click element    ${pic2}
             Random Number    ${totalUser}
             ${res}    general return status    xpath=//div[@class='dvContentSearch'][${randomAngka}]/p[@style='color:#4C4DDC']
-            func PIC    ${res}
-            varif func PIC    ${counter}
+            func PIC   ${counter}
+            verif func PIC    ${counter}
             Log To Console    Nama PIC : ${namePICtext}
         ELSE
             Get Text    ${fieldPICadmin}
@@ -173,34 +191,36 @@ user without selecting one of the PICs
     END
 
 func PIC
-    [Arguments]    ${res}
+    [Arguments]    ${counter}
     
     general Wait Until    ${listPIC}
-    Sleep    3
-    Scroll Element Into View    xpath=//div[@class='dvContentSearch'][${randomAngka}]
-    IF    ${res}
-        Random Number    ${totalUser}
-        Scroll Element Into View    xpath=//div[@class='dvContentSearch'][${randomAngka}]
-        ${namePICtext}    Get Text    xpath=//div[@class='dvContentSearch'][${randomAngka}]/p[contains(@class,'txtLgMedium')]
+    
+    user input text        xpath=//input[@id='searchUser']   ${name_user_management}
+    ${namePICtext}    Get Text    xpath=//p[normalize-space()='${name_user_management}']
+    Set Global Variable    ${namePICtext}    ${namePICtext}
+    user click element     xpath=//p[normalize-space()='${namePICtext}']
+    
+    ${textSelect}    Get Text    xpath=//p[contains(text(), 'Admin')]/following-sibling::div[${counter}]//span//span
+    IF    '${textSelect}' == '-Select-'
+        user click element     xpath=//p[contains(text(), 'Admin')]/following-sibling::div[${counter}]/button
+        user input text        xpath=//input[@id='searchUser']   ${name_user_management}
+        ${namePICtext}    Get Text    xpath=//p[normalize-space()='${name_user_management}']
         Set Global Variable    ${namePICtext}    ${namePICtext}
-        user click element    xpath=//div[@class='dvContentSearch'][${randomAngka}]
-    ELSE
-        Scroll Element Into View    xpath=//div[@class='dvContentSearch'][${randomAngka}]
-        ${namePICtext}    Get Text    xpath=//div[@class='dvContentSearch'][${randomAngka}]/p[contains(@class,'txtLgMedium')]
-        Set Global Variable    ${namePICtext}    ${namePICtext}
-        user click element    xpath=//div[@class='dvContentSearch'][${randomAngka}]
+        user click element     xpath=//p[normalize-space()='${namePICtext}']
     END
 
-varif func PIC
+    
+verif func PIC
     [Arguments]    ${counter}
     IF    '${counter}' == '1'
-        ${textPICadmin}    Get Text        xpath=//p[contains(text(), 'Admin')]/following-sibling::div[${counter}]/button/span//span
+        ${textPICadmin}    Get Text          ${fieldPICadmin}//span//span
+        # //p[contains(text(), 'Admin')]/following-sibling::div[1]/button/span//span
         Should Be Equal    ${namePICtext}    ${textPICadmin}
     ELSE IF    '${counter}' == '2'
-        ${textPICmanager}    Get Text        xpath=//p[contains(text(), 'Admin')]/following-sibling::div[${counter}]/button/span//span
+        ${textPICmanager}    Get Text          ${fieldPICmanager}//span//span
         Should Be Equal    ${namePICtext}    ${textPICmanager}
     ELSE IF    '${counter}' == '3' 
-        ${textPICfinance}    Get Text        xpath=//p[contains(text(), 'Admin')]/following-sibling::div[${counter}]/button/span//span
+        ${textPICfinance}    Get Text          ${fieldPICfinance}//span//span
         Should Be Equal    ${namePICtext}    ${textPICfinance}
     END
 
@@ -240,6 +260,7 @@ choose same PIC
     choose PIC (same PIC)    ${fieldPICmanager}
     
     # Verify Error State
+    Sleep    3
     Element Should Be Visible    ${labelErr_PICsame}
     ${labelErr}    Get Text    ${labelErr_PICsame}
     Should Be Equal    ${labelErr}    PIC Tidak boleh sama

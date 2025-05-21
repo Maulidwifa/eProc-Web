@@ -104,19 +104,19 @@ Get list User Management (SITE)
     ${listUserManagement}=    Get From Dictionary    ${json}    value
     ${count}=    Get Length    ${listUserManagement}
     
-    ${totalUser}=    Get From Dictionary    ${listUserManagement}    countData
-    # Set Global Variable    ${totalUser}    ${totalUser}
-    Set Global Variable    ${totalUser}    8
+    ${totalUser_management}=    Get From Dictionary    ${listUserManagement}    countData
+    Set Global Variable    ${totalUser}    ${totalUser_management}
+    # Set Global Variable    ${totalUser}    8
     Log    TotalUser: ${totalUser} 
 
     # Menghasilkan indeks acak
     ${listValue}    Get From Dictionary    ${listUserManagement}    value
-    ${random_index}=    Evaluate    random.randint(1, ${count} - 1)    random
+    ${random_index}=    Evaluate    random.randint(1, ${totalUser_management} - 1)    random
     ${randomUserDetail}=    Get From List    ${listValue}    ${random_index}
 
     # Contoh ambil value name nya
     ${userManagement_name}=    Get From Dictionary    ${randomUserDetail}    name
-
+    Set Global Variable    ${name_user_management}    ${userManagement_name}
     Log    Response: ${response.content}
     Log    resp: ${json}
     Log    resp: ${listUserManagement}

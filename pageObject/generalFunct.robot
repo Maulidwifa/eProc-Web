@@ -35,7 +35,7 @@ ${buttonBatalkan_onNotes}                xpath=//div[contains(@class,'UpdateNote
 # General Function
 user input text
     [Arguments]    ${locator}    ${text}
-    Wait Until Element Is Visible    ${locator}
+    Wait Until Element Is Visible    ${locator}    52s
     Input Text    ${locator}    ${text}
     Sleep    5
 
@@ -47,10 +47,9 @@ user input password
 
 user click element
     [Arguments]    ${element}
-    Sleep    5
     Wait Until Element Is Visible    ${element}
-    ${clickElement}    Click Element    ${element}
-    RETURN    ${clickElement}
+    Sleep    3
+    Click Element    ${element}
     
 user scroll element
     [Arguments]    ${locator}
@@ -61,17 +60,17 @@ scroll ke atas
 
 general Wait Until
     [Arguments]    ${locator}
-    Wait Until Element Is Visible    ${locator}    timeout=5s
-    Sleep    5
+    Wait Until Element Is Visible    ${locator}    timeout=55s
+    Sleep    3
 
 general wait until enable
     [Arguments]    ${locator}
-    Wait Until Element Is Enabled     ${locator}    timeout=5s
-    Sleep    5
+    Wait Until Element Is Enabled     ${locator}    timeout=55s
+    Sleep    3
 
 general return status
     [Arguments]    ${locator}
-    ${res}    Run Keyword And Return Status    Wait Until Element Is Visible    ${locator}    timeout=5s
+    ${res}    Run Keyword And Return Status    Wait Until Element Is Visible    ${locator}    timeout=55s
     RETURN    ${res}
 
 # Error General for no handphone or password not filled    
