@@ -154,7 +154,7 @@ user pilih seluruh pic
             user click element    ${fieldPICfinance} 
            
             Get list User Management (SITE)
-            WHILE    '${name_user_management}' == '${PIC_manager}' and '${name_user_management}' == '${PIC_admin}'
+            WHILE    '${name_user_management}' == '${PIC_manager}' or '${name_user_management}' == '${PIC_admin}'
                 Get list User Management (SITE)
                 Log    ${name_user_management}
             END
@@ -171,16 +171,17 @@ user without selecting one of the PICs
     FOR    ${counter}    IN RANGE    ${start1}    4
         IF    '${counter}' == '${start1}'
             user click element    ${pic1}
-            Random Number    ${totalUser}
             func PIC   ${counter} 
             verif func PIC    ${counter}
             Log To Console    Nama PIC : ${namePICtext}
         ELSE IF    '${counter}' == '${start2}'
             Get list User Management (SITE)
+            ${nameUser}    Set Variable    ${namePICtext}
             Scroll Element Into View    ${fieldPICfinance}
             user click element    ${pic2}
-            Random Number    ${totalUser}
-            ${res}    general return status    xpath=//div[@class='dvContentSearch'][${randomAngka}]/p[@style='color:#4C4DDC']
+            WHILE    '${name_user_management}' == '${nameUser}'
+                Get list User Management (SITE)
+            END
             func PIC   ${counter}
             verif func PIC    ${counter}
             Log To Console    Nama PIC : ${namePICtext}
@@ -192,7 +193,6 @@ user without selecting one of the PICs
 
 func PIC
     [Arguments]    ${counter}
-    
     general Wait Until    ${listPIC}
     
     user input text        xpath=//input[@id='searchUser']   ${name_user_management}

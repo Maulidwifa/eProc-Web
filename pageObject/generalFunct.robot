@@ -73,6 +73,15 @@ general return status
     ${res}    Run Keyword And Return Status    Wait Until Element Is Visible    ${locator}    timeout=55s
     RETURN    ${res}
 
+Tunggu Sampai Kondisi Terpenuhi
+    [Arguments]    ${keyword}    ${locator}    ${timeout}=10s    ${interval}=1s
+    Wait Until Keyword Succeeds    ${timeout}    ${interval}    Run Keyword    ${keyword}    ${locator}
+
+Cek Field Sudah Terisi
+    [Arguments]    ${value_element}
+    ${value}=    Get Value    ${value_element}
+    Should Not Be Empty    ${value}
+
 # Error General for no handphone or password not filled    
 show message error    
     ${label}    general return status    xpath=//div[@class='mb-20px']//parent::div/label[contains(text(), 'Nomor')]

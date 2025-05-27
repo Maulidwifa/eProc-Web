@@ -3,8 +3,6 @@ Library        SeleniumLibrary
 Resource       ../../generalFunct.robot
 
 *** Variables ***
-# ${id_user}              085210758864    # Administrator
-# ${pass_user}            123456
 ${headerLogin}          xpath=//p[contains(text(), 'Log')]
 ${inputPassword}        xpath=//input[@id='pwd']
 ${inputUsername}        xpath=//input[@id='TxtPhone']
@@ -24,6 +22,10 @@ user visit E-Proc1000s Login Page
         ${res}    general return status    ${headerLogin}
     END
 
+Cek Visible
+    [Arguments]    ${element_visible}
+    Wait Until Element Is Visible    ${element_visible}
+
 user login E-Proc1000s Page
     general Wait Until    ${inputPassword}
     user input text    ${inputUsername}    ${ROLE_ADMIN}
@@ -31,7 +33,11 @@ user login E-Proc1000s Page
     IF    ${res}
         Sleep    4
         user input text    ${inputUsername}    ${ROLE_ADMIN}
+        # Sleep    3
+        Tunggu Sampai Kondisi Terpenuhi    Cek Visible    ${inputPassword}    50s    3s
         user input password    ${inputPassword}    ${PASSWORD}
+        Cek Field Sudah Terisi    ${inputPassword}
+        Tunggu Sampai Kondisi Terpenuhi    Cek Field Sudah Terisi    ${inputPassword}    20s    1s
         Press Key    ${inputPassword}    \\13
         Sleep    5
         ${res_list}    general return status    ${listFilter}
