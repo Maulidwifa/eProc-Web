@@ -55,3 +55,4 @@ jobs:
           --data '{
             "text": "*[Robot Test - '"${{ steps.extract.outputs.summary }}"']*\nResult: '"${{ steps.extract.outputs.details }}"'\n<https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}|Lihat detail di GitHub Actions>"
           }' ${{ secrets.SLACK_WEBHOOK_URL }}
+
