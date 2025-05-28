@@ -37,13 +37,13 @@ user input text
     [Arguments]    ${locator}    ${text}
     Wait Until Element Is Visible    ${locator}    52s
     Input Text    ${locator}    ${text}
-    Sleep    5
+    Sleep    3
 
 user input password
     [Arguments]    ${locator}    ${text}
     Wait Until Element Is Visible    ${locator}
     Input Password    ${locator}    ${text}
-    Sleep    5
+    Sleep    3
 
 user click element
     [Arguments]    ${element}
@@ -61,16 +61,16 @@ scroll ke atas
 general Wait Until
     [Arguments]    ${locator}
     Wait Until Element Is Visible    ${locator}    timeout=55s
-    Sleep    3
+    Sleep    2
 
 general wait until enable
     [Arguments]    ${locator}
     Wait Until Element Is Enabled     ${locator}    timeout=55s
-    Sleep    3
+    Sleep    2
 
 general return status
     [Arguments]    ${locator}
-    ${res}    Run Keyword And Return Status    Wait Until Element Is Visible    ${locator}    timeout=55s
+    ${res}    Run Keyword And Return Status    Wait Until Element Is Visible    ${locator}    timeout=20s
     RETURN    ${res}
 
 Tunggu Sampai Kondisi Terpenuhi
@@ -81,6 +81,10 @@ Cek Field Sudah Terisi
     [Arguments]    ${value_element}
     ${value}=    Get Value    ${value_element}
     Should Not Be Empty    ${value}
+
+Cek Visible
+    [Arguments]    ${element_visible}
+    Wait Until Element Is Visible    ${element_visible}
 
 # Error General for no handphone or password not filled    
 show message error    

@@ -27,6 +27,7 @@ ${fieldPICadmin}                 xpath=//p[contains(text(), 'Admin')]/following-
 ${fieldPICmanager}               xpath=//p[contains(text(), 'Manager')]/following-sibling::div[1]/button
 ${fieldPICfinance}               xpath=//p[contains(text(), 'Finance')]/following-sibling::div[1]/button
 ${labelErr_PICsame}              xpath=//div[contains(@class, 'btnBetween')][1]/label[contains(.,'PIC')]
+${pilih_PIC}                     xpath=//div[@class='dvContentSearch'][1]
 
 # Anggaran Maximum
 ${anggaranMax}                   xpath=//input[@placeholder='Masukkan anggaran maksimal pembelian...']
@@ -56,7 +57,8 @@ user choose kecamatan list
         user input text    ${inputKecamatan}    ${EMPTY}
         Get list city
         user input text    ${inputKecamatan}    ${kecamatan_name}
-        Sleep    2
+        # Sleep    2
+        Tunggu Sampai Kondisi Terpenuhi    Cek Field Sudah Terisi    ${inputKecamatan}    20s    1s
         user click element    ${listKecamatan}
     END
 
@@ -88,7 +90,8 @@ tanggal mulai (1x)
     user click element    ${tanggalMulai_datePicker}
     user click element    ${nextMonth}
     Get Random Angka    28
-    Sleep    3s
+    # Sleep    3
+    Tunggu Sampai Kondisi Terpenuhi    Cek Visible    ${headerCalendar}    50s    3s
     ${textHeaderCalendar}    Get Text    ${headerCalendar}
     user click element    xpath=//button[contains(@aria-label, '${randomAngka} ${textHeaderCalendar}')]
 
@@ -123,7 +126,7 @@ tanggal berakhir (3x)
 user input anggaranMax
     Random angka
     user input text    ${anggaranMax}    ${angka_acak}
-    Sleep    3
+    Tunggu Sampai Kondisi Terpenuhi    Cek Field Sudah Terisi    ${anggaranMax}    20s    1s
 
 user pilih PIC
     user pilih seluruh pic
@@ -260,7 +263,7 @@ choose same PIC
     choose PIC (same PIC)    ${fieldPICmanager}
     
     # Verify Error State
-    Sleep    3
+    Tunggu Sampai Kondisi Terpenuhi    Cek Visible    ${labelErr_PICsame}    50s    3s
     Element Should Be Visible    ${labelErr_PICsame}
     ${labelErr}    Get Text    ${labelErr_PICsame}
     Should Be Equal    ${labelErr}    PIC Tidak boleh sama
@@ -269,5 +272,5 @@ choose same PIC
 choose PIC (same PIC)
     [Arguments]    ${field_PIC}
     user click element    ${field_PIC}
-    Sleep    3
-    user click element    xpath=//div[@class='dvContentSearch'][1]
+    Tunggu Sampai Kondisi Terpenuhi    Cek Visible    ${pilih_PIC}    50s    3s
+    user click element    ${pilih_PIC}

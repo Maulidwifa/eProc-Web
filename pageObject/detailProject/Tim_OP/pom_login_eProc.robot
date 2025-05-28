@@ -22,10 +22,6 @@ user visit E-Proc1000s Login Page
         ${res}    general return status    ${headerLogin}
     END
 
-Cek Visible
-    [Arguments]    ${element_visible}
-    Wait Until Element Is Visible    ${element_visible}
-
 user login E-Proc1000s Page
     general Wait Until    ${inputPassword}
     user input text    ${inputUsername}    ${ROLE_ADMIN}
@@ -33,7 +29,6 @@ user login E-Proc1000s Page
     IF    ${res}
         Sleep    4
         user input text    ${inputUsername}    ${ROLE_ADMIN}
-        # Sleep    3
         Tunggu Sampai Kondisi Terpenuhi    Cek Visible    ${inputPassword}    50s    3s
         user input password    ${inputPassword}    ${PASSWORD}
         Cek Field Sudah Terisi    ${inputPassword}
