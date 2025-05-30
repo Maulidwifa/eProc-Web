@@ -149,6 +149,7 @@ user pilih seluruh pic
             Log To Console    PIC Manager : ${namePICtext}
             ${PIC_manager}    Set Variable    ${namePICtext}
         ELSE IF    '${counter}' == '3'
+            Scroll Element Into View    ${fieldPICfinance}
             user click element    ${fieldPICfinance} 
            
             Get list User Management (SITE)

@@ -1,9 +1,9 @@
 *** Settings ***
 # Resource            ../config/${ENV}.robot
 Resource            ../../config/web_eProc.robot       # untuk keperluan GitAction
-Resource            ../../../testScenario/Tim_OP/detailProject_MenungguPersetujuan.robot
-Resource            ../../../testScenario/Tim_OP/detailProject_EvaluasiAnggaran.robot
-Resource            ../../../testScenario/Tim_OP/detailProject_Aktif.robot
+Resource            ../../testScenario/Tim_OP/detailProject_MenungguPersetujuan.robot
+Resource            ../../testScenario/Tim_OP/detailProject_EvaluasiAnggaran.robot
+Resource            ../../testScenario/Tim_OP/detailProject_Aktif.robot
 Test Setup            Begin Web Test
 Test Teardown         End Web Test
 
