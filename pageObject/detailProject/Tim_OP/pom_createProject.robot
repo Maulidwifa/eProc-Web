@@ -270,5 +270,5 @@ choose same PIC
 choose PIC (same PIC)
     [Arguments]    ${field_PIC}
     user click element    ${field_PIC}
-    Tunggu Sampai Kondisi Terpenuhi    Cek Visible    ${pilih_PIC}    50s    3s
+    # Tunggu Sampai Kondisi Terpenuhi    Cek Visible    ${pilih_PIC}    50s    3s
     user click element    ${pilih_PIC}

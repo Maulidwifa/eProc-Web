@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-05-30T09:17:30.339462" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-05-30T09:54:57.029547" rpa="false" schemaversion="5">
 <suite id="s1" name="test detailProject Aktif" source="C:\Users\1000Saudara45\Documents\Automation\eProc_Web\testSuite\Tim_OP\test_detailProject_Aktif.robot">
 <test id="s1-t1" name="Tim OP can Changes Data Estimasi Tanggal Berakhir Project" line="11">
 <kw name="Begin Web Test" owner="web_eProc" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-05-30T09:17:32.010976" level="INFO">Opening browser 'headlesschrome' to base url 'about:blank'.</msg>
+<msg time="2025-05-30T09:54:58.961510" level="INFO">Opening browser 'headlesschrome' to base url 'about:blank'.</msg>
 <arg>about:blank</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-05-30T09:17:32.010612" elapsed="2.165467"/>
+<status status="PASS" start="2025-05-30T09:54:58.961140" elapsed="3.334396"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-05-30T09:17:34.176818" elapsed="0.033695"/>
+<status status="PASS" start="2025-05-30T09:55:02.296157" elapsed="0.040661"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-05-30T09:17:34.211376" level="INFO">Opening url 'https://developer.1000saudara.com/project1000s'</msg>
+<msg time="2025-05-30T09:55:02.337706" level="INFO">Opening url 'https://developer.1000saudara.com/project1000s'</msg>
 <arg>${URL_DEV}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-05-30T09:17:34.210996" elapsed="0.876486"/>
+<status status="PASS" start="2025-05-30T09:55:02.337285" elapsed="1.041912"/>
 </kw>
-<status status="PASS" start="2025-05-30T09:17:32.009246" elapsed="3.078404"/>
+<status status="PASS" start="2025-05-30T09:54:58.959699" elapsed="4.419852"/>
 </kw>
 <kw name="User change data End Date before the start date" owner="detailProject_Aktif">
 <kw name="Given User go to detail Project Page" owner="detailProject_Aktif">
@@ -28,16 +28,16 @@
 <kw name="Then user go to home page E-Proc1000s" owner="pom_login_eProc">
 <kw name="user visit E-Proc1000s Login Page" owner="pom_login_eProc">
 <kw name="Get Location" owner="SeleniumLibrary">
-<msg time="2025-05-30T09:17:35.110177" level="INFO">${current_url} = https://developer.1000saudara.com/project1000s</msg>
+<msg time="2025-05-30T09:55:03.402168" level="INFO">${current_url} = https://developer.1000saudara.com/project1000s</msg>
 <var>${current_url}</var>
 <doc>Returns the current browser window URL.</doc>
-<status status="PASS" start="2025-05-30T09:17:35.094240" elapsed="0.016046"/>
+<status status="PASS" start="2025-05-30T09:55:03.388615" elapsed="0.013680"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-05-30T09:17:35.110813" level="INFO">Current Path: https://developer.1000saudara.com/project1000s</msg>
+<msg time="2025-05-30T09:55:03.403270" level="INFO">Current Path: https://developer.1000saudara.com/project1000s</msg>
 <arg>Current Path: ${current_url}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-05-30T09:17:35.110558" elapsed="0.000333"/>
+<status status="PASS" start="2025-05-30T09:55:03.402735" elapsed="0.000939"/>
 </kw>
 <kw name="general return status" owner="generalFunct">
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
@@ -45,46 +45,46 @@
 <arg>${locator}</arg>
 <arg>timeout=20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-30T09:17:35.112019" elapsed="0.041223"/>
+<status status="PASS" start="2025-05-30T09:55:03.406624" elapsed="0.040611"/>
 </kw>
-<msg time="2025-05-30T09:17:35.153463" level="INFO">${res} = True</msg>
+<msg time="2025-05-30T09:55:03.447619" level="INFO">${res} = True</msg>
 <var>${res}</var>
 <arg>Wait Until Element Is Visible</arg>
 <arg>${locator}</arg>
 <arg>timeout=20s</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-05-30T09:17:35.111715" elapsed="0.041800"/>
+<status status="PASS" start="2025-05-30T09:55:03.405461" elapsed="0.042264"/>
 </kw>
 <return>
 <value>${res}</value>
-<status status="PASS" start="2025-05-30T09:17:35.153631" elapsed="0.000099"/>
+<status status="PASS" start="2025-05-30T09:55:03.447958" elapsed="0.000159"/>
 </return>
-<msg time="2025-05-30T09:17:35.153970" level="INFO">${res} = True</msg>
+<msg time="2025-05-30T09:55:03.448409" level="INFO">${res} = True</msg>
 <var>${res}</var>
 <arg>${headerLogin}</arg>
-<status status="PASS" start="2025-05-30T09:17:35.111160" elapsed="0.042858"/>
+<status status="PASS" start="2025-05-30T09:55:03.404237" elapsed="0.044224"/>
 </kw>
 <while condition="${res} == $False">
 <iter>
 <kw name="Reload Page" owner="SeleniumLibrary">
 <doc>Simulates user reloading page.</doc>
-<status status="NOT RUN" start="2025-05-30T09:17:35.155011" elapsed="0.000119"/>
+<status status="NOT RUN" start="2025-05-30T09:55:03.449164" elapsed="0.000051"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2025-05-30T09:17:35.156072" elapsed="0.000168"/>
+<status status="NOT RUN" start="2025-05-30T09:55:03.449404" elapsed="0.000049"/>
 </kw>
 <kw name="general return status" owner="generalFunct">
 <var>${res}</var>
 <arg>${headerLogin}</arg>
-<status status="NOT RUN" start="2025-05-30T09:17:35.156866" elapsed="0.000198"/>
+<status status="NOT RUN" start="2025-05-30T09:55:03.449716" elapsed="0.000060"/>
 </kw>
-<status status="NOT RUN" start="2025-05-30T09:17:35.154128" elapsed="0.003161"/>
+<status status="NOT RUN" start="2025-05-30T09:55:03.448576" elapsed="0.001268"/>
 </iter>
-<status status="NOT RUN" start="2025-05-30T09:17:35.154126" elapsed="0.003331"/>
+<status status="NOT RUN" start="2025-05-30T09:55:03.448573" elapsed="0.001337"/>
 </while>
-<status status="PASS" start="2025-05-30T09:17:35.093491" elapsed="0.064299"/>
+<status status="PASS" start="2025-05-30T09:55:03.387743" elapsed="0.062280"/>
 </kw>
 <kw name="user login E-Proc1000s Page" owner="pom_login_eProc">
 <kw name="general Wait Until" owner="generalFunct">
@@ -92,7 +92,7 @@
 <arg>${locator}</arg>
 <arg>timeout=55s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-30T09:17:35.160582" elapsed="0.270141"/>
+<status status="PASS" start="2025-05-30T09:55:03.451340" elapsed="0.246933"/>
 </kw>
 <kw name="Tunggu Sampai Kondisi Terpenuhi" owner="generalFunct">
 <kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
@@ -102,15 +102,15 @@
 <arg>${element_visible}</arg>
 <arg>timeout=30s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-30T09:17:35.434485" elapsed="0.020547"/>
+<status status="PASS" start="2025-05-30T09:55:03.702147" elapsed="0.016495"/>
 </kw>
 <arg>${locator}</arg>
-<status status="PASS" start="2025-05-30T09:17:35.433687" elapsed="0.021681"/>
+<status status="PASS" start="2025-05-30T09:55:03.701529" elapsed="0.017360"/>
 </kw>
 <arg>${keyword}</arg>
 <arg>${locator}</arg>
 <doc>Executes the given keyword with the given arguments.</doc>
-<status status="PASS" start="2025-05-30T09:17:35.432690" elapsed="0.022785"/>
+<status status="PASS" start="2025-05-30T09:55:03.700251" elapsed="0.018733"/>
 </kw>
 <arg>${timeout}</arg>
 <arg>${interval}</arg>
@@ -118,53 +118,53 @@
 <arg>${keyword}</arg>
 <arg>${locator}</arg>
 <doc>Runs the specified keyword and retries if it fails.</doc>
-<status status="PASS" start="2025-05-30T09:17:35.432043" elapsed="0.023523"/>
+<status status="PASS" start="2025-05-30T09:55:03.699468" elapsed="0.019608"/>
 </kw>
 <arg>Cek Visible</arg>
 <arg>${locator}</arg>
-<status status="PASS" start="2025-05-30T09:17:35.431169" elapsed="0.024500"/>
+<status status="PASS" start="2025-05-30T09:55:03.698610" elapsed="0.020581"/>
 </kw>
 <arg>${inputPassword}</arg>
-<status status="PASS" start="2025-05-30T09:17:35.159622" elapsed="0.296145"/>
+<status status="PASS" start="2025-05-30T09:55:03.450843" elapsed="0.268439"/>
 </kw>
 <kw name="user input text" owner="generalFunct">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>52s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-30T09:17:35.456554" elapsed="0.027133"/>
+<status status="PASS" start="2025-05-30T09:55:03.720059" elapsed="0.021130"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-30T09:17:35.484326" level="INFO">Typing text '085210758864' into text field 'xpath=//input[@id='TxtPhone']'.</msg>
+<msg time="2025-05-30T09:55:03.741827" level="INFO">Typing text '085210758864' into text field 'xpath=//input[@id='TxtPhone']'.</msg>
 <arg>${locator}</arg>
 <arg>${text}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-30T09:17:35.483979" elapsed="0.162774"/>
+<status status="PASS" start="2025-05-30T09:55:03.741485" elapsed="0.304188"/>
 </kw>
 <kw name="Tunggu Sampai Kondisi Terpenuhi" owner="generalFunct">
 <kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
 <kw name="Run Keyword" owner="BuiltIn">
 <kw name="Cek Field Sudah Terisi" owner="generalFunct">
 <kw name="Get Value" owner="SeleniumLibrary">
-<msg time="2025-05-30T09:17:35.676476" level="INFO">${value} = 085210758864</msg>
+<msg time="2025-05-30T09:55:04.087404" level="INFO">${value} = 085210758864</msg>
 <var>${value}</var>
 <arg>${value_element}</arg>
 <doc>Returns the value attribute of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-30T09:17:35.650136" elapsed="0.026442"/>
+<status status="PASS" start="2025-05-30T09:55:04.051077" elapsed="0.036494"/>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
-<msg time="2025-05-30T09:17:35.677180" level="INFO">Length is 12.</msg>
+<msg time="2025-05-30T09:55:04.088614" level="INFO">Length is 12.</msg>
 <arg>${value}</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="PASS" start="2025-05-30T09:17:35.676920" elapsed="0.000353"/>
+<status status="PASS" start="2025-05-30T09:55:04.088142" elapsed="0.000623"/>
 </kw>
 <arg>${locator}</arg>
-<status status="PASS" start="2025-05-30T09:17:35.649282" elapsed="0.028178"/>
+<status status="PASS" start="2025-05-30T09:55:04.049760" elapsed="0.039387"/>
 </kw>
 <arg>${keyword}</arg>
 <arg>${locator}</arg>
 <doc>Executes the given keyword with the given arguments.</doc>
-<status status="PASS" start="2025-05-30T09:17:35.648383" elapsed="0.029166"/>
+<status status="PASS" start="2025-05-30T09:55:04.048606" elapsed="0.040738"/>
 </kw>
 <arg>${timeout}</arg>
 <arg>${interval}</arg>
@@ -172,15 +172,15 @@
 <arg>${keyword}</arg>
 <arg>${locator}</arg>
 <doc>Runs the specified keyword and retries if it fails.</doc>
-<status status="PASS" start="2025-05-30T09:17:35.647880" elapsed="0.029751"/>
+<status status="PASS" start="2025-05-30T09:55:04.047584" elapsed="0.042266"/>
 </kw>
 <arg>Cek Field Sudah Terisi</arg>
 <arg>${locator}</arg>
-<status status="PASS" start="2025-05-30T09:17:35.647204" elapsed="0.030718"/>
+<status status="PASS" start="2025-05-30T09:55:04.046249" elapsed="0.044320"/>
 </kw>
 <arg>${inputUsername}</arg>
 <arg>${ROLE_ADMIN}</arg>
-<status status="PASS" start="2025-05-30T09:17:35.456036" elapsed="0.221985"/>
+<status status="PASS" start="2025-05-30T09:55:03.719541" elapsed="0.371255"/>
 </kw>
 <kw name="general return status" owner="generalFunct">
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
@@ -188,71 +188,71 @@
 <arg>${locator}</arg>
 <arg>timeout=20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-30T09:17:35.678958" elapsed="0.018510"/>
+<status status="PASS" start="2025-05-30T09:55:04.094247" elapsed="0.024386"/>
 </kw>
-<msg time="2025-05-30T09:17:35.697664" level="INFO">${res} = True</msg>
+<msg time="2025-05-30T09:55:04.118832" level="INFO">${res} = True</msg>
 <var>${res}</var>
 <arg>Wait Until Element Is Visible</arg>
 <arg>${locator}</arg>
 <arg>timeout=20s</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-05-30T09:17:35.678704" elapsed="0.019011"/>
+<status status="PASS" start="2025-05-30T09:55:04.093645" elapsed="0.025237"/>
 </kw>
 <return>
 <value>${res}</value>
-<status status="PASS" start="2025-05-30T09:17:35.697825" elapsed="0.000091"/>
+<status status="PASS" start="2025-05-30T09:55:04.118993" elapsed="0.000085"/>
 </return>
-<msg time="2025-05-30T09:17:35.698130" level="INFO">${res} = True</msg>
+<msg time="2025-05-30T09:55:04.119291" level="INFO">${res} = True</msg>
 <var>${res}</var>
 <arg>${inputPassword}</arg>
-<status status="PASS" start="2025-05-30T09:17:35.678270" elapsed="0.019906"/>
+<status status="PASS" start="2025-05-30T09:55:04.092384" elapsed="0.026956"/>
 </kw>
 <if>
 <branch type="IF" condition="${res}">
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-30T09:17:39.699613" level="INFO">Slept 4 seconds.</msg>
+<msg time="2025-05-30T09:55:08.120618" level="INFO">Slept 4 seconds.</msg>
 <arg>4</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-30T09:17:35.698619" elapsed="4.001553"/>
+<status status="PASS" start="2025-05-30T09:55:04.119761" elapsed="4.001015"/>
 </kw>
 <kw name="user input text" owner="generalFunct">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>52s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-30T09:17:39.703258" elapsed="0.043897"/>
+<status status="PASS" start="2025-05-30T09:55:08.121906" elapsed="0.021242"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-30T09:17:39.748493" level="INFO">Typing text '085210758864' into text field 'xpath=//input[@id='TxtPhone']'.</msg>
+<msg time="2025-05-30T09:55:08.143827" level="INFO">Typing text '085210758864' into text field 'xpath=//input[@id='TxtPhone']'.</msg>
 <arg>${locator}</arg>
 <arg>${text}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-30T09:17:39.747666" elapsed="0.137403"/>
+<status status="PASS" start="2025-05-30T09:55:08.143465" elapsed="0.153927"/>
 </kw>
 <kw name="Tunggu Sampai Kondisi Terpenuhi" owner="generalFunct">
 <kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
 <kw name="Run Keyword" owner="BuiltIn">
 <kw name="Cek Field Sudah Terisi" owner="generalFunct">
 <kw name="Get Value" owner="SeleniumLibrary">
-<msg time="2025-05-30T09:17:39.912689" level="INFO">${value} = 085210758864</msg>
+<msg time="2025-05-30T09:55:08.329258" level="INFO">${value} = 085210758864</msg>
 <var>${value}</var>
 <arg>${value_element}</arg>
 <doc>Returns the value attribute of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-30T09:17:39.890064" elapsed="0.022754"/>
+<status status="PASS" start="2025-05-30T09:55:08.302020" elapsed="0.027367"/>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
-<msg time="2025-05-30T09:17:39.913858" level="INFO">Length is 12.</msg>
+<msg time="2025-05-30T09:55:08.330444" level="INFO">Length is 12.</msg>
 <arg>${value}</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="PASS" start="2025-05-30T09:17:39.913409" elapsed="0.000586"/>
+<status status="PASS" start="2025-05-30T09:55:08.330000" elapsed="0.000644"/>
 </kw>
 <arg>${locator}</arg>
-<status status="PASS" start="2025-05-30T09:17:39.888637" elapsed="0.025558"/>
+<status status="PASS" start="2025-05-30T09:55:08.300846" elapsed="0.030027"/>
 </kw>
 <arg>${keyword}</arg>
 <arg>${locator}</arg>
 <doc>Executes the given keyword with the given arguments.</doc>
-<status status="PASS" start="2025-05-30T09:17:39.887591" elapsed="0.026706"/>
+<status status="PASS" start="2025-05-30T09:55:08.299779" elapsed="0.031182"/>
 </kw>
 <arg>${timeout}</arg>
 <arg>${interval}</arg>
@@ -260,15 +260,15 @@
 <arg>${keyword}</arg>
 <arg>${locator}</arg>
 <doc>Runs the specified keyword and retries if it fails.</doc>
-<status status="PASS" start="2025-05-30T09:17:39.886640" elapsed="0.027743"/>
+<status status="PASS" start="2025-05-30T09:55:08.298768" elapsed="0.032279"/>
 </kw>
 <arg>Cek Field Sudah Terisi</arg>
 <arg>${locator}</arg>
-<status status="PASS" start="2025-05-30T09:17:39.885494" elapsed="0.028988"/>
+<status status="PASS" start="2025-05-30T09:55:08.297835" elapsed="0.033316"/>
 </kw>
 <arg>${inputUsername}</arg>
 <arg>${ROLE_ADMIN}</arg>
-<status status="PASS" start="2025-05-30T09:17:39.701443" elapsed="0.213123"/>
+<status status="PASS" start="2025-05-30T09:55:08.121133" elapsed="0.210169"/>
 </kw>
 <kw name="Tunggu Sampai Kondisi Terpenuhi" owner="generalFunct">
 <kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
@@ -278,15 +278,15 @@
 <arg>${element_visible}</arg>
 <arg>timeout=30s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-30T09:17:39.916510" elapsed="0.018798"/>
+<status status="PASS" start="2025-05-30T09:55:08.334050" elapsed="0.018851"/>
 </kw>
 <arg>${locator}</arg>
-<status status="PASS" start="2025-05-30T09:17:39.916082" elapsed="0.019394"/>
+<status status="PASS" start="2025-05-30T09:55:08.333575" elapsed="0.019484"/>
 </kw>
 <arg>${keyword}</arg>
 <arg>${locator}</arg>
 <doc>Executes the given keyword with the given arguments.</doc>
-<status status="PASS" start="2025-05-30T09:17:39.915685" elapsed="0.019886"/>
+<status status="PASS" start="2025-05-30T09:55:08.333152" elapsed="0.020000"/>
 </kw>
 <arg>${timeout}</arg>
 <arg>${interval}</arg>
@@ -294,52 +294,52 @@
 <arg>${keyword}</arg>
 <arg>${locator}</arg>
 <doc>Runs the specified keyword and retries if it fails.</doc>
-<status status="PASS" start="2025-05-30T09:17:39.915291" elapsed="0.020374"/>
+<status status="PASS" start="2025-05-30T09:55:08.332681" elapsed="0.020560"/>
 </kw>
 <arg>Cek Visible</arg>
 <arg>${inputPassword}</arg>
 <arg>50s</arg>
 <arg>3s</arg>
-<status status="PASS" start="2025-05-30T09:17:39.914784" elapsed="0.020998"/>
+<status status="PASS" start="2025-05-30T09:55:08.331761" elapsed="0.021585"/>
 </kw>
 <kw name="user input password" owner="generalFunct">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-30T09:17:39.936647" elapsed="0.018303"/>
+<status status="PASS" start="2025-05-30T09:55:08.354123" elapsed="0.020904"/>
 </kw>
 <kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2025-05-30T09:17:39.955584" level="INFO">Typing password into text field 'xpath=//input[@id='pwd']'.</msg>
-<msg time="2025-05-30T09:17:39.993263" level="INFO">Temporally setting log level to: NONE</msg>
+<msg time="2025-05-30T09:55:08.375969" level="INFO">Typing password into text field 'xpath=//input[@id='pwd']'.</msg>
+<msg time="2025-05-30T09:55:08.420653" level="INFO">Temporally setting log level to: NONE</msg>
 <arg>${locator}</arg>
 <arg>${text}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-30T09:17:39.955251" elapsed="0.122649"/>
+<status status="PASS" start="2025-05-30T09:55:08.375547" elapsed="0.140433"/>
 </kw>
 <kw name="Tunggu Sampai Kondisi Terpenuhi" owner="generalFunct">
 <kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
 <kw name="Run Keyword" owner="BuiltIn">
 <kw name="Cek Field Sudah Terisi" owner="generalFunct">
 <kw name="Get Value" owner="SeleniumLibrary">
-<msg time="2025-05-30T09:17:40.103404" level="INFO">${value} = 123456</msg>
+<msg time="2025-05-30T09:55:08.546301" level="INFO">${value} = 123456</msg>
 <var>${value}</var>
 <arg>${value_element}</arg>
 <doc>Returns the value attribute of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-30T09:17:40.083463" elapsed="0.020068"/>
+<status status="PASS" start="2025-05-30T09:55:08.518616" elapsed="0.027941"/>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
-<msg time="2025-05-30T09:17:40.104889" level="INFO">Length is 6.</msg>
+<msg time="2025-05-30T09:55:08.548161" level="INFO">Length is 6.</msg>
 <arg>${value}</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="PASS" start="2025-05-30T09:17:40.104136" elapsed="0.000960"/>
+<status status="PASS" start="2025-05-30T09:55:08.547537" elapsed="0.000808"/>
 </kw>
 <arg>${locator}</arg>
-<status status="PASS" start="2025-05-30T09:17:40.081833" elapsed="0.023543"/>
+<status status="PASS" start="2025-05-30T09:55:08.517930" elapsed="0.030632"/>
 </kw>
 <arg>${keyword}</arg>
 <arg>${locator}</arg>
 <doc>Executes the given keyword with the given arguments.</doc>
-<status status="PASS" start="2025-05-30T09:17:40.080852" elapsed="0.024625"/>
+<status status="PASS" start="2025-05-30T09:55:08.517501" elapsed="0.031153"/>
 </kw>
 <arg>${timeout}</arg>
 <arg>${interval}</arg>
@@ -347,217 +347,20 @@
 <arg>${keyword}</arg>
 <arg>${locator}</arg>
 <doc>Runs the specified keyword and retries if it fails.</doc>
-<status status="PASS" start="2025-05-30T09:17:40.079802" elapsed="0.025775"/>
+<status status="PASS" start="2025-05-30T09:55:08.517075" elapsed="0.031666"/>
 </kw>
 <arg>Cek Field Sudah Terisi</arg>
 <arg>${locator}</arg>
-<status status="PASS" start="2025-05-30T09:17:40.078361" elapsed="0.027328"/>
+<status status="PASS" start="2025-05-30T09:55:08.516461" elapsed="0.032393"/>
 </kw>
 <arg>${inputPassword}</arg>
 <arg>${PASSWORD}</arg>
-<status status="PASS" start="2025-05-30T09:17:39.936075" elapsed="0.169702"/>
+<status status="PASS" start="2025-05-30T09:55:08.353631" elapsed="0.195309"/>
 </kw>
 <kw name="Cek Field Sudah Terisi" owner="generalFunct">
 <kw name="Get Value" owner="SeleniumLibrary">
-<msg time="2025-05-30T09:17:40.122920" level="INFO">${value} = 123456</msg>
+<msg time="2025-05-30T09:55:08.568053" level="INFO">${value} = 123456</msg>
 <var>${value}</var>
 <arg>${value_element}</arg>
 <doc>Returns the value attribute of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-30T09:17:40.106505" elapsed="0.016484"/>
-</kw>
-<kw name="Should Not Be Empty" owner="BuiltIn">
-<msg time="2025-05-30T09:17:40.123681" level="INFO">Length is 6.</msg>
-<arg>${value}</arg>
-<doc>Verifies that the given item is not empty.</doc>
-<status status="PASS" start="2025-05-30T09:17:40.123437" elapsed="0.000330"/>
-</kw>
-<arg>${inputPassword}</arg>
-<status status="PASS" start="2025-05-30T09:17:40.106047" elapsed="0.017839"/>
-</kw>
-<kw name="Tunggu Sampai Kondisi Terpenuhi" owner="generalFunct">
-<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
-<kw name="Run Keyword" owner="BuiltIn">
-<kw name="Cek Field Sudah Terisi" owner="generalFunct">
-<kw name="Get Value" owner="SeleniumLibrary">
-<msg time="2025-05-30T09:17:40.142918" level="INFO">${value} = 123456</msg>
-<var>${value}</var>
-<arg>${value_element}</arg>
-<doc>Returns the value attribute of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-30T09:17:40.125851" elapsed="0.017135"/>
-</kw>
-<kw name="Should Not Be Empty" owner="BuiltIn">
-<msg time="2025-05-30T09:17:40.143521" level="INFO">Length is 6.</msg>
-<arg>${value}</arg>
-<doc>Verifies that the given item is not empty.</doc>
-<status status="PASS" start="2025-05-30T09:17:40.143243" elapsed="0.000413"/>
-</kw>
-<arg>${locator}</arg>
-<status status="PASS" start="2025-05-30T09:17:40.125426" elapsed="0.018344"/>
-</kw>
-<arg>${keyword}</arg>
-<arg>${locator}</arg>
-<doc>Executes the given keyword with the given arguments.</doc>
-<status status="PASS" start="2025-05-30T09:17:40.125014" elapsed="0.018837"/>
-</kw>
-<arg>${timeout}</arg>
-<arg>${interval}</arg>
-<arg>Run Keyword</arg>
-<arg>${keyword}</arg>
-<arg>${locator}</arg>
-<doc>Runs the specified keyword and retries if it fails.</doc>
-<status status="PASS" start="2025-05-30T09:17:40.124617" elapsed="0.019318"/>
-</kw>
-<arg>Cek Field Sudah Terisi</arg>
-<arg>${inputPassword}</arg>
-<arg>20s</arg>
-<arg>1s</arg>
-<status status="PASS" start="2025-05-30T09:17:40.124113" elapsed="0.019930"/>
-</kw>
-<kw name="Press Key" owner="SeleniumLibrary">
-<arg>${inputPassword}</arg>
-<arg>\\13</arg>
-<doc>Simulates user pressing key on element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-30T09:17:40.144244" elapsed="0.039903"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<arg>5</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="FAIL" start="2025-05-30T09:17:40.184576" elapsed="4.427056">Execution terminated by signal</status>
-</kw>
-<kw name="general return status" owner="generalFunct">
-<var>${res_list}</var>
-<arg>${listFilter}</arg>
-<status status="NOT RUN" start="2025-05-30T09:17:44.613306" elapsed="0.000437"/>
-</kw>
-<while condition="${res_list} == $False">
-<iter>
-<kw name="Press Key" owner="SeleniumLibrary">
-<arg>${inputPassword}</arg>
-<arg>\\13</arg>
-<doc>Simulates user pressing key on element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-05-30T09:17:44.616299" elapsed="0.000174"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<arg>5</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2025-05-30T09:17:44.617097" elapsed="0.000149"/>
-</kw>
-<kw name="general return status" owner="generalFunct">
-<var>${res_err}</var>
-<arg>xpath=//div[@class='mb-20px']//parent::div/label[contains(text(), 'Nomor')]</arg>
-<status status="NOT RUN" start="2025-05-30T09:17:44.617994" elapsed="0.000154"/>
-</kw>
-<if>
-<branch type="IF" condition="${res_err}">
-<kw name="without filling any of them" owner="pom_login_eProc">
-<arg>${inputUsername}</arg>
-<arg>${ROLE_ADMIN}</arg>
-<status status="NOT RUN" start="2025-05-30T09:17:44.619516" elapsed="0.000148"/>
-</kw>
-<status status="NOT RUN" start="2025-05-30T09:17:44.618512" elapsed="0.001336"/>
-</branch>
-<branch type="ELSE">
-<kw name="Exit For Loop" owner="BuiltIn">
-<doc>Stops executing the enclosing FOR loop.</doc>
-<status status="NOT RUN" start="2025-05-30T09:17:44.620728" elapsed="0.000141"/>
-</kw>
-<status status="NOT RUN" start="2025-05-30T09:17:44.620017" elapsed="0.001026"/>
-</branch>
-<status status="NOT RUN" start="2025-05-30T09:17:44.618409" elapsed="0.002783"/>
-</if>
-<status status="NOT RUN" start="2025-05-30T09:17:44.614455" elapsed="0.006850"/>
-</iter>
-<status status="NOT RUN" start="2025-05-30T09:17:44.614433" elapsed="0.007008"/>
-</while>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${listFilter}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2025-05-30T09:17:44.622458" elapsed="0.000160"/>
-</kw>
-<status status="FAIL" start="2025-05-30T09:17:35.698327" elapsed="8.924959">Execution terminated by signal</status>
-</branch>
-<branch type="ELSE">
-<kw name="Exit For Loop" owner="BuiltIn">
-<doc>Stops executing the enclosing FOR loop.</doc>
-<status status="NOT RUN" start="2025-05-30T09:17:44.625049" elapsed="0.000178"/>
-</kw>
-<status status="NOT RUN" start="2025-05-30T09:17:44.624187" elapsed="0.001336"/>
-</branch>
-<status status="FAIL" start="2025-05-30T09:17:35.698287" elapsed="8.927811">Execution terminated by signal</status>
-</if>
-<status status="FAIL" start="2025-05-30T09:17:35.158802" elapsed="9.468447">Execution terminated by signal</status>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${listFilter}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2025-05-30T09:17:44.628003" elapsed="0.000157"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${titleProject}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2025-05-30T09:17:44.629027" elapsed="0.000175"/>
-</kw>
-<kw name="Get Text" owner="SeleniumLibrary">
-<var>${title}</var>
-<arg>${titleProject}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-05-30T09:17:44.630437" elapsed="0.000318"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${\n}${title}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2025-05-30T09:17:44.631416" elapsed="0.000148"/>
-</kw>
-<status status="FAIL" start="2025-05-30T09:17:35.091203" elapsed="9.541363">Execution terminated by signal</status>
-</kw>
-<status status="FAIL" start="2025-05-30T09:17:35.090248" elapsed="9.542969">Execution terminated by signal</status>
-</kw>
-<kw name="When user click Detail on Project" owner="pom_detailProject_MenungguPersetujuan">
-<arg>Aktif</arg>
-<status status="NOT RUN" start="2025-05-30T09:17:44.634178" elapsed="0.000140"/>
-</kw>
-<kw name="And detail information on detail page" owner="pom_detailProject_MenungguPersetujuan">
-<status status="NOT RUN" start="2025-05-30T09:17:44.635360" elapsed="0.000149"/>
-</kw>
-<kw name="And user on detail Aktif page" owner="pom_detailProject_Aktif">
-<status status="NOT RUN" start="2025-05-30T09:17:44.636160" elapsed="0.000140"/>
-</kw>
-<status status="FAIL" start="2025-05-30T09:17:35.089429" elapsed="9.547498">Execution terminated by signal</status>
-</kw>
-<kw name="When click button ubah" owner="generalFunct">
-<status status="NOT RUN" start="2025-05-30T09:17:44.640269" elapsed="0.000144"/>
-</kw>
-<kw name="And user scroll element" owner="generalFunct">
-<arg>${PICfinance}</arg>
-<status status="NOT RUN" start="2025-05-30T09:17:44.641107" elapsed="0.000314"/>
-</kw>
-<kw name="And user ubah tanggal akhir" owner="pom_detailProject_Aktif">
-<status status="NOT RUN" start="2025-05-30T09:17:44.643119" elapsed="0.000161"/>
-</kw>
-<kw name="And user click element" owner="generalFunct">
-<arg>${buttonSimpan}</arg>
-<status status="NOT RUN" start="2025-05-30T09:17:44.643930" elapsed="0.000141"/>
-</kw>
-<kw name="Then error for startDate and endDate" owner="generalFunct">
-<status status="NOT RUN" start="2025-05-30T09:17:44.645826" elapsed="0.000127"/>
-</kw>
-<status status="FAIL" start="2025-05-30T09:17:35.088261" elapsed="9.557951">Execution terminated by signal</status>
-</kw>
-<kw name="End Web Test" owner="web_eProc" type="TEARDOWN">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-05-30T09:17:44.649869" level="INFO">Suite teardown initiated</msg>
-<arg>Suite teardown initiated</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-05-30T09:17:44.649401" elapsed="0.000673"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<msg time="2025-05-30T09:17:48.682228" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001F9CE376A50&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/43b19513d9a104f9727facdfd967096d</msg>
-<msg time="2025-05-30T09:17:52.750019" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001F9CE2CED50&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/43b19513d9a104f9727facdfd967096d</msg>
-<msg time="2025-05-30T09:17:56.811928" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001F9CE2CF9D0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/43b19513d9a104f9727facdfd967096d</msg>
-<errors>
-<msg time="2025-05-30T09:17:48.682228" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001F9CE376A50&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/43b19513d9a104f9727facdfd967096d</msg>
-<msg time="2025-05-30T09:17:52.750019" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001F9CE2CED50&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/43b19513d9a104f9727facdfd967096d</msg>
-<msg time="2025-05-30T09:17:56.811928" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001F9CE2CF9D0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/43b19513d9a104f9727facdfd967096d</msg>
-<msg time="2025-05-30T09:18:02.954669" level="ERROR">Execution stopped by user.</msg>
-</errors>
-</robot>
+<status status="PASS" start="2025-05-30T09:55:08.549640" elapsed="0.018480"/>
