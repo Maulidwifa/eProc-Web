@@ -22,7 +22,6 @@ Remove file Report PNG
     Remove Files    @{png_file}
 
 End Web Test
-    # Close Browser
     [Documentation]    Closes the browser after all tests in the suite have run
     Log    Suite teardown initiated
     Close Browser

@@ -57,7 +57,6 @@ user choose kecamatan list
         user input text    ${inputKecamatan}    ${EMPTY}
         Get list city
         user input text    ${inputKecamatan}    ${kecamatan_name}
-        # Sleep    2
         Tunggu Sampai Kondisi Terpenuhi    Cek Field Sudah Terisi    ${inputKecamatan}    20s    1s
         user click element    ${listKecamatan}
     END
@@ -76,8 +75,6 @@ user choose address detail without fill kecamatan
 tanggal mulai
     [Arguments]    ${changeMonth}
     user click element    ${tanggalMulai_datePicker}
-    # user click element    ${nextMonth}
-    # user click element    ${nextMonth}
     FOR    ${counter}    IN RANGE    1    4
         user click element    ${changeMonth}
         Sleep    3
@@ -90,7 +87,6 @@ tanggal mulai (1x)
     user click element    ${tanggalMulai_datePicker}
     user click element    ${nextMonth}
     Get Random Angka    28
-    # Sleep    3
     Tunggu Sampai Kondisi Terpenuhi    Cek Visible    ${headerCalendar}    50s    3s
     ${textHeaderCalendar}    Get Text    ${headerCalendar}
     user click element    xpath=//button[contains(@aria-label, '${randomAngka} ${textHeaderCalendar}')]
@@ -114,7 +110,6 @@ tanggal berakhir
 tanggal berakhir (3x)
     [Arguments]    ${changeMonth}
     user click element    ${tanggalBerakhir_datePicker}
-    # user click element    ${nextMonth}
     FOR    ${counter}    IN RANGE    1    4
         user click element    ${changeMonth}
         Sleep    3
@@ -199,6 +194,7 @@ func PIC
     general Wait Until    ${listPIC}
     
     user input text        xpath=//input[@id='searchUser']   ${name_user_management}
+    Tunggu Sampai Kondisi Terpenuhi    Cek Visible    xpath=//p[normalize-space()='${name_user_management}']
     ${namePICtext}    Get Text    xpath=//p[normalize-space()='${name_user_management}']
     Set Global Variable    ${namePICtext}    ${namePICtext}
     user click element     xpath=//p[normalize-space()='${namePICtext}']
@@ -207,6 +203,7 @@ func PIC
     IF    '${textSelect}' == '-Select-'
         user click element     xpath=//p[contains(text(), 'Admin')]/following-sibling::div[${counter}]/button
         user input text        xpath=//input[@id='searchUser']   ${name_user_management}
+        Tunggu Sampai Kondisi Terpenuhi    Cek Visible    xpath=//p[normalize-space()='${name_user_management}']
         ${namePICtext}    Get Text    xpath=//p[normalize-space()='${name_user_management}']
         Set Global Variable    ${namePICtext}    ${namePICtext}
         user click element     xpath=//p[normalize-space()='${namePICtext}']
