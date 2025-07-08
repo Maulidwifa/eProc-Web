@@ -8,7 +8,7 @@ Resource                ./login.robot
 *** Keywords ***
 User go to detail Project Page
     Given User can access Home Login 1000s
-    When user click Detail on Project    Menunggu persetujuan
+    When user click filter status    Menunggu persetujuan    Menunggu persetujuan
     And detail information on detail page
 
 User change data alamat project
@@ -31,6 +31,7 @@ User change data End Date project before the start date
     And user click element    ${buttonSimpan}
     Then error for startDate and endDate
 
+# Ini fitur penjagaan nya dilepas (udah gaada lagi PIC tidak boleh sama)
 User change PIC same to each other
     Given User go to detail Project Page
     When user ubah project

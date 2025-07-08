@@ -142,6 +142,7 @@ User Create project with the end date must be after the start date
     And user scroll element    ${inputNamaProject}
     And error for startDate and endDate
 
+# Ini fitur penjagaan nya dilepas (udah gaada lagi PIC tidak boleh sama)
 User choose PIC same to each other
     Given User can access Home Login 1000s
     When user click element    ${buttonBuatProject}

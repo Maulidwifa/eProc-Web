@@ -2,6 +2,7 @@
 Library                SeleniumLibrary
 Resource               ../../API_listKecamatan.robot
 Resource               ../../generalFunct.robot
+Resource               pom_detailProject_Aktif.robot
 
 *** Variables ***
 ${buttonBuatProject}        xpath=//span[contains(text(), 'Buat Project')]//ancestor::button
@@ -49,7 +50,7 @@ user input nama project
 user choose kecamatan list
     Get list city
     user input text    ${inputKecamatan}    ${kecamatan_name}
-    Sleep    2
+    general delay
     ${res}    Run Keyword And Return Status    Wait Until Element Is Visible    ${listKecamatan}
     IF    ${res}
         user click element    ${listKecamatan}
@@ -77,7 +78,7 @@ tanggal mulai
     user click element    ${tanggalMulai_datePicker}
     FOR    ${counter}    IN RANGE    1    4
         user click element    ${changeMonth}
-        Sleep    3
+        general delay    3s
     END
     Get Random Angka    28
     ${textHeaderCalendar}    Get Text    ${headerCalendar}
@@ -102,6 +103,7 @@ tanggal berakhir
     [Arguments]    ${loc}
     user click element    ${tanggalBerakhir_datePicker}
     user click element    ${loc}
+    general Wait Until    ${headerCalendar}
     ${textHeaderCalendar}    Get Text    ${headerCalendar}
     Get Random Angka    28
     general Wait Until    xpath=//button[contains(@aria-label, '${randomAngka} ${textHeaderCalendar}')]
@@ -112,7 +114,7 @@ tanggal berakhir (3x)
     user click element    ${tanggalBerakhir_datePicker}
     FOR    ${counter}    IN RANGE    1    4
         user click element    ${changeMonth}
-        Sleep    3
+        general delay    3s
     END
     Get Random Angka    28
     ${textHeaderCalendar}    Get Text    ${headerCalendar}
@@ -120,6 +122,7 @@ tanggal berakhir (3x)
 
 user input anggaranMax
     Random angka
+    general delay
     user input text    ${anggaranMax}    ${angka_acak}
     Tunggu Sampai Kondisi Terpenuhi    Cek Field Sudah Terisi    ${anggaranMax}    20s    1s
 
@@ -194,8 +197,14 @@ func PIC
     [Arguments]    ${counter}
     general Wait Until    ${listPIC}
     
-    user input text        xpath=//input[@id='searchUser']   ${name_user_management}
+    user input text        ${field_searchPIC}   ${name_user_management}
     Tunggu Sampai Kondisi Terpenuhi    Cek Visible    xpath=//p[normalize-space()='${name_user_management}']
+    ${res}    general return status    ${pencarianTidakDiTemukan}
+    WHILE    ${res}
+        Clear Element Text    ${field_searchPIC}
+        general delay
+        user input text        ${field_searchPIC}   ${name_user_management}
+    END
     ${namePICtext}    Get Text    xpath=//p[normalize-space()='${name_user_management}']
     Set Global Variable    ${namePICtext}    ${namePICtext}
     user click element     xpath=//p[normalize-space()='${namePICtext}']
@@ -203,7 +212,7 @@ func PIC
     ${textSelect}    Get Text    xpath=//p[contains(text(), 'Admin')]/following-sibling::div[${counter}]//span//span
     IF    '${textSelect}' == '-Select-'
         user click element     xpath=//p[contains(text(), 'Admin')]/following-sibling::div[${counter}]/button
-        user input text        xpath=//input[@id='searchUser']   ${name_user_management}
+        user input text        ${field_searchPIC}   ${name_user_management}
         Tunggu Sampai Kondisi Terpenuhi    Cek Visible    xpath=//p[normalize-space()='${name_user_management}']
         ${namePICtext}    Get Text    xpath=//p[normalize-space()='${name_user_management}']
         Set Global Variable    ${namePICtext}    ${namePICtext}
@@ -215,7 +224,6 @@ verif func PIC
     [Arguments]    ${counter}
     IF    '${counter}' == '1'
         ${textPICadmin}    Get Text          ${fieldPICadmin}//span//span
-        # //p[contains(text(), 'Admin')]/following-sibling::div[1]/button/span//span
         Should Be Equal    ${namePICtext}    ${textPICadmin}
     ELSE IF    '${counter}' == '2'
         ${textPICmanager}    Get Text          ${fieldPICmanager}//span//span

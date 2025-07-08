@@ -13,10 +13,11 @@ Tim OP can Changes Data Estimasi Tanggal Berakhir Project
     [Tags]                     1000s    detail_project    test
     User change data End Date before the start date
 
-Tim OP can Changes Data PIC same to each other
-    [Documentation]            This scenario test User can change data pic same to each other
-    [Tags]                     1000s    detail_project    test
-    User change PIC to same each other
+# Ini Fitur penjagaan nya udah dilepas, (gaada lagi)
+# Tim OP can Changes Data PIC same to each other
+#     [Documentation]            This scenario test User can change data pic same to each other
+#     [Tags]                     1000s    detail_project    test
+#     User change PIC to same each other
 
 Tim OP can Change Data Anggaran Maksimal
     [Documentation]            This scenario test User can change data Anggaran Maksimal
@@ -26,4 +27,4 @@ Tim OP can Change Data Anggaran Maksimal
 Tim OP click button Kembali on PopUp dialog
     [Documentation]            This scenario test User can click button batalkan on detail persetujuan anggaran
     [Tags]                     1000s    detail_project    test
-    user click button kembali on popUp
+    user batal ubah project

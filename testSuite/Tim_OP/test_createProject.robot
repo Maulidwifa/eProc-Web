@@ -57,10 +57,11 @@ Tim OP create project with End Date is less than Start Date
     [Tags]                     1000s    buat_project    test
     User Create project with the end date must be after the start date
 
-Tim OP create project with PIC same to Each Other
-    [Documentation]            This scenario test User create project with the PIC same
-    [Tags]                     1000s    buat_project    test
-    User choose PIC same to each other
+# Ini Fitur penjagaan nya udah dilepas, (gaada lagi)
+# Tim OP create project with PIC same to Each Other
+#     [Documentation]            This scenario test User create project with the PIC same
+#     [Tags]                     1000s    buat_project    test
+#     User choose PIC same to each other
 
 Show Error State Form Buat Project
     [Documentation]            This scenario test Show error state on form Buat Project

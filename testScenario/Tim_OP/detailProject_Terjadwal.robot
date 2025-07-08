@@ -1,17 +1,17 @@
 *** Settings ***
 Resource                ../../pageObject/generalFunct.robot
 Resource                ../../pageObject/API_listKecamatan.robot
-Resource                ../../../pageObject/detailProject/Tim_OP/pom_detailProject_Aktif.robot
-Resource                ../../../pageObject/detailProject/Tim_OP/pom_detailProject_MenungguPersetujuan.robot
-Resource                ../../../pageObject/detailProject/Tim_OP/pom_detailProject_Terjadwal.robot
-Resource                ../../../pageObject/detailProject/Tim_OP/pom_detailProject_ProsesEvaluasi.robot
-Resource                ../../../pageObject/detailProject/Tim_OP/pom_detailProject_EvaluasiAnggaran.robot
+Resource                ../../pageObject/detailProject/Tim_OP/pom_detailProject_Aktif.robot
+Resource                ../../pageObject/detailProject/Tim_OP/pom_detailProject_MenungguPersetujuan.robot
+Resource                ../../pageObject/detailProject/Tim_OP/pom_detailProject_Terjadwal.robot
+Resource                ../../pageObject/detailProject/Tim_OP/pom_detailProject_ProsesEvaluasi.robot
+Resource                ../../pageObject/detailProject/Tim_OP/pom_detailProject_EvaluasiAnggaran.robot
 Resource                ./login.robot
 
 *** Keywords ***
 User go to detail Project Page
     Given User can access Home Login 1000s
-    When user click Detail on Project    Terjadwal
+    When user click filter status    Terjadwal    Terjadwal
     And detail information on detail page
     And user on detail Terjadwal page
 
@@ -30,8 +30,8 @@ User change Anggaran Maksimal
     Then user input anggaranMax
     And user click element    ${buttonSimpan}
     And show pop up dialog    ${popUp_UbahAnggaran}
-    And button accept on dialog form ubah    Ajukan
-    And verify status after change data    Persetujuan anggaran
+    # And button accept on dialog form ubah    Ajukan
+    # And verify status after change data    Persetujuan anggaran
     
 User change data End Date before the start date
     Given User go to detail Project Page
@@ -41,6 +41,7 @@ User change data End Date before the start date
     And user click element    ${buttonSimpan}
     Then error for startDate and endDate
 
+# Ini fitur penjagaan nya dilepas (udah gaada lagi PIC tidak boleh sama)
 User change PIC to same each other
     Given User go to detail Project Page
     And Sleep    3

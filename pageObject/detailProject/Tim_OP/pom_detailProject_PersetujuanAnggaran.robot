@@ -2,7 +2,7 @@
 Library                SeleniumLibrary
 Resource        ../../generalFunct.robot
 Resource        ../../API_listKecamatan.robot
-Resource        ../../../pageObject/detailProject/Tim_OP/pom_detailProject_MenungguPersetujuan.robot
+Resource        ../../detailProject/Tim_OP/pom_detailProject_MenungguPersetujuan.robot
 
 
 *** Variables ***
@@ -42,7 +42,7 @@ show content in riwayat detail
 
     # Fungsi ini berbeda karna ada Notes nya di Riwayat
     general Wait Until    ${dateOnRiwayatPopUp}
-    Element Should Be Visible    xpath=//div[@class='dvHistory ']/div[contains(.,'Aktif')]
+    Element Should Be Visible    ${popUp_titleAktif_onDetailRiwayat}
     ${textDate}    Get Text    ${dateOnRiwayatPopUp}
     Log To Console    Date History: ${textDate}
     FOR    ${counter}    IN RANGE    1    4
@@ -67,17 +67,17 @@ user click button batalkan
     [Arguments]    ${btn_loc}    ${titleText_popUp}
     general Wait Until    ${btn_loc}
     user click element    ${btn_loc}
-    Wait Until Element Is Visible    ${titlePopUp}
+    general Wait Until    ${titlePopUp}
     
     # Verify Content PopUp Alert
     ${textTitlePopUp}        Get Text     ${titlePopUp}
     Log To Console    PopUp Batalkan : ${textTitlePopUp}
     Should Be Equal    ${textTitlePopUp}    ${titleText_popUp}
-    Sleep    3
+    general delay
     
 verify batalkan (Ya)
     [Arguments]    ${text_status}
-    Sleep    3
+    general delay
     general Wait Until    ${statusProject}
     ${text}    Get Text    ${statusProject}
 

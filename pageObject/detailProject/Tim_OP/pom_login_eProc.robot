@@ -7,7 +7,7 @@ ${headerLogin}          xpath=//p[contains(text(), 'Log')]
 ${inputPassword}        xpath=//input[@id='pwd']
 ${inputUsername}        xpath=//input[@id='TxtPhone']
 ${listFilter}           xpath=//div[@id='listFilter']
-${titleProject}         xpath=//div[@class='d-flex align-items-center mb-18px']/p[contains(text(), 'Manajemen')]
+${titleProject}         xpath=//p[.='Manajemen Project']
 ${buttonMasuk}          xpath=//button[@type='button']//span[contains(text(), 'Masuk')]//ancestor::button
 
 *** Keywords ***
@@ -15,10 +15,11 @@ ${buttonMasuk}          xpath=//button[@type='button']//span[contains(text(), 'M
 user visit E-Proc1000s Login Page
     ${current_url}        Get Location
     Log  Current Path: ${current_url}
+    general delay
     ${res}    general return status    ${headerLogin}
     WHILE    ${res} == $False
         Reload Page
-        Sleep    2s
+        general delay
         ${res}    general return status    ${headerLogin}
     END
 
@@ -27,38 +28,41 @@ user login E-Proc1000s Page
     user input text    ${inputUsername}    ${ROLE_ADMIN}
     ${res}    general return status    ${inputPassword}
     IF    ${res}
-        Sleep    4
+        general delay
         user input text    ${inputUsername}    ${ROLE_ADMIN}
         Tunggu Sampai Kondisi Terpenuhi    Cek Visible    ${inputPassword}    50s    3s
         user input password    ${inputPassword}    ${PASSWORD}
         Cek Field Sudah Terisi    ${inputPassword}
         Tunggu Sampai Kondisi Terpenuhi    Cek Field Sudah Terisi    ${inputPassword}    20s    1s
         Press Key    ${inputPassword}    \\13
-        Sleep    5
-        ${res_list}    general return status    ${listFilter}
+        general delay    3s
+        ${res_list}    general return status    ${titleProject}    timeout=5s
         WHILE    ${res_list} == $False
             Press Key    ${inputPassword}    \\13
-            Sleep    5
-            ${res_err}    general return status    xpath=//div[@class='mb-20px']//parent::div/label[contains(text(), 'Nomor')]
+            general delay    3s
+            ${res_err}    general return status    ${textNomorTelpon_onLogin}
             IF    ${res_err}
-                without filling any of them    ${inputUsername}    ${ROLE_ADMIN}
+                # without filling any of them    ${inputUsername}    ${ROLE_ADMIN}
+                user input text    ${inputUsername}    ${ROLE_ADMIN}
+                user input password    ${inputPassword}    ${PASSWORD}
+                user click element    ${buttonMasuk}
             ELSE
                 Exit For Loop
             END
         END
-        Wait Until Element Is Visible    ${listFilter}
+        general Wait Until    ${listFilter}
     ELSE
         Exit For Loop
     END
 
 without fill no handphone and password
     general Wait Until    ${buttonMasuk}
-    Sleep    4
+    general delay
     user click element    ${buttonMasuk}
     ${res}    general return status    ${inputPassword}
     IF    ${res}
         general Wait Until    ${buttonMasuk}
-        Sleep    4
+        general delay
         user click element    ${buttonMasuk}
     ELSE
         user visit E-Proc1000s Login Page
@@ -66,14 +70,14 @@ without fill no handphone and password
 
 without filling any of them
     [Arguments]    ${loc_text}    ${text}
-    general Wait Until    ${loc_text}
     reload_pages       ${loc_text}
+    general Wait Until    ${loc_text}
     ${res}    general return status    ${inputPassword}
     IF    ${res}
         general Wait Until    ${loc_text}
-        Sleep    4
+        general delay
         user input text       ${loc_text}    ${text}
-        Sleep    4
+        general delay
         general wait until enable    ${buttonMasuk}
         user click element    ${buttonMasuk}
     ELSE
@@ -87,10 +91,10 @@ input error no telp
     ${res}    general return status    ${inputPassword}
     IF    ${res}
         general Wait Until     ${id}
-        Sleep    4
+        general delay
         user input text        ${id}    ${text_id}
         user input password    ${pass}    ${text_pass}
-        Sleep    4
+        general delay
         user click element     ${buttonMasuk}
     ELSE
         user visit E-Proc1000s Login Page

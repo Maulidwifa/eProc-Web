@@ -5,8 +5,6 @@ Resource        ../../API_listKecamatan.robot
 Resource        ../../detailProject/Tim_OP/pom_createProject.robot
 
 *** Variables ***
-${namaProject_onDetailPage}              xpath=//span[@class='ttlMdSemiBold']
-${statusProject}                         xpath=//div[@class='d-flex align-items-center justify-content-between mb-2px']//div[@class='d-flex align-items-center']/span[2]
 ${ubahProject_MenungguPersetujuan}       xpath=//p[contains(.,'Perubahan Project')]
 
 ${iconDeleteCity}                        xpath=//div[@id='svgdeletecity']
@@ -15,52 +13,6 @@ ${iconDeleteCity}                        xpath=//div[@id='svgdeletecity']
 ${nextPage}                              xpath=//a[@title="Next page"]
 
 *** Keywords ***
-user click Detail on Project
-    [Arguments]    ${textStatus}
-    ${len}    Get Length    xpath=//tbody/tr/td[5]
-    Sleep    3
-    FOR    ${counter}    IN RANGE    1    ${len}
-        ${res}    general return status    xpath=//tbody/tr/td[5]//div[contains(.,'${textStatus}')]
-        IF    ${res}
-            check in project list    ${textStatus}
-            Exit For Loop
-        ELSE
-            ${next}    general return status    ${nextPage}
-            Run Keyword If    ${next}    user click element    ${nextPage}
-        END
-    END
-
-check in project list
-    [Arguments]    ${textStatusProject}
-    FOR    ${counter}    IN RANGE    1    10
-        ${res}    general return status    xpath=//tbody/tr[${counter}]/td[5]//div[contains(.,'${textStatusProject}')]
-        IF    ${res}
-            ${text}    Get Text    xpath=//tbody/tr[${counter}]/td[1]
-            ${status}    Get Text    xpath=//tbody/tr[${counter}]/td[5]
-            # user click element    xpath=//tbody/tr[${counter}]/td[contains(., 'Detail')]/span
-            user click element    xpath=//tbody/tr[${counter}]/td[6]/span/span
-            general Wait Until    xpath=//span[normalize-space()='Detail Project']
-            ${res_detail}    general return status    xpath=//span[normalize-space()='Detail Project']
-            WHILE    ${res_detail} == $False
-                user click element    xpath=//tbody/tr[${counter}]/td[contains(., 'Detail')]
-                ${res_detail}    general return status    xpath=//span[normalize-space()='Detail Project']
-            END
-
-            # User in Detail Page
-            general Wait Until    ${namaProject_onDetailPage}
-            ${nameProject}    Get Text    ${namaProject_onDetailPage}
-            ${status_onDetailPage}    Get Text    ${statusProject}
-            Log To Console    Nama Project: ${nameProject}
-            Log To Console    Status Project: ${status_onDetailPage}
-            Set Global Variable    ${nameProject_MenungguPersetujuan}    ${nameProject}
-
-            # Verify Name and Status Project
-            Should Be Equal    ${nameProject}    ${text}
-            Should Be Equal    ${status_onDetailPage}    ${status}
-            Exit For Loop
-        END
-    END
-
 detail information on detail page
     ${len}    Get Length    xpath=//div[@class='w-100']/div
     FOR    ${counter}    IN RANGE    1    ${len}
@@ -82,7 +34,7 @@ detail information on detail page
 user click button Riwayat
     general Wait Until    ${buttonRiwayat}
     user click element    ${buttonRiwayat}
-    general Wait Until    xpath=//p[normalize-space()='Riwayat']
+    general Wait Until    ${popUP_titleRiwayat}
 
     ${len}    Get Length    xpath=//div[contains(@class,'dvHistory')]/div//p
     FOR    ${counter}    IN RANGE    1    ${len}
@@ -104,7 +56,7 @@ user ubah project
         Element Should Be Visible    ${iconDeleteCity}
     ELSE
         reload_thePage    ${iconDeleteCity}
-        Sleep    5
+        general delay    5s
         click button ubah
     END  
 
@@ -113,12 +65,12 @@ user ubah alamat project
     user choose kecamatan list
     user click element    ${buttonSimpan}
 
-    ${res}    general return status    ${ubahProject_MenungguPersetujuan}
-    WHILE    ${res} == $False
-        user click element    ${buttonSimpan}
-        show pop up dialog    ${ubahProject_MenungguPersetujuan}
-        ${res}    general return status    ${ubahProject_MenungguPersetujuan}
-    END
+    # ${res}    general return status    ${ubahProject_MenungguPersetujuan}
+    # WHILE    ${res} == $False
+    #     user click element    ${buttonSimpan}
+    #     show pop up dialog    ${ubahProject_MenungguPersetujuan}
+    #     ${res}    general return status    ${ubahProject_MenungguPersetujuan}
+    # END
     
 
 reload_thePage
@@ -140,16 +92,17 @@ user ubah startDate project
     Scroll Element Into View    ${fieldPICmanager}
     ${a}    Get Text    ${fieldPICmanager}
     user click element    ${fieldPICmanager}
-    Sleep    2
+    general delay
     pilih PIC    ${a}
-    Sleep    2
+    general delay
     tanggal mulai    ${for_tanggal}
 
 pilih PIC
     [Arguments]    ${location}
-    ${res}    general return status    xpath=//div[@class='dvContentSearch']
+    ${res}    general return status    ${listPIC}
     IF    ${res}
-        user input text       xpath=//input[@id='searchUser']    ${location}
+        general return status   ${field_searchPIC}
+        user input text       ${field_searchPIC}    ${location}
         user click element    xpath=//p[normalize-space()='${location}']
     ELSE
         user click element    ${fieldPICmanager}
@@ -161,29 +114,29 @@ user ubah tanggal akhir sebelum tanggal mulai
 
 user ubah pic yang sama satu sama lain
     general Wait Until    ${inputNamaProject}
-    Scroll Element Into View    ${fieldPICmanager}
+    Scroll Element Into View    ${fieldPICfinance}
+    general Wait Until    ${fieldPICfinance}
     ${a}    Get Text    ${fieldPICmanager}
     user click element    ${fieldPICadmin}
-    Sleep    2
     pilih PIC    ${a}
 
     # Verify Error State
     # Element Should Be Enabled    ${labelErr_PICsame}
     # ${labelErr}    Get Text    ${labelErr_PICsame}
-    Sleep    3
+    general delay    3s
     ${labelErr}    Get Text    xpath=//div[contains(@class, 'btnBetween')][1]/label
     Should Be Equal    ${labelErr}    PIC Tidak boleh sama
     Log To Console    Error State: ${labelErr}
 
 user ubah nama project dengan nama yang sudah digunakan
     [Arguments]    ${StatusProject}
-    Get list Project Manajemen
-    user click Detail on Project    ${StatusProject}
+    user click filter status    ${StatusProject}   Menunggu persetujuan 
     user ubah project
+    Get list Project Manajemen
     general Wait Until    ${inputNamaProject}
     user click element    ${inputNamaProject}
-    Run Keyword If    '${nameProject_MenungguPersetujuan}' == '${projectName}'    Get list Project Manajemen
-    ${nameUsed}    Replace String    ${nameProject_MenungguPersetujuan}    ${nameProject_MenungguPersetujuan}    ${projectName}
+    Run Keyword If    '${Project_Name}' == '${projectName}'    Get list Project Manajemen
+    ${nameUsed}    Replace String    ${Project_Name}    ${Project_Name}    ${projectName}
     user input text    ${inputNamaProject}    ${nameUsed}
     ${textName}    Get Text    ${inputNamaProject}
     IF    "${textName}" == "${nameUsed}" 

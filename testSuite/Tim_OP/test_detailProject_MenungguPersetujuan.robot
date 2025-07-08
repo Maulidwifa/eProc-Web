@@ -27,10 +27,11 @@ Tim OP can Changes Data Estimasi Tanggal Berakhir Project
     [Tags]                     1000s    detail_project    test
     User change data End Date project before the start date
 
-Tim OP can Changes Data PIC same to each other
-    [Documentation]            This scenario test User can change data pic same to each other
-    [Tags]                     1000s    detail_project    test
-    User change PIC same to each other
+# Ini Fitur penjagaan nya udah dilepas, (gaada lagi)
+# Tim OP can Changes Data PIC same to each other
+#     [Documentation]            This scenario test User can change data pic same to each other
+#     [Tags]                     1000s    detail_project    test
+#     User change PIC same to each other
 
 Tim OP can Changes Data Name Project with name has been used
     [Documentation]            This scenario test User can change data name project with name has been used

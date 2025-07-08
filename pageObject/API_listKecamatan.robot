@@ -147,12 +147,13 @@ Get list Project Manajemen
     ${valueList}=    Get From Dictionary    ${listProjectManajemen}    value
     ${count}=    Get Length    ${listProjectManajemen}
     ${totalUser}=    Get From Dictionary    ${listProjectManajemen}    countData
+    ${totalUser}=    Evaluate    ${totalUser} - 1
 
     # buat fungsi untuk nge list daftar Project Name
     @{project_names}=    Get Project Names    ${valueList}
 
     # Ambil salah satu nama proyek, misalnya proyek pertama
-    ${single_project_name}=    Get From List    ${project_names}    2 
+    ${single_project_name}=    Get From List    ${project_names}    ${totalUser}
     Set Global Variable    ${projectName}    ${single_project_name}
     Log    Single Project Name: ${single_project_name}
     Log To Console    Single Project Name: ${single_project_name}
