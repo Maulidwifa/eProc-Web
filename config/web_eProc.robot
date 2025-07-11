@@ -10,7 +10,7 @@ Library    browserUtils.py
 ${BROWSER}                  headlesschrome
 ${URL_DEV}                  https://developer.1000saudara.com/project1000s
 ${URL_BETA}                 https://beta.1000saudara.com/project1000s
-${ZOOM}                     0.80
+${ZOOM}                     0.75
 
 *** Keywords ***
 Begin Web Test

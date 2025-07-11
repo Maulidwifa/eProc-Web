@@ -9,6 +9,15 @@ Library        Collections
 ${ROLE_ADMIN}    085210758864
 ${ROLE_SCM}      085210758865
 ${PASSWORD}      123456
+# ${MULTI_ROLE_SUPERADMIN}    08012345678
+# ${MULTI_ROLE_OPSITE}        08012345676
+# ${MULTI_ROLE_SCMSITE}       08012345677
+
+# User (2)
+${MULTI_ROLE_SUPERADMIN}    080123123123
+${MULTI_ROLE_OPSITE}        080123123111
+${MULTI_ROLE_SCMSITE}       080123123122
+
 
 # Landing Page
 ${textNomorTelpon_onLogin}        xpath=//div[@class='mb-20px']//parent::div/label[contains(text(), 'Nomor')]
@@ -96,7 +105,7 @@ Elemen Harus Stabil Terlihat
     Wait Until Element Is Visible    ${locator}    timeout=5s
     FOR    ${i}    IN RANGE    ${ulang}
         Element Should Be Visible    ${locator}
-        Wait Until Element Is Visible    ${locator}    timeout=${interval}
+        Wait Until Element Is Visible    ${locator}    timeout=5s    #timeout=${interval}
     END
 
 general wait until enable
@@ -124,7 +133,7 @@ Cek Visible
 
 Click When Element Ready
     [Arguments]    ${locator}
-    Wait Until Keyword Succeeds    5 times    3s     Click Element    ${locator}
+    Wait Until Keyword Succeeds    30 times    3s     Click Element    ${locator}
 
 general delay
     [Arguments]    ${durasi}=2s
@@ -308,8 +317,17 @@ Get Information Project
     IF    ${res}
         Log    ERROR (DETAIL PROJECT)
     ELSE
-        ${nameProject}    Get Text    ${namaProject_onDetailPage}
+        general delay
+        general Wait Until    xpath=//div[@class='d-flex align-items-center justify-content-between mb-2px']/div/span[1]
+        general wait until enable    xpath=//div[@class='d-flex align-items-center justify-content-between mb-2px']/div/span[1]
+        ${nameProject}    Get Text    xpath=//div[@class='d-flex align-items-center justify-content-between mb-2px']/div/span[1]
         ${status_onDetailPage}    Get Text    ${statusProject}
+        IF    "${nameProject} == ''"
+            general Wait Until    ${namaProject_onDetailPage}
+            ${nameProject}    Get Text    ${namaProject_onDetailPage}
+            ${status_onDetailPage}    Get Text    ${statusProject}
+        END
+
         Log To Console    Nama Project: ${nameProject}
         Log To Console    Status Project: ${status_onDetailPage}
         Set Global Variable    ${Project_Name}    ${nameProject}

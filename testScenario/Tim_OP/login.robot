@@ -17,7 +17,7 @@ User login without fill no handphone and password
 # Login Without fill password
 User login without fill password
     Given user visit E-Proc1000s Login Page
-    When without filling any of them    ${inputUsername}    ${ROLE_ADMIN}
+    When without filling any of them    ${inputUsername}    ${MULTI_ROLE_OPSITE}
     Then show message error
     And Should Be Equal    ${err_text}    Password harus diisi
         

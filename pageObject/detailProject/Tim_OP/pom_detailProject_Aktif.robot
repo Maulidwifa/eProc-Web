@@ -40,7 +40,17 @@ pilih project aktif total pembelian (0)
         ${res}    general return status    xpath=//tbody/tr[${counter}]/td[contains(.,'Rp 0')]
         IF    ${res}
             general delay
-            Get Information Project    ${counter}
-            BREAK
+            ${btn_detail}    general return status    xpath=//tbody/tr[${counter}]/td[6]/span[1]/span[contains(.,'Detail')]
+            Run Keyword If    ${btn_detail}    Get Information Project    ${counter}
+            # Exit For Loop
         END
     END
+
+
+Get load on popUp form project
+    general Wait Until    xpath=//p[normalize-space()='Nama Project']
+    #//input[@id='projectName']
+    Reload Page
+    ${res_btnUbah}    Run Keyword And Return Status    Wait Until Element Is Visible    ${buttonUbah}
+    Run Keyword If    ${res_btnUbah}    click button ubah    ELSE    general Wait Until    ${buttonUbah}    timeout=50s
+    general wait until enable    xpath=//input[@placeholder='Masukkan anggaran maksimal pembelian...']

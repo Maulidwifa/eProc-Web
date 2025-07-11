@@ -28,6 +28,7 @@ User change Anggaran Maksimal
     And detail information on detail page
     And user on detail Aktif page
     When click button ubah
+    And Get load on popUp form project
     And user clear text Anggaran Maksimal
     Then user input anggaranMax
     And user click element    ${buttonSimpan}
@@ -40,6 +41,7 @@ User change Anggaran Maksimal
 User change data End Date before the start date
     Given User go to detail Project Page
     When click button ubah
+    And Get load on popUp form project
     And user scroll element    ${PICfinance}
     And user ubah tanggal akhir
     And user click element    ${buttonSimpan}

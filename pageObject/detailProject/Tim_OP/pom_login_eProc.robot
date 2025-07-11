@@ -25,25 +25,25 @@ user visit E-Proc1000s Login Page
 
 user login E-Proc1000s Page
     general Wait Until    ${inputPassword}
-    user input text    ${inputUsername}    ${ROLE_ADMIN}
+    user input text    ${inputUsername}    ${MULTI_ROLE_OPSITE}
     ${res}    general return status    ${inputPassword}
     IF    ${res}
         general delay
-        user input text    ${inputUsername}    ${ROLE_ADMIN}
+        user input text    ${inputUsername}    ${MULTI_ROLE_OPSITE}
         Tunggu Sampai Kondisi Terpenuhi    Cek Visible    ${inputPassword}    50s    3s
         user input password    ${inputPassword}    ${PASSWORD}
         Cek Field Sudah Terisi    ${inputPassword}
         Tunggu Sampai Kondisi Terpenuhi    Cek Field Sudah Terisi    ${inputPassword}    20s    1s
         Press Key    ${inputPassword}    \\13
         general delay    3s
-        ${res_list}    general return status    ${titleProject}    timeout=5s
+        ${res_list}    general return status    ${titleProject}    timeout=50s
         WHILE    ${res_list} == $False
             Press Key    ${inputPassword}    \\13
             general delay    3s
             ${res_err}    general return status    ${textNomorTelpon_onLogin}
             IF    ${res_err}
                 # without filling any of them    ${inputUsername}    ${ROLE_ADMIN}
-                user input text    ${inputUsername}    ${ROLE_ADMIN}
+                user input text    ${inputUsername}    ${MULTI_ROLE_OPSITE}
                 user input password    ${inputPassword}    ${PASSWORD}
                 user click element    ${buttonMasuk}
             ELSE
