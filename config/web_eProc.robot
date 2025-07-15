@@ -1,5 +1,5 @@
 *** Settings ***
-Library    SeleniumLibrary        timeout=100        run_on_failure=Capture Page Screenshot
+Library    SeleniumLibrary        timeout=100        run_on_failure=NONE    #run_on_failure=Capture Page Screenshot
 Library    String
 Library    BuiltIn
 Library    OperatingSystem
@@ -26,6 +26,9 @@ Remove file Report PNG
 
 End Web Test
     [Documentation]    Closes the browser after all tests in the suite have run
+    ${now}=    Get Time    epoch
+    ${filename}=    Set Variable    ${TEST NAME}_${now}.png
+    Run Keyword If    '${TEST STATUS}' == 'FAIL'    Capture Page Screenshot   ${filename}
     Log    Suite teardown initiated
     Close Browser
     # Remove file Report PNG

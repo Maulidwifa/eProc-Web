@@ -68,7 +68,6 @@ user input text
 
 user input password
     [Arguments]    ${locator}    ${text}
-    # Wait Until Element Is Visible    ${locator}
     general Wait Until   ${locator}
     Input Password    ${locator}    ${text}
     Tunggu Sampai Kondisi Terpenuhi    Cek Field Sudah Terisi    ${locator}
@@ -77,7 +76,7 @@ user click element
     [Arguments]    ${element}
     general Wait Until    ${element}
     Click When Element Ready    ${element}
-    
+
 user scroll element
     [Arguments]    ${locator}    ${durasi}=2s
     general delay
@@ -139,8 +138,8 @@ general delay
     [Arguments]    ${durasi}=2s
     Run Keyword And Ignore Error    Wait Until Keyword Succeeds    2 times    ${durasi}    Fail    Delay paksa tanpa Sleep
 
-# Error General for no handphone or password not filled    
-show message error    
+# Error General for no handphone or password not filled
+show message error
     ${label}    general return status    ${textNomorTelpon_onLogin}
     IF    ${label}
         general Wait Until    ${errMessageLabel}
@@ -198,12 +197,12 @@ error for startDate and endDate
 # Button Ubah on Detail Page
 click button ubah
     general Wait Until    ${buttonUbah}
-    user click element    ${buttonUbah} 
+    user click element    ${buttonUbah}
 
 user click button
     [Arguments]    ${loc_btn}
     general Wait Until    ${loc_btn}
-    user click element    ${loc_btn}    
+    user click element    ${loc_btn}
 
 # Bisa Kirim / Simpan
 button accept on dialog form ubah
@@ -218,22 +217,6 @@ button accept on dialog form ubah
     user click element    xpath=//div[@id='listFilter']/span[contains(.,'${filter_list}')]
     general delay    1s
 
-    # ${res}    general return status    xpath=//tbody/tr[${randomAngka}]/td[contains(.,'${filter_status}')]    timeout=1s
-    # IF    ${res}
-    #     general delay    1s
-    #     Get Information Project    ${randomAngka}
-    # ELSE
-    #     general delay    1s
-    #     FOR    ${counter}    IN RANGE    1    10
-    #     ${res}    general return status    xpath=//div[@id='listFilter']/span[contains(.,'${filter_list}')]    timeout=1s
-    #         Run Keyword If    ${res}
-    #         ...    Loop For Search Project    ${filter_status}
-    #         ...  ELSE
-    #         ...    Exit For Loop
-    #     END
-    # END
-    
-    # coba coba yang baru fungsi 
     search project    ${filter_status}
     FOR    ${page_counter}    IN RANGE    2    10
         # Cek jika ada tombol Next
@@ -274,7 +257,7 @@ Loop For Search Project
     END
 
 # ini fungsi untuk Proses Evaluasi, Persetujuan Anggaran, Evaluasi Anggaran
-Filter Status 
+Filter Status
     [Arguments]    ${filter_status}    ${durasi}=2s
     Random Number    10
     general Wait Until    ${listFilter_Menunggu}
@@ -310,7 +293,7 @@ Get Information Project
         ${res_detail}    general return status    ${detail_project_header}
     END
     Log    ${text}
-    
+
     # User in Detail Page
     general Wait Until    ${namaProject_onDetailPage}
     ${res}    general return status    ${text}    timeout=1s    # Ini Selalu ke FALSE
@@ -322,7 +305,7 @@ Get Information Project
         general wait until enable    xpath=//div[@class='d-flex align-items-center justify-content-between mb-2px']/div/span[1]
         ${nameProject}    Get Text    xpath=//div[@class='d-flex align-items-center justify-content-between mb-2px']/div/span[1]
         ${status_onDetailPage}    Get Text    ${statusProject}
-        IF    "${nameProject} == ''"
+        WHILE    "${nameProject}" == ''
             general Wait Until    ${namaProject_onDetailPage}
             ${nameProject}    Get Text    ${namaProject_onDetailPage}
             ${status_onDetailPage}    Get Text    ${statusProject}
@@ -386,17 +369,16 @@ Get Random Angka
     IF    ${randomAngka} < 10
         # ini untuk format tanggal kurang dari 10 (contoh : 06)
         ${randomAngka}=    Evaluate    str(${randomAngka}).zfill(2)
-        
+
         Set Global Variable    ${randomAngka}    ${randomAngka}
         Log     ${randomAngka}
     ELSE
         Set Global Variable    ${randomAngka}    ${randomAngka}
     END
-    
+
     RETURN    ${randomAngka}
 
 Random Number
     [Arguments]    ${angka}
     ${randomAngka}=    Evaluate    random.randint(1, ${angka} - 1)    random
     Set Global Variable    ${randomAngka}    ${randomAngka}
-    
